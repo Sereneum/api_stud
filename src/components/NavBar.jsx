@@ -8,12 +8,6 @@ import {LOGIN_ROUTE, MAIN_ROUTE} from "../utils/consts";
 const NavBar = observer(() => {
 
     const {user} = useContext(Context)
-    const navigator = useNavigate()
-
-    const logOut = () => {
-
-    }
-
     return (
         <Navbar bg="dark" variant="dark">
             <Container>
@@ -25,13 +19,13 @@ const NavBar = observer(() => {
                         >
                             Что-то тут будет
                         </Button>
-                        <Button
-                            variant={"outline-light"}
-                            style={{marginLeft: 10}}
-                            onClick={() => logOut()}
-                        >
-                            Выйти
-                        </Button>
+                        {/*<Button*/}
+                        {/*    variant={"outline-light"}*/}
+                        {/*    style={{marginLeft: 10}}*/}
+                        {/*    onClick={() => logOut()}*/}
+                        {/*>*/}
+                        {/*    Выйти*/}
+                        {/*</Button>*/}
                     </Nav>
                     :
                     <Nav className="ml-auto" style={{color: "white"}}>
