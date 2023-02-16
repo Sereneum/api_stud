@@ -14,7 +14,9 @@ const Login = observer(() => {
     const navigator = useNavigate()
     const {user} = useContext(Context)
 
-    const click = async () => {
+    const click = async e => {
+        e.preventDefault()
+
         try {
             let token = await login(email, password)
             if(token === undefined) return
@@ -69,7 +71,8 @@ const Login = observer(() => {
                             <Button
                                 variant="outline-dark"
                                 className="mt-3 align-self-end"
-                                onClick={() => click()}
+                                type={"submit"}
+                                onClick={click}
                             >
                                 Войти
                             </Button>
