@@ -1,0 +1,10 @@
+@font-face {
+    font-family: 'M_Ying_Hei';
+    src: local('M_Ying_Hei'),
+    url('resources/M_Ying_Hei.woff2') format('truetype');
+    font-weight: bold;
+}
+
+.font_M_Ying_Hei {
+    font-family: 'M_Ying_Hei';
+}
