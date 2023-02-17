@@ -8,3 +8,27 @@
 .font_M_Ying_Hei {
     font-family: 'M_Ying_Hei';
 }
+
+*::-webkit-scrollbar {
+    height: 12px;
+    width: 8px;
+
+}
+*::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 1);
+
+}
+*::-webkit-scrollbar-thumb {
+    background-color: #393E46;
+    border-radius: 5px;
+    border: 0px solid black;
+}
+body {
+    background-color: #000000;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+
+}

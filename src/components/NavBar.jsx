@@ -15,20 +15,8 @@ const NavBar = observer(() => {
     // console.log(user.moreInfo.group.item1)
 
     return (
-        <Navbar bg="dark" variant="dark">
+        <Navbar className='navbar' variant="dark" style={{backgroundColor: 'black'}}>
             <Container>
-                {/*<NavLink*/}
-                {/*    style={{*/}
-                {/*        color: 'white',*/}
-                {/*        textDecoration: 'none',*/}
-                {/*        fontSize: 24,*/}
-                {/*        marginLeft: -40,*/}
-                {/*    }}*/}
-                {/*    className='font_M_Ying_Hei'*/}
-                {/*    to={MAIN_ROUTE}*/}
-                {/*>*/}
-                {/*    .Space*/}
-                {/*</NavLink>*/}
                     <Navbar.Brand className={'d-flex d-inline-block align-top'}>
                         <img
                             alt=""
