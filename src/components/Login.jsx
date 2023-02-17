@@ -1,6 +1,6 @@
 import React, {useContext, useEffect, useState} from 'react';
 import {Button, Card, Container, Form, Row} from "react-bootstrap";
-import {login} from "../http/userAPI";
+import {check, login, moreInfo} from "../http/userAPI";
 import {observer} from "mobx-react-lite";
 import {useNavigate} from "react-router-dom";
 import {Context} from "../index";
@@ -20,10 +20,16 @@ const Login = observer(() => {
         try {
             let token = await login(email, password)
             if(token === undefined) return
-
-            user.setIsAuth(true)
             user.setToken(token)
-            navigator(MAIN_ROUTE)
+            localStorage.setItem('token', token)
+
+            check().then(data => {
+                user.setUser(data.dataUser)
+                user.setMoreInfo(data.moreInfo)
+                navigator(MAIN_ROUTE)
+                user.setIsAuth(true)
+            })
+
         } catch (e) {
             console.log(e.response.data)
         }
