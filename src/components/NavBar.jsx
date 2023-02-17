@@ -38,7 +38,7 @@ const NavBar = observer(() => {
                             alt=""
                             src={humanLogo}
                             className="d-inline-block align-top"
-                            style={{width: 30}}
+                            style={{width: 25, marginLeft: 2}}
                         />
                     </div>
                     :
