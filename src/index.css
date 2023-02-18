@@ -1,3 +1,8 @@
+html {
+    margin-left: calc(100vw - 100%);
+    margin-right: 0;
+}
+
 @font-face {
     font-family: 'M_Ying_Hei';
     src: local('M_Ying_Hei'),
