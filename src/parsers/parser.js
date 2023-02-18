@@ -3,12 +3,14 @@ export const parserCourseStatus = (data) => {
         tasks: []
     }
     for(let i of data.listSelectedTasks) {
+        // console.log(i)
         object.tasks.push({
             name: i.nameTask,
             statusID: i.taskExpired.statusID === null ? 0 : i.taskExpired.statusID,
             statusName: i.taskExpired.statusID === null ? 'Не отправлено' : data.listStatus[i.taskExpired.statusID - 1].statusName,
             numberTask: i.numberTask,
-            deadline: getDeadline(i.periodRealization)
+            deadline: getDeadline(i.periodRealization),
+            taskID: i.courseTaskID
         })
     }
     return object

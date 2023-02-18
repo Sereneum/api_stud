@@ -8,10 +8,13 @@ import {LOGIN_ROUTE} from "./utils/consts";
 import {check, moreInfo} from "./http/userAPI";
 import {Spinner} from "react-bootstrap";
 import MySpinner from "./components/MySpinner";
+import {settings} from "./utils/settings";
+import {loadingCourse, preloadingCourse} from "./http/studAPI";
 
 const App = observer(() => {
-    const {user} = useContext(Context)
-    const [loading, setLoading] = useState(true)
+    const {user, course} = useContext(Context)
+    const [loadingUser, setLoadingUser] = useState(true)
+    const [loadingCourse, setLoadingCourse] = useState(true)
 
 
     useEffect(() => {
@@ -19,11 +22,17 @@ const App = observer(() => {
             user.setIsAuth(data.dataState)
             user.setUser(data.dataUser)
             user.setMoreInfo(data.moreInfo)
-        }).finally(() => setLoading(false))
+        }).finally(() => setLoadingUser(false))
     }, [])
 
+    useEffect(() => {
+        preloadingCourse(settings.courses).then(data => {
+            course.setCourses(data)
+        }).finally(() => setLoadingCourse(false))
+    }, [settings])
 
-    if (loading) return <MySpinner />
+
+    if (loadingUser || loadingCourse) return <MySpinner />
 
     return (
         <BrowserRouter>
