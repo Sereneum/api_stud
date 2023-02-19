@@ -1,6 +1,6 @@
 import React, {useContext} from 'react';
 import {Route, Routes} from "react-router-dom";
-import {anonRoutes, authRoutes, publicRoutes} from "../routes";
+import {anonRoutes, authRoutes} from "../routes";
 import {observer} from "mobx-react-lite";
 import {Context} from "../index";
 

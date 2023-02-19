@@ -17,7 +17,11 @@ const authInterceptor = config => {
     return config
 }
 
-$authHost.interceptors.request.use(authInterceptor)
+const bedAuth = error => {
+    return Promise.reject(error)
+}
+
+$authHost.interceptors.request.use(authInterceptor, bedAuth)
 
 export {
     $host,

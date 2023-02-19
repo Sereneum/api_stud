@@ -5,9 +5,12 @@ import {observer} from "mobx-react-lite";
 import {useNavigate} from "react-router-dom";
 import {Context} from "../index";
 import {LOGIN_ROUTE, MAIN_ROUTE} from "../utils/consts";
+import NavBar from "./NavBar";
 
 
 const Login = observer(() => {
+
+    console.log('login')
 
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
@@ -19,76 +22,75 @@ const Login = observer(() => {
 
         try {
             let token = await login(email, password)
-            if(token === undefined) return
+            if (token === undefined) return
             user.setToken(token)
             localStorage.setItem('token', token)
 
-            check().then(data => {
-                user.setUser(data.dataUser)
-                user.setMoreInfo(data.moreInfo)
-                navigator(MAIN_ROUTE)
-                user.setIsAuth(true)
-            })
-
+            user.setIsAuth(true)
+            navigator(MAIN_ROUTE)
         } catch (e) {
             console.log(e.response.data)
         }
     }
 
     useEffect(() => {
-        if(user.isAuth) navigator(MAIN_ROUTE)
+        if (user.isAuth) navigator(MAIN_ROUTE)
     }, [])
 
 
     return (
-        <Container
-            className='d-flex justify-content-center align-content-center'
-            style={{
-                height: window.innerHeight - 54
-            }}
-        >
-            <Card
+        <div>
+            {/*<NavBar isLoaded={false}/>*/}
+
+            <Container
+                className='d-flex justify-content-center align-content-center'
                 style={{
-                    width: 600,
-                    backgroundColor: '#697780',
-                    font: 'Helvetica'
+                    height: window.innerHeight - 54
                 }}
-                className='p-5'
             >
-                <h2 className='m-auto'>{'Авторизация'}</h2>
-                <Form className='col-md-auto'>
-                    <Form.Group className='d-flex flex-column mb-5'>
-                        <Form.Control
-                            className="mt-2"
-                            placeholder="введите ваш email"
-                            style={{color: "black", backgroundColor: '#c0c0c0'}}
-                            value={email}
-                            onChange={e => setEmail(e.target.value)}
-                        />
-                        <Form.Control
-                            className="mt-2"
-                            placeholder="введите пароль"
-                            style={{color: "black", backgroundColor: '#c0c0c0'}}
-                            type={'password'}
-                            value={password}
-                            onChange={e => setPassword(e.target.value)}
-                        />
-                        <Row className='d-flex justify-content-between mt-3'>
-                            <Button
-                                variant="outline-dark"
-                                className="mt-3 align-self-end"
-                                type={"submit"}
-                                onClick={click}
-                            >
-                                Войти
-                            </Button>
-                        </Row>
+                <Card
+                    style={{
+                        width: 600,
+                        backgroundColor: '#697780',
+                        font: 'Helvetica'
+                    }}
+                    className='p-5'
+                >
+                    <h2 className='m-auto'>{'Авторизация'}</h2>
+                    <Form className='col-md-auto'>
+                        <Form.Group className='d-flex flex-column mb-5'>
+                            <Form.Control
+                                className="mt-2"
+                                placeholder="введите ваш email"
+                                style={{color: "black", backgroundColor: '#c0c0c0'}}
+                                value={email}
+                                onChange={e => setEmail(e.target.value)}
+                            />
+                            <Form.Control
+                                className="mt-2"
+                                placeholder="введите пароль"
+                                style={{color: "black", backgroundColor: '#c0c0c0'}}
+                                type={'password'}
+                                value={password}
+                                onChange={e => setPassword(e.target.value)}
+                            />
+                            <Row className='d-flex justify-content-between mt-3'>
+                                <Button
+                                    variant="outline-dark"
+                                    className="mt-3 align-self-end"
+                                    type={"submit"}
+                                    onClick={click}
+                                >
+                                    Войти
+                                </Button>
+                            </Row>
 
-                    </Form.Group>
-                </Form>
-            </Card>
+                        </Form.Group>
+                    </Form>
+                </Card>
 
-        </Container>
+            </Container>
+        </div>
     );
 });
 
