@@ -3,7 +3,7 @@ import {makeAutoObservable} from "mobx";
 export default class CourseStore {
     constructor() {
         this._courses = []
-        this._activeCourse = 2
+        this._activeCourse = 0
         makeAutoObservable(this)
     }
 

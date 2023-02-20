@@ -1,0 +1,67 @@
+.course_list {
+    color: #c4c4c4;
+    font-size: 20px;
+    line-height: 1.9;
+    font-weight: 400;
+    background-position: center center;
+    border-color: transparent;
+    border-style: solid;
+    vertical-align: center;
+    padding-bottom: 25px;
+}
+.course_block {
+    border-radius: 23px;
+    background-color: #121212;
+    border-color: transparent;
+    border-style: solid;
+    font-family: 'M_Ying_Hei';
+    width: 300px;
+    margin-right: 100px;
+    height: fit-content;
+}
+
+@font-face {
+    font-family: 'M_Ying_Hei';
+    src: local('M_Ying_Hei'),
+    url('M_Ying_Hei.woff2') format('truetype');
+    font-weight: bold;
+}
+.course_title {
+    color: white;
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 40px;
+}
+
+.course_settings {
+    color: #50525b;
+    text-align: center;
+    user-select: none;
+    font-size: 20px;
+    line-height: 1.9;
+    font-weight: 400;
+    margin-top: -10px;
+    margin-bottom: 5px;
+}
+
+.course_settings:hover {
+    color: #a7a3be;
+}
+.course_item {
+    border: 2px solid transparent;
+    background-color: #121212;
+    width: 100%;
+    text-align: center;
+    vertical-align: center;
+    user-select: none;
+}
+
+.course_item:hover {
+    border-radius: 20px;
+    background-color: #484444;
+}
+
+.isActiveCourse {
+    border: 2px solid wheat;
+    border-radius: 20px;
+}

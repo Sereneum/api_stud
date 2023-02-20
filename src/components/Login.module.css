@@ -1,0 +1,112 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.login_block {
+    margin-top: 70px;
+    display: flex;
+    flex-direction: column;
+    /*justify-content: center;*/
+    /*align-content: center;*/
+
+
+    border-radius: 23px;
+    background-color: #121212;
+    background-position: center center;
+    border-color: transparent;
+    border-style: solid;
+    width: 560px;
+
+    line-height: 1.9;
+    font-weight: 400;
+    font-size: 20px;
+    height: fit-content;
+
+}
+
+.login_title {
+    color: white;
+    font-size: 24px;
+    font-family: 'M_Ying_Hei', Arial;
+    margin: 20px 30px;
+}
+
+.tip {
+    margin: 5px 30px;
+    color: #757575;
+    font-size: 16px;
+    font-family: 'M_Ying_Hei', Arial;
+    line-height: 1.55;
+    font-weight: 400;
+    background-position: center center;
+    border-color: transparent;
+    border-style: solid;
+}
+
+
+.input_group {
+    display: flex;
+    flex-direction: column;
+    margin: 60px 30px 35px;
+    font-family: 'M_Ying_Hei', Arial;
+    color: white;
+    /*background-color: ;*/
+}
+
+
+.input {
+    outline: none;
+    line-height: 1.33;
+    -webkit-appearance: none;
+    background-color: transparent;
+    color: white;
+    /*border: 2px solid transparent;*/
+}
+.input::placeholder {
+    color: white;
+    border-color: rgba(248,248,255, 0.2);
+}
+
+input::-webkit-input-placeholder       {opacity: 1; transition: opacity 0.3s ease;}
+input::-moz-placeholder                {opacity: 1; transition: opacity 0.3s ease;}
+input:-moz-placeholder                 {opacity: 1; transition: opacity 0.3s ease;}
+input:-ms-input-placeholder            {opacity: 1; transition: opacity 0.3s ease;}
+input:focus::-webkit-input-placeholder {opacity: 0; transition: opacity 0.3s ease;}
+input:focus::-moz-placeholder          {opacity: 0; transition: opacity 0.3s ease;}
+input:focus:-moz-placeholder           {opacity: 0; transition: opacity 0.3s ease;}
+input:focus:-ms-input-placeholder      {opacity: 0; transition: opacity 0.3s ease;}
+
+.input:focus {
+    background-color: transparent;
+    color: white;
+    border-color: rgba(248,248,255, 0.4);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(248,248,255, 0.4);
+    outline: 0 none;
+}
+
+.email {
+
+}
+
+
+
+.password {
+    margin-top: 20px;
+}
+
+.button {
+    margin: 10px 30px 35px;
+    background-color: black;
+    font-family: 'M_Ying_Hei', Arial;
+    border-color: transparent;
+    font-size: 14px;
+}
+
+@font-face {
+    font-family: 'M_Ying_Hei';
+    src: local('Space/M_Ying_Hei'),
+    url('Space/M_Ying_Hei.woff2') format('truetype');
+    font-weight: bold;
+}

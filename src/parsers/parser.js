@@ -1,4 +1,4 @@
-export const parserCourseStatus = (data) => {
+export const parserCourseStatus = ({data, course_name}) => {
     let object = {
         tasks: []
     }
@@ -10,14 +10,16 @@ export const parserCourseStatus = (data) => {
             statusName: i.taskExpired.statusID === null ? 'Не отправлено' : data.listStatus[i.taskExpired.statusID - 1].statusName,
             numberTask: i.numberTask,
             deadline: getDeadline(i.periodRealization),
-            taskID: i.courseTaskID
+            taskID: i.courseTaskID,
+            courseID: i.courseID,
+            file: i.file,
+            course_name: course_name
         })
     }
     return object
 }
 
 let getDeadline = deadline => {
-    let day = 1000 * 60 * 60 * 24
-    let days = (Date.parse(deadline) - Date.now()) / day
-    return days > 0 ? Math.round(days) + ' дней' : 'конец'
+    let hours = (Date.parse(deadline) - Date.now()) / (1000 * 60 * 60)
+    return hours > 0 ? Math.round(hours) : 0
 }

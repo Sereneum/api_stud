@@ -1,0 +1,32 @@
+.tasks_block {
+    border-radius: 23px;
+    background-color: #121212;
+    background-position: center center;
+    border-color: transparent;
+    border-style: solid;
+    width: 560px;
+    font-family: 'M_Ying_Hei';
+}
+
+.title {
+    color: white;
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 40px;
+}
+
+.task_list {
+    padding-bottom: 25px;
+}
+
+.task {
+    font-family: 'M_Ying_Hei';
+    color: #ffffff;
+    font-size: 16px;
+    line-height: 1.55;
+    font-weight: 400;
+    background-position: center center;
+    border-color: transparent;
+    border-style: solid;
+    margin-left: 20px;
+}

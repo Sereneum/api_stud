@@ -2,13 +2,13 @@ import {$authHost, $host} from './index'
 import {API_COURSE} from "../utils/consts";
 import {parserCourseStatus} from "../parsers/parser";
 
-export const getCourseStatus = async (course_id) => {
+export const getCourseStatus = async ({course_id, course_name}) => {
     const {data} = await $authHost(API_COURSE + course_id)
-    return parserCourseStatus(data.data)
+    return parserCourseStatus({data: data.data, course_name})
 }
 
 export const preloadingCourse = async (courses) => {
-    const promises = courses.map(i => getCourseStatus(i.course_id))
+    const promises = courses.map(i => getCourseStatus({course_id: i.course_id, course_name: i.course_name}))
     const res = await Promise.all(
         promises.map(p => p.then())
     )

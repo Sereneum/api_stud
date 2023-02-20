@@ -1,5 +1,6 @@
 import React from 'react';
-import './Space.css'
+import '../Space.css'
+import styles from './TaskList.module.css'
 
 const Task = ({task, size, index}) => {
 
@@ -16,7 +17,7 @@ const Task = ({task, size, index}) => {
 
     return (
         <div>
-            <div className='task'>
+            <div className={styles.task}>
                 <div>{`${index}. ${task.name}`}</div>
                 <div>{'Статус: '} <span style={styleStatus(task.statusID)}>{task.statusName}</span></div>
             </div>

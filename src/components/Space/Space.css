@@ -8,92 +8,11 @@
     vertical-align: center;
 }
 
-.courses-block {
-    border-radius: 23px;
-    background-color: #121212;
-    border-color: transparent;
-    border-style: solid;
-    font-family: 'M_Ying_Hei';
-    width: 300px;
-    margin-right: 100px;
-    height: fit-content;
-}
-
-.course-list {
-    color: #c4c4c4;
-    font-size: 20px;
-    line-height: 1.9;
-    font-weight: 400;
-    background-position: center center;
-    border-color: transparent;
-    border-style: solid;
-    vertical-align: center;
-    padding-bottom: 25px;
-}
-
-.course-title {
-    color: white;
-    text-align: center;
-    font-size: 24px;
-    margin-bottom: 40px;
-}
-
-.course-item {
-    border: 2px solid transparent;
-    background-color: #121212;
-    width: 100%;
-    text-align: center;
-    vertical-align: center;
-    user-select: none;
-}
-
 .marker {
     width: 5px;
     height: 5px;
     border-radius: 5px;
     background-color: salmon;
-}
-
-.isActiveCourse {
-    border: 2px solid wheat;
-    border-radius: 20px;
-}
-
-.course-item:hover {
-    border-radius: 20px;
-    background-color: #484444;
-}
-
-
-@font-face {
-    font-family: 'M_Ying_Hei';
-    src: local('M_Ying_Hei'),
-    url('M_Ying_Hei.woff2') format('truetype');
-    font-weight: bold;
-}
-
-
-
-
-.tasks-block {
-    border-radius: 23px;
-    background-color: #121212;
-    background-position: center center;
-    border-color: transparent;
-    border-style: solid;
-    width: 560px;
-    font-family: 'M_Ying_Hei';
-}
-
-.course-title-in-tasks {
-    color: white;
-    text-align: center;
-    font-size: 24px;
-    margin-bottom: 40px;
-}
-
-.tasks-list {
-    padding-bottom: 25px;
 }
 
 .hr {
@@ -104,14 +23,10 @@
     border-top: 1.5px solid white;
 }
 
-.task {
+@font-face {
     font-family: 'M_Ying_Hei';
-    color: #ffffff;
-    font-size: 16px;
-    line-height: 1.55;
-    font-weight: 400;
-    background-position: center center;
-    border-color: transparent;
-    border-style: solid;
-    margin-left: 20px;
+    src: local('M_Ying_Hei'),
+    url('M_Ying_Hei.woff2') format('truetype');
+    font-weight: bold;
 }
+
