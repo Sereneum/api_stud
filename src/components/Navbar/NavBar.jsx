@@ -36,14 +36,15 @@ const NavBar = observer(({isLoaded}) => {
                     <div className={styles.navbar_space}>.Space</div>
                 </Navbar.Brand>
                 {isLoaded ?
-                    <div className={styles.navbar_info_block}>
+                    <Navbar.Brand  className={styles.navbar_info_block}>
                         <div className={styles.navbar_student}>{user_info()}</div>
+                        {/*{user_info()}*/}
                         <img
                             alt=""
                             src={humanLogo}
-                            className={styles.navbar_logo}
+                            className={styles.navbar_human_logo}
                         />
-                    </div>
+                    </Navbar.Brand >
                     :
                     ''
                 }

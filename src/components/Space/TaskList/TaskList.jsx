@@ -5,7 +5,7 @@ import {observer} from "mobx-react-lite";
 
 const TaskList = observer(({course}) => {
 
-    // console.log(course.courses[course.activeCourse].tasks)
+
 
     return (
         <div className={styles.tasks_block}>

@@ -1,22 +1,51 @@
+@keyframes spawn {
+    0% {opacity: 0%;}
+    100% {opacity: 100%;}
+}
+
+
 .tasks_block {
+
+    animation: spawn 1s infinite cubic-bezier(0.58, 0, 0, 1.04);
+    animation-iteration-count: 1;
+    will-change: opacity;
+
     border-radius: 23px;
     background-color: #121212;
     background-position: center center;
     border-color: transparent;
     border-style: solid;
-    width: 560px;
+    min-width: 560px;
     font-family: 'M_Ying_Hei';
+    user-select: none;
 }
 
 .title {
     color: white;
-    text-align: center;
-    font-size: 24px;
-    margin-bottom: 40px;
+    font-size: 28px;
+    margin: 40px 32.5px 50px;
+    text-align: left;
+    line-height: 1.4;
+}
+
+.task_name {
+
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+}
+
+.status_name {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .task_list {
-    padding-bottom: 25px;
+    /*text-indent: 20px;*/
+    margin: 10px 30px 20px;
+
 }
 
 .task {
@@ -24,9 +53,19 @@
     color: #ffffff;
     font-size: 16px;
     line-height: 1.55;
-    font-weight: 400;
-    background-position: center center;
-    border-color: transparent;
-    border-style: solid;
-    margin-left: 20px;
+    border: 2px solid transparent;
+}
+
+.task:hover {
+    border-radius: 7px;
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: background-color 0.15s ease-in-out;
+}
+
+.hr {
+    margin: 20px 10px;
+    padding: 0;
+    height: 0;
+    border: none;
+    border-top: 1.5px solid white;
 }

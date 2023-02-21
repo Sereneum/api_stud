@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './DeadlineList.module.css'
 
-const DeadlineItem = ({task}) => {
+const DeadlineItem = ({task, isLast}) => {
 
 
     const timeParser = (hours) => {
@@ -17,7 +17,10 @@ const DeadlineItem = ({task}) => {
                <div className={styles.dl_item_task_name}>{task.name}</div>
                <div className={styles.dl_item_timer}>{timeParser(task.deadline)}</div>
            </div>
-           <hr className={styles.hr}/>
+           {isLast
+               ? ''
+               : <hr className={styles.hr}/>
+           }
        </div>
     );
 };

@@ -1,6 +1,6 @@
 .space {
     display: flex;
-    margin-top: 50px;
+    /*margin-top: 50px;*/
     width: 100vw;
     height: 100%;
     justify-content: center;

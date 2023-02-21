@@ -1,17 +1,21 @@
 .navbar {
     background-color: transparent;
-    margin-bottom: 50px;
     font-family: "M_Ying_Hei";
+    display: flex;
+    /*align-content: center;*/
+    /*justify-content: center;*/
 }
 
 .navbar_brand {
     display: flex;
+    margin-bottom: 40px;
 }
 
 .navbar_space {
     margin-left: 23px;
     font-size: 50px;
-    margin-top: 50px;
+    margin-top: 40px;
+    /*margin-bottom: 40px;*/
 }
 
 .navbar_logo {
@@ -22,18 +26,22 @@
 
 .navbar_info_block {
     color: white;
-    display: inline-block;
-    /*display: flex;*/
-    /*flex-direction: row;*/
-    width: fit-content;
+    display: flex;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    margin-right: 0px;
+
 }
 
 .navbar_student {
-
+    text-align: center;
+    margin: auto;
+    font-size: 16px;
 }
 
 .navbar_human_logo {
-
+    width: 32px;
+    margin-left: 10px;
 }
 
 @font-face {

@@ -24,7 +24,7 @@ const CourseList = observer(({course, activeCourse}) => {
                                                                  index={index}/>)
                 }
             </div>
-
+            <hr className={styles.hr}/>
             <div className={styles.course_settings} onClick={openSettings}>Настроить курсы</div>
         </Container>
     );

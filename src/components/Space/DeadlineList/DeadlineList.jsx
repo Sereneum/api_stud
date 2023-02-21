@@ -8,7 +8,7 @@ const DeadlineList = observer(({tasks}) => {
         <div className={styles.deadline_block}>
             <div className={styles.title}>Ближайшие дедлайны</div>
             <div className={styles.deadline_list}>
-                {tasks.map(i => <DeadlineItem key={i.taskID} task={i}/>)}
+                {tasks.map((i, index) => <DeadlineItem key={i.taskID} task={i} isLast={tasks.length == index + 1}/>)}
             </div>
         </div>
     );

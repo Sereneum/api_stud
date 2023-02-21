@@ -18,10 +18,10 @@ const Task = ({task, size, index}) => {
     return (
         <div>
             <div className={styles.task}>
-                <div>{`${index}. ${task.name}`}</div>
-                <div>{'Статус: '} <span style={styleStatus(task.statusID)}>{task.statusName}</span></div>
+                <div className={styles.task_name}>{`${index}. ${task.name}`}</div>
+                <div className={styles.status_name}>{'Статус: '} <span style={styleStatus(task.statusID)}>{task.statusName}</span></div>
             </div>
-            {size === index ? '' : <hr className='hr' />}
+            {size === index ? '' : <hr className={styles.hr} />}
         </div>
     );
 };
