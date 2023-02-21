@@ -1,0 +1,44 @@
+.navbar {
+    background-color: transparent;
+    margin-bottom: 50px;
+    font-family: "M_Ying_Hei";
+}
+
+.navbar_brand {
+    display: flex;
+}
+
+.navbar_space {
+    margin-left: 23px;
+    font-size: 50px;
+    margin-top: 50px;
+}
+
+.navbar_logo {
+    width: 50px;
+    margin-top: 50px;
+    margin-left: -10px;
+}
+
+.navbar_info_block {
+    color: white;
+    display: inline-block;
+    /*display: flex;*/
+    /*flex-direction: row;*/
+    width: fit-content;
+}
+
+.navbar_student {
+
+}
+
+.navbar_human_logo {
+
+}
+
+@font-face {
+    font-family: 'M_Ying_Hei';
+    src: local('M_Ying_Hei'),
+    url('M_Ying_Hei.woff2') format('truetype');
+    font-weight: bold;
+}

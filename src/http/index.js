@@ -7,6 +7,22 @@ const $host = axios.create({
 const $authHost = axios.create({
     baseURL: process.env.REACT_APP_API_URL
 })
+//
+// const $hostAfterLogin = axios.create({
+//     baseURL: process.env.REACT_APP_API_URL,
+//     headers: {
+//         Authorization: `Bearer ${}`
+//     }
+// })
+
+const getHostAfterLogin = (token) => {
+    return axios.create({
+        baseURL: process.env.REACT_APP_API_URL,
+        headers: {
+            Authorization: `Bearer ${token}`
+        }
+    })
+}
 
 const $serverHost = axios.create({
     baseURL: process.env.REACT_APP_SERVER_API_URL
@@ -26,5 +42,6 @@ $authHost.interceptors.request.use(authInterceptor, bedAuth)
 export {
     $host,
     $authHost,
-    $serverHost
+    $serverHost,
+    getHostAfterLogin
 }

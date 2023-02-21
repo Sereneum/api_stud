@@ -6,7 +6,7 @@ import {preloadingCourse} from "../http/studAPI";
 import {settings} from "../utils/settings";
 import {Context} from "../index";
 import MySpinner from "./MySpinner";
-import NavBar from "./NavBar";
+import NavBar from "./Navbar/NavBar";
 
 const Main = observer(() => {
 

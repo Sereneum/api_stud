@@ -9,7 +9,7 @@ import styles from './Login.module.css'
 
 const Login = observer(() => {
 
-    console.log('login')
+    // console.log('login')
 
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
@@ -20,15 +20,17 @@ const Login = observer(() => {
         e.preventDefault()
 
         try {
-            let token = await login(email, password)
+            let {token, dataUser, moreInfo} = await login(email, password)
             if (token === undefined) return
             user.setToken(token)
             localStorage.setItem('token', token)
 
             user.setIsAuth(true)
+            user.setUser(dataUser)
+            user.setMoreInfo(moreInfo)
             navigator(MAIN_ROUTE)
         } catch (e) {
-            console.log(e.response.data)
+            console.log(e)
         }
     }
 

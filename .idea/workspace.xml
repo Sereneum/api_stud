@@ -28,7 +28,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/projects/stud_api/src/components/Space/DeadlineList",
+    "last_opened_file_path": "D:/projects/stud_api/src/components/Navbar",
     "list.type.of.created.stylesheet": "CSS",
     "nodejs_package_manager_path": "npm",
     "ts.external.directory.path": "C:\\Program Files\\JetBrains\\WebStorm 2022.2.2\\plugins\\JavaScriptLanguage\\jsLanguageServicesImpl\\external",
@@ -37,13 +37,14 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\projects\stud_api\src\components\Navbar" />
+      <recent name="D:\projects\stud_api\src" />
       <recent name="D:\projects\stud_api\src\components\Space\DeadlineList" />
       <recent name="D:\projects\stud_api\src\components\Space\TaskList" />
       <recent name="D:\projects\stud_api\src\components\Space\CourseList" />
-      <recent name="D:\projects\stud_api\src\components" />
-      <recent name="D:\projects\stud_api\src\components\Space" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\projects\stud_api\src\components\Navbar" />
       <recent name="D:\projects\stud_api\src\components\Space\TaskList" />
       <recent name="D:\projects\stud_api\src\components\Space\CourseList" />
       <recent name="D:\projects\stud_api\src\components\Space" />
@@ -65,7 +66,7 @@
       <workItem from="1676664213841" duration="3572000" />
       <workItem from="1676701948170" duration="21057000" />
       <workItem from="1676900077596" duration="207000" />
-      <workItem from="1676910724513" duration="10720000" />
+      <workItem from="1676910724513" duration="17573000" />
     </task>
     <servers />
   </component>

@@ -1,4 +1,4 @@
-import {$authHost, $host} from './index'
+import {$authHost, $host, getHostAfterLogin} from './index'
 import {API_AUTH, API_MORE_INFO} from "../utils/consts";
 
 export const login = async (userName, password) => {
@@ -6,8 +6,22 @@ export const login = async (userName, password) => {
     let token = data.data.accessToken
     if (token !== undefined) {
         localStorage.setItem('token', token)
-    }
-    return token
+        let u, more
+
+        let $hostAfterLogin = getHostAfterLogin(token)
+
+
+        await $hostAfterLogin.get(API_AUTH)
+            .then(d => u = d.data.data.user)
+
+        await $hostAfterLogin.get(API_MORE_INFO + u.anotherID)
+            .then(m => more = m.data.data)
+
+
+        return {token, dataUser: u, moreInfo: more}
+    } else return {token: '', dataUser: {}, moreInfo: {}}
+
+
 }
 
 export const check = async () => {

@@ -5,7 +5,7 @@ import React, {useContext, useEffect, useState} from "react";
 import {Context} from "./index";
 import {check} from "./http/userAPI";
 import MySpinner from "./components/MySpinner";
-import NavBar from "./components/NavBar";
+import NavBar from "./components/Navbar/NavBar";
 
 const App = observer(() => {
     const {user} = useContext(Context)
