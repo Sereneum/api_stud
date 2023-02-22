@@ -1,8 +1,15 @@
 html {
     margin-left: calc(100vw - 100%);
     margin-right: 0;
+}
 
-
+.mySpinner {
+    position: fixed;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100000000;
 }
 
 @font-face {

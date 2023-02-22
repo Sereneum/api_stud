@@ -6,9 +6,9 @@
 
 .tasks_block {
 
-    animation: spawn 1s infinite cubic-bezier(0.58, 0, 0, 1.04);
-    animation-iteration-count: 1;
-    will-change: opacity;
+    /*animation: spawn 1s infinite cubic-bezier(0.58, 0, 0, 1.04);*/
+    /*animation-iteration-count: 1;*/
+    /*will-change: opacity;*/
 
     border-radius: 23px;
     background-color: #121212;
@@ -23,7 +23,7 @@
 .title {
     color: white;
     font-size: 28px;
-    margin: 40px 32.5px 50px;
+    margin: 40px 40px 40px;
     text-align: left;
     line-height: 1.4;
 }

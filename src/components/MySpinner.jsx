@@ -1,9 +1,10 @@
 import React from 'react';
 import {Button, Spinner} from "react-bootstrap";
+import '../index.css'
 
 const MySpinner = () => {
     return (
-        <div className='text-center'>
+        <div className='text-center mySpinner'>
                 <Spinner
                     animation="border"
                     role="status"
