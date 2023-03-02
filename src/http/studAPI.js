@@ -1,5 +1,5 @@
 import {$authHost, $host} from './index'
-import {API_COURSE} from "../utils/consts";
+import {API_ALL_COURSES, API_COURSE} from "../utils/consts";
 import {parserCourseStatus} from "../parsers/parser";
 
 export const getCourseStatus = async ({course_id, course_name}) => {
@@ -17,4 +17,9 @@ export const preloadingCourse = async (courses) => {
             return {course_id: courses[index].course_id, tasks: i.tasks, course: courses[index]}
         }
     )
+}
+
+export const getAllCourses = async () => {
+    const {data} = await $authHost(API_ALL_COURSES)
+    return data.data.listCourse.reverse()
 }

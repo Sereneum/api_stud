@@ -42,7 +42,6 @@ const Login = observer(() => {
     return (
         <Container
             style={{
-                // height: window.innerHeight - 54,
                 width: "100%"
             }}
             className={styles.container}

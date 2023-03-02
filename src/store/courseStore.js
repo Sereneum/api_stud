@@ -8,6 +8,10 @@ export default class CourseStore {
     }
 
     setCourses(courses) {
+        // console.log('courses', courses)
+        // console.log('this', this)
+        // console.log('_courses', courses._courses)
+
         this._courses = courses
     }
 

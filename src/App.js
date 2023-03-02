@@ -20,6 +20,8 @@ const App = observer(() => {
             .finally(() => setLoadingUser(false))
     }, [])
 
+
+
     if (loadingUser) return <MySpinner/>
 
     return (
@@ -27,7 +29,6 @@ const App = observer(() => {
             <NavBar isLoaded={user.isAuth}/>
             <AppRouter/>
         </BrowserRouter>
-
     );
 })
 

@@ -20,8 +20,6 @@ export const login = async (userName, password) => {
 
         return {token, dataUser: u, moreInfo: more}
     } else return {token: '', dataUser: {}, moreInfo: {}}
-
-
 }
 
 export const check = async () => {

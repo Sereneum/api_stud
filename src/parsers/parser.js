@@ -20,6 +20,6 @@ export const parserCourseStatus = ({data, course_name}) => {
 }
 
 let getDeadline = deadline => {
-    let hours = (Date.parse(deadline) - Date.now()) / (1000 * 60 * 60)
+    let hours = (Date.parse(deadline) - Date.now()) / (1000 * 60 * 60) + 24
     return hours > 0 ? Math.round(hours) : 0
 }

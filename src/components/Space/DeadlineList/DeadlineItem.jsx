@@ -7,7 +7,7 @@ const DeadlineItem = ({task, isLast}) => {
     const timeParser = (hours) => {
         let days = hours / 24
         if(days >= 1) return `Дней до закрытия: ${Math.round(hours / 24)}`
-        else return `Часов до закрытия: ${hours}`
+        else return `Часов до закрытия: ${(hours)}`
     }
 
     return (
