@@ -8,7 +8,7 @@ import {getActiveElement} from "@testing-library/user-event/dist/utils";
 const Server = () => {
 
 
-    let email = "tree_penis@mail.ru"
+    let email = "tree_en@mail.ru"
     let active = {color: 'white', margin: 'auto', fontSize: 32}
     let passive = {gun: "ak-47"}
 

@@ -1,0 +1,98 @@
+.config_main_block {
+    border-radius: 23px;
+    background-color: #121212;
+    border-color: transparent;
+    border-style: solid;
+    font-family: 'M_Ying_Hei';
+    min-width: 630px;
+    max-width: 630px;
+    min-height: 500px;
+    height: fit-content;
+    text-align: left;
+}
+
+.config_block {
+    border-radius: 10px;
+    background-color: #171717;
+    border-color: transparent;
+    border-style: solid;
+    font-family: 'M_Ying_Hei';
+    height: fit-content;
+    text-align: left;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.config_title {
+    color: white;
+    font-size: 28px;
+    margin: 40px 30px 40px;
+    text-align: left;
+    user-select: none;
+}
+
+.config_local_title {
+    color: #ABABAB;
+    font-size: 21px;
+    margin: 20px 30px 20px;
+    text-align: left;
+    user-select: none;
+}
+
+.config_list {
+    background-color: #171717;
+    color: #ABABAB;
+    font-size: 20px;
+    line-height: 1.9;
+    font-weight: 400;
+    background-position: center center;
+    border-color: transparent;
+    border-style: solid;
+    vertical-align: center;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-bottom: 20px;
+    /*margin-top: 20px;*/
+}
+
+
+.config_item {
+    text-align: left;
+    border: 2px solid transparent;
+    background-color: #262626;
+    width: 100%;
+    vertical-align: center;
+    user-select: none;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    text-indent: 10px;
+    font-size: 18px;
+    border-radius: 10px;
+}
+
+.config_item:hover {
+    border-radius: 7px;
+    background-color: rgba(255, 255, 255, 0.3);
+    transition: background-color 0.017s ease-in-out;
+}
+
+.isActive {
+    border: 2px solid transparent;
+    border-radius: 7px;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.hr {
+    margin: 20px 35px;
+    padding: 0;
+    height: 0;
+    border: none;
+    border-top: 1.5px solid white;
+}
+
+@font-face {
+    font-family: 'M_Ying_Hei';
+    src: local('M_Ying_Hei'),
+    url('M_Ying_Hei.woff2') format('truetype');
+    font-weight: bold;
+}

@@ -18,7 +18,7 @@ const getHostAfterLogin = (token) => {
     })
 }
 
-const key = 'AKfycbxY3qzHcPlF-GCczKkGHIE1_zy4dCWi3roOjTTDx3kVIY7s7jOu0WQTzKUtDhfUIzxUfw'
+const key = 'AKfycbyNnQxsaQJXI7uxbJKXjFlP109m8O5dmIhxBFOWidTr90SN3BIEPFIdsZzFO_CYX3gg6g'
 const url = `https://script.google.com/macros/s/${key}/exec?`
 
 const $serverHost = axios.create({

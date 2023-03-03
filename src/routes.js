@@ -1,8 +1,9 @@
-import {DB_ROUTE, LOGIN_ROUTE, MAIN_ROUTE, SERVER_ROUTE,} from "./utils/consts";
+import {CONFIG_ROUTE, DB_ROUTE, LOGIN_ROUTE, MAIN_ROUTE, SERVER_ROUTE,} from "./utils/consts";
 import Login from "./components/Login";
 import Main from "./components/Main";
 import Db from "./components/Db/Db";
 import Server from "./components/Db/Server";
+import Config from "./components/Space/Config/Config";
 
 
 export const anonRoutes = [
@@ -24,5 +25,9 @@ export const authRoutes = [
     {
         path: SERVER_ROUTE,
         Component: Server
+    },
+    {
+        path: CONFIG_ROUTE,
+        Component: Config
     }
 ]
