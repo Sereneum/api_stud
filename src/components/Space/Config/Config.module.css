@@ -9,6 +9,10 @@
     min-height: 500px;
     height: fit-content;
     text-align: left;
+
+    box-shadow: 0px 0px 20px 0px rgba(0,0,0,1);
+    margin-top: 60px;
+    padding-bottom: 20px;
 }
 
 .config_block {
@@ -19,16 +23,20 @@
     font-family: 'M_Ying_Hei';
     height: fit-content;
     text-align: left;
-    margin-left: 20px;
-    margin-right: 20px;
+
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .config_title {
     color: white;
     font-size: 28px;
-    margin: 40px 30px 40px;
+    /*margin: 40px 30px 40px;*/
     text-align: left;
     user-select: none;
+    /*margin-left: 50px;*/
+    /*margin: 40px 0 50px 40px;*/
+    margin: 40px 40px;
 }
 
 .config_local_title {
@@ -37,6 +45,7 @@
     margin: 20px 30px 20px;
     text-align: left;
     user-select: none;
+    /*margin: 40px 40px;*/
 }
 
 .config_list {
@@ -49,36 +58,36 @@
     border-color: transparent;
     border-style: solid;
     vertical-align: center;
-    margin-left: 15px;
-    margin-right: 15px;
-    margin-bottom: 20px;
-    /*margin-top: 20px;*/
+    /*margin-left: 15px;*/
+    /*margin-right: 15px;*/
+    /*margin-bottom: 20px;*/
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 10px;
 }
 
 
 .config_item {
-    text-align: left;
-    border: 2px solid transparent;
     background-color: #262626;
-    width: 100%;
-    vertical-align: center;
-    user-select: none;
-    margin-bottom: 10px;
-    margin-top: 10px;
-    text-indent: 10px;
-    font-size: 18px;
+    border: 7px solid transparent;
     border-radius: 10px;
+    font-size: 17px;
+    margin-bottom: 10px;
+    text-align: left;
+    text-indent: 15px;
+    -webkit-user-select: none;
+    user-select: none;
+    vertical-align: center;
+    width: 100%;
 }
 
 .config_item:hover {
-    border-radius: 7px;
     background-color: rgba(255, 255, 255, 0.3);
     transition: background-color 0.017s ease-in-out;
 }
 
 .isActive {
-    border: 2px solid transparent;
-    border-radius: 7px;
+    border: 7px solid transparent;
     background-color: rgba(255, 255, 255, 0.3);
 }
 

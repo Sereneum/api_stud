@@ -2,8 +2,7 @@
     background-color: transparent;
     font-family: "M_Ying_Hei";
     display: flex;
-    /*align-content: center;*/
-    /*justify-content: center;*/
+    user-select: none;
 }
 
 .navbar_brand {

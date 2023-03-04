@@ -28,27 +28,28 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/projects/stud_api/src/components/Space/CourseConfig",
+    "last_opened_file_path": "D:/projects/stud_api/src/components/Login",
     "list.type.of.created.stylesheet": "CSS",
     "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "io.unthrottled.amii.config.ui.PluginSettingsUI",
     "ts.external.directory.path": "C:\\Program Files\\JetBrains\\WebStorm 2022.2.2\\plugins\\JavaScriptLanguage\\jsLanguageServicesImpl\\external",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\projects\stud_api\src\components\Login" />
       <recent name="D:\projects\stud_api\src\components\Space\CourseConfig" />
       <recent name="D:\projects\stud_api\src\components\Navbar" />
       <recent name="D:\projects\stud_api\src" />
       <recent name="D:\projects\stud_api\src\components\Space\DeadlineList" />
-      <recent name="D:\projects\stud_api\src\components\Space\TaskList" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\projects\stud_api\src\components\Login" />
       <recent name="D:\projects\stud_api\src\components\Space\Config" />
       <recent name="D:\projects\stud_api\src\components\Navbar" />
       <recent name="D:\projects\stud_api\src\components\Space\TaskList" />
       <recent name="D:\projects\stud_api\src\components\Space\CourseList" />
-      <recent name="D:\projects\stud_api\src\components\Space" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -76,7 +77,8 @@
       <workItem from="1677551660279" duration="3655000" />
       <workItem from="1677745053815" duration="1248000" />
       <workItem from="1677777755252" duration="779000" />
-      <workItem from="1677813804271" duration="7467000" />
+      <workItem from="1677813804271" duration="7651000" />
+      <workItem from="1677911466715" duration="7424000" />
     </task>
     <servers />
   </component>

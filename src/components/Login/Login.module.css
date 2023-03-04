@@ -90,9 +90,14 @@ input:focus:-ms-input-placeholder      {opacity: 0; transition: opacity 0.3s eas
     box-shadow: 1px 0px 0px rgba(0, 0, 0, 0.075) inset, 0 0 0px rgba(248,248,255, 0.4);
 }
 
-.email {
-
+.spinner {
+    text-align: center;
 }
+
+.input.bad {
+    border-color: rgba(255,76,91, 0.4);
+}
+
 
 .password {
     margin-top: 20px;
@@ -108,9 +113,12 @@ input:focus:-ms-input-placeholder      {opacity: 0; transition: opacity 0.3s eas
     height: 45px;
 }
 
+
+
+
 @font-face {
     font-family: 'M_Ying_Hei';
     src: local('Space/M_Ying_Hei'),
-    url('Space/M_Ying_Hei.woff2') format('truetype');
+    url('../Space/M_Ying_Hei.woff2') format('truetype');
     font-weight: bold;
 }

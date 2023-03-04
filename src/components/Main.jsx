@@ -26,7 +26,7 @@ const Main = observer(() => {
 
 
     if (loadingCourse) return <MySpinner/>
-    console.log(course.courses)
+    // console.log(course.courses)
 
     let c = {
         course_id: null,

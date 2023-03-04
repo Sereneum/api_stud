@@ -9,6 +9,7 @@ import humanLogo from '../../resources/human_logo.svg'
 
 
 import styles from './NavBar.module.css'
+import Stars from "../Stars/Stars";
 
 const NavBar = observer(({isLoaded}) => {
 
@@ -18,38 +19,41 @@ const NavBar = observer(({isLoaded}) => {
 
     const user_info = () => {
         try {
-                return `${user.user.first_name} ${user.user.last_name}, ${user.moreInfo.group.item1}`
+            return `${user.user.first_name} ${user.user.last_name}, ${user.moreInfo.group.item1}`
         } catch (e) {
             return ''
         }
     }
 
     return (
-        <Navbar className={styles.navbar} variant="dark">
-            <Container>
-                <Navbar.Brand className={styles.navbar_brand}>
-                    <img
-                        alt=""
-                        src={mgriLogo}
-                        className={styles.navbar_logo}
-                    />
-                    <div className={styles.navbar_space}>.Space</div>
-                </Navbar.Brand>
-                {isLoaded ?
-                    <Navbar.Brand  className={styles.navbar_info_block}>
-                        <div className={styles.navbar_student}>{user_info()}</div>
-                        {/*{user_info()}*/}
+        <>
+
+            <Navbar className={styles.navbar} variant="dark">
+                <Container>
+                    <Navbar.Brand className={styles.navbar_brand}>
                         <img
                             alt=""
-                            src={humanLogo}
-                            className={styles.navbar_human_logo}
+                            src={mgriLogo}
+                            className={styles.navbar_logo}
                         />
-                    </Navbar.Brand >
-                    :
-                    ''
-                }
-            </Container>
-        </Navbar>
+                        <div className={styles.navbar_space}>.Space</div>
+                    </Navbar.Brand>
+                    {isLoaded ?
+                        <Navbar.Brand className={styles.navbar_info_block}>
+                            <div className={styles.navbar_student}>{user_info()}</div>
+                            {/*{user_info()}*/}
+                            <img
+                                alt=""
+                                src={humanLogo}
+                                className={styles.navbar_human_logo}
+                            />
+                        </Navbar.Brand>
+                        :
+                        ''
+                    }
+                </Container>
+            </Navbar>
+        </>
     );
 });
 
