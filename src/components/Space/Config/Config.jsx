@@ -73,11 +73,10 @@ const Config = observer(() => {
         setActive(newActive)
         setPassive(newPassive)
 
-
-        console.log('отправка изменений на сервер...')
-        recordingChangesToServer({id: id, active: newActive}).then(r => {
-            console.log('r', r)
-        })
+        // console.log('отправка изменений на сервер...')
+        // recordingChangesToServer({id: id, active: newActive}).then(r => {
+        //     console.log('r', r)
+        // })
     }
 
 
