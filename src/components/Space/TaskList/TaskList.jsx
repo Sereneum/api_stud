@@ -6,8 +6,6 @@ import {observer} from "mobx-react-lite";
 const TaskList = observer(({course}) => {
 
 
-    console.log(course.courses)
-
     return (
         <div className={styles.tasks_block}>
             <div
@@ -30,7 +28,7 @@ const TaskList = observer(({course}) => {
                 :
                 <div className={styles.task_not_found}>
                     <p>Не найдены активные курсы</p>
-                    <p>перейдите в найтройки</p>
+                    <p>перейдите в настройки</p>
                 </div>
             }
 
