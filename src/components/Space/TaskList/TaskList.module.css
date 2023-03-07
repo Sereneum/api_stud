@@ -16,6 +16,7 @@
     border-color: transparent;
     border-style: solid;
     min-width: 560px;
+    min-height: 400px;
     font-family: 'M_Ying_Hei';
     user-select: none;
 }
@@ -28,8 +29,13 @@
     line-height: 1.4;
 }
 
-.task_name {
+.task_not_found {
+    color: darkgray;
+    text-align: center;
+    margin-top: 155px;
+}
 
+.task_name {
     padding-left: 10px;
     padding-right: 10px;
     padding-top: 10px;

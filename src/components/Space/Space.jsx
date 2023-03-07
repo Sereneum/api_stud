@@ -20,7 +20,6 @@ const Space = observer(() => {
     const [deadlineTasks, setDeadlineTasks] = useState([])
 
     useEffect(() => {
-        // console.log('useEffect')
         setDeadlineTasks(allTasks())
     }, [course.courses])
 

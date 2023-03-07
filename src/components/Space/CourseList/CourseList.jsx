@@ -23,10 +23,15 @@ const CourseList = observer(({course, activeCourse}) => {
             </div>
             <div className={styles.course_list}>
                 {
+
+                    course.courses
+                    ?
                     course.courses.map((i, index) => <CourseItem key={i.course_id}
                                                                  isActive={index === course.activeCourse}
                                                                  course={i.course} click={activeCourse}
                                                                  index={index}/>)
+                        :
+                        "пусто"
                 }
             </div>
             <hr className={styles.hr}/>

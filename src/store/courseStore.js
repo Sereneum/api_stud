@@ -8,10 +8,6 @@ export default class CourseStore {
     }
 
     setCourses(courses) {
-        // console.log('courses', courses)
-        // console.log('this', this)
-        // console.log('_courses', courses._courses)
-
         this._courses = courses
     }
 
@@ -26,5 +22,4 @@ export default class CourseStore {
     get activeCourse() {
         return this._activeCourse
     }
-    // JSON.parse(JSON.stringify(u))
 }

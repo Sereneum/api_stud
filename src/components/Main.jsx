@@ -30,7 +30,6 @@ const Main = observer(() => {
         loadingCoursesOnMain(id).then(d => {
             course.setCourses(d)
             setLoadingCourse(false)
-            // console.log('loadingCoursesOnMain: ', d)
         })
     }, [])
 
