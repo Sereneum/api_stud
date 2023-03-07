@@ -29,11 +29,12 @@ const division = (active, all) => {
     const passive = []
     for (let i of all) {
         let isPresent = false
-        for (let j of active)
-            if (i.course_id == j.course_id) {
+        for (let j of JSON.parse(active)) {
+            if (i.course_id === j.course_id) {
                 isPresent = true;
                 break
             }
+        }
 
         if (!isPresent) passive.push(i)
     }
