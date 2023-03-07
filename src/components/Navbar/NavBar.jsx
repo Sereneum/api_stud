@@ -16,6 +16,7 @@ const NavBar = observer(({isLoaded}) => {
 
     const {user, course} = useContext(Context)
 
+    const navigator = useNavigate()
 
     const user_info = () => {
         try {
@@ -30,7 +31,7 @@ const NavBar = observer(({isLoaded}) => {
 
             <Navbar className={styles.navbar} variant="dark">
                 <Container>
-                    <Navbar.Brand className={styles.navbar_brand}>
+                    <Navbar.Brand className={styles.navbar_brand} onClick={() => navigator('')}>
                         <img
                             alt=""
                             src={mgriLogo}

@@ -8,25 +8,38 @@ import {Context} from "../index";
 import MySpinner from "./MySpinner";
 import NavBar from "./Navbar/NavBar";
 import {useLoading} from "../hooks/useLoading";
+import {loadingCoursesOnMain} from "../chain/serverConfig";
 
 const Main = observer(() => {
 
     const [loadingCourse, setLoadingCourse] = useState(true)
     const {user, course} = useContext(Context)
+    let id = user.user.anotherID
 
-    useLoading(
-        {
-            func: preloadingCourse,
-            args: settings.courses,
-            setter: d => course.setCourses(d),
-            loader: () => setLoadingCourse(false)
-        }
-    ).then()
+    // useLoading(
+    //     {
+    //         func: preloadingCourse,
+    //         args: settings.courses,
+    //         setter: d => course.setCourses(d),
+    //         loader: () => setLoadingCourse(false)
+    //     }
+    // ).then()
+
+
+    useEffect(() => {
+        loadingCoursesOnMain(id).then(d => {
+            course.setCourses(d)
+            setLoadingCourse(false)
+            // console.log('loadingCoursesOnMain: ', d)
+        })
+    }, [])
+
+
 
 
 
     if (loadingCourse) return <MySpinner/>
-    // console.log(course.courses)
+
 
     let c = {
         course_id: null,

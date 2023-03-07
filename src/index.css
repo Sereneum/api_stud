@@ -6,11 +6,12 @@ html {
 }
 
 .mySpinner {
-    position: fixed;
-    left: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
+
+    position: absolute;
+    left: calc(50vw - 25px);
+    top: calc(50vh - 25px);
+    width: 30px;
+    height: 30px;
     z-index: 100000000;
 }
 

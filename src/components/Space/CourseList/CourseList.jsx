@@ -4,12 +4,17 @@ import styles from './CourseList.module.css'
 import {Container} from "react-bootstrap";
 import {observer} from "mobx-react-lite";
 import {Context} from "../../../index";
+import {useNavigate} from "react-router-dom";
 
 const CourseList = observer(({course, activeCourse}) => {
 
 
     const openSettings = () => {
+        navigator('config')
     }
+
+    const navigator = useNavigate()
+
 
     return (
         <Container className={styles.course_block}>
