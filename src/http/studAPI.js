@@ -8,6 +8,7 @@ export const getCourseStatus = async ({course_id, course_name}) => {
 }
 
 export const preloadingCourse = async (courses) => {
+    // console.log('courses', courses)
     const promises = courses.map(i => getCourseStatus({course_id: i.course_id, course_name: i.course_name}))
     const res = await Promise.all(
         promises.map(p => p.then())

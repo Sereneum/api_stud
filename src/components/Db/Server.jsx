@@ -13,12 +13,6 @@ const Server = () => {
     let passive = {gun: "ak-47"}
 
 
-    // useLoading({
-    //     func: addUserData,
-    //     args: {email, active, passive},
-    //     setter: d => console.log(d)
-    // }).then()
-
         useLoading({
             func: getUserData,
             args: {email},

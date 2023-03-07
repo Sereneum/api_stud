@@ -4,16 +4,16 @@ import '../index.css'
 
 const MySpinner = () => {
     return (
-        <div className='text-center mySpinner'>
+        <div className='mySpinner'>
                 <Spinner
                     animation="border"
                     role="status"
                     variant='light'
-                    style={{
-                        width: '3rem',
-                        height: '3rem',
-                        marginTop: 'calc(50vh - 25px)'
-                    }}
+                    // style={{
+                    //     width: '3rem',
+                    //     height: '3rem',
+                    //     marginTop: 'calc(50vh - 25px)'
+                    // }}
                 >
                     <span className="visually-hidden" style={{color: 'white'}}>Loading...</span>
                 </Spinner>

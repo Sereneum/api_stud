@@ -1,6 +1,8 @@
 import React from 'react';
 import styles from "./Config.module.css";
 import ConfigItem from "./ConfigItem";
+import MySpinner from "../../MySpinner";
+import ConfigSpinner from "./ConfigSpinner";
 
 const ConfigBlock = ({list, title, click, selected}) => {
 
@@ -23,6 +25,7 @@ const ConfigBlock = ({list, title, click, selected}) => {
                 }
             </div>
         </div>
+
     );
 };
 

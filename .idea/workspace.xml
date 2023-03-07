@@ -23,19 +23,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/projects/stud_api/src/components/Login",
-    "list.type.of.created.stylesheet": "CSS",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "io.unthrottled.amii.config.ui.PluginSettingsUI",
-    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\WebStorm 2022.2.2\\plugins\\JavaScriptLanguage\\jsLanguageServicesImpl\\external",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/projects/stud_api/src/components/Login&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;io.unthrottled.amii.config.ui.PluginSettingsUI&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\WebStorm 2022.2.2\\plugins\\JavaScriptLanguage\\jsLanguageServicesImpl\\external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\projects\stud_api\src\components\Login" />
@@ -45,11 +45,11 @@
       <recent name="D:\projects\stud_api\src\components\Space\DeadlineList" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\projects\stud_api\src" />
       <recent name="D:\projects\stud_api\src\components\Login" />
       <recent name="D:\projects\stud_api\src\components\Space\Config" />
       <recent name="D:\projects\stud_api\src\components\Navbar" />
       <recent name="D:\projects\stud_api\src\components\Space\TaskList" />
-      <recent name="D:\projects\stud_api\src\components\Space\CourseList" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -78,7 +78,10 @@
       <workItem from="1677745053815" duration="1248000" />
       <workItem from="1677777755252" duration="779000" />
       <workItem from="1677813804271" duration="7651000" />
-      <workItem from="1677911466715" duration="7424000" />
+      <workItem from="1677911466715" duration="7517000" />
+      <workItem from="1678084815618" duration="474000" />
+      <workItem from="1678124035609" duration="8558000" />
+      <workItem from="1678183842829" duration="7958000" />
     </task>
     <servers />
   </component>
