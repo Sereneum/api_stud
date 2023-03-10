@@ -36,21 +36,6 @@ const Space = observer(() => {
         }
     }
 
-    const allTasksForDev = () => {
-        try {
-            let tasks = []
-            for (let cour of course.courses) {
-                if(tasks.length > 5) break
-                for (let task of cour.tasks) {
-                    if(tasks.length > 5) break
-                    tasks.push(task)
-                }
-            }
-            return tasks
-        } catch (e) {
-        }
-    }
-
 
 
     return (

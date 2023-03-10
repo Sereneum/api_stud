@@ -29,7 +29,7 @@ const division = (active, all) => {
     const passive = []
     for (let i of all) {
         let isPresent = false
-        for (let j of JSON.parse(active)) {
+        for (let j of typeof active == 'string' ? JSON.parse(active): active) {
             if (i.course_id === j.course_id) {
                 isPresent = true;
                 break
@@ -66,7 +66,7 @@ export const recordingChangesToServer = ({id, active}) => {
 export const loadingCoursesOnMain = id => {
     return new Promise((resolve, reject) => {
         loadingActiveCourses(id).then(d => {
-            preloadingCourse(JSON.parse(d)).then(courses => {
+            preloadingCourse(typeof d == 'string' ? JSON.parse(d): d).then(courses => {
                 resolve(courses)
             })
         })

@@ -8,16 +8,7 @@ const TaskList = observer(({course}) => {
 
     return (
         <div className={styles.tasks_block}>
-            <div
-                className={styles.title}>
-                {!course.courses
-                    ?
-                    course.courses[course.activeCourse].course.course_name
-                    :
-                    ''}
-            </div>
-
-            {!course.courses
+            {course.courses.length
                 ?
                 <div className={styles.task_list}>
                     {
@@ -31,7 +22,6 @@ const TaskList = observer(({course}) => {
                     <p>перейдите в настройки</p>
                 </div>
             }
-
         </div>
     );
 });

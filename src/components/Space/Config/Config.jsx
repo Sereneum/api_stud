@@ -82,8 +82,7 @@ const Config = observer(() => {
 
     useEffect(() => {
         gettingCoursesFromServer(id).then(r => {
-            // console.log(r)
-            setActive(JSON.parse(r.active))
+            setActive(typeof r.active == 'string' ? JSON.parse(r.active) : r.active)
             setPassive(r.passive)
             setActiveSelected([...Array(r.active.length).keys()].map(i => false))
             setPassiveSelected([...Array(r.passive.length).keys()].map(i => false))
