@@ -60,6 +60,7 @@
     font-size: 16px;
     line-height: 1.55;
     border: 2px solid transparent;
+    cursor: pointer;
 }
 
 .task:hover {

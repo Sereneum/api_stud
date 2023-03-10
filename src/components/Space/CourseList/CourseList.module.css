@@ -48,6 +48,7 @@
     margin-left: 15px;
     font-size: 18px;
     margin-right: 16.5px;
+    cursor: pointer;
 }
 
 .course_settings:hover {
@@ -66,8 +67,7 @@
     margin-bottom: 5px;
     text-indent: 10px;
     font-size: 18px;
-
-    /*pad*/
+    cursor: pointer;
 }
 
 .course_item:hover {

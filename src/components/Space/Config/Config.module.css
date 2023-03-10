@@ -101,6 +101,7 @@
     user-select: none;
     vertical-align: center;
     width: 100%;
+    cursor: pointer;
 }
 
 .config_item:hover {
