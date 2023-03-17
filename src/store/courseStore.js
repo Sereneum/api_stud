@@ -8,6 +8,7 @@ export default class CourseStore {
     }
 
     setCourses(courses) {
+        this._activeCourse = 0
         this._courses = courses
     }
 
