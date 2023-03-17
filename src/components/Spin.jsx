@@ -1,19 +1,17 @@
 import React from 'react';
-import {Button, Spinner} from "react-bootstrap";
-import '../index.css'
+import {Spinner} from "react-bootstrap";
 
-const MySpinner = () => {
+const Spin = ({cl}) => {
     return (
-        <div className='mySpinner'>
                 <Spinner
                     animation="border"
                     role="status"
                     variant='light'
+                    className={cl}
                 >
                     <span className="visually-hidden" style={{color: 'white'}}>Loading...</span>
                 </Spinner>
-        </div>
     );
 };
 
-export default MySpinner;
+export default Spin;

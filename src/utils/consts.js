@@ -1,7 +1,5 @@
 export const LOGIN_ROUTE = '/login'
 export const MAIN_ROUTE = ''
-export const DB_ROUTE = '/db'
-export const SERVER_ROUTE = '/server'
 export const CONFIG_ROUTE = '/config'
 
 export const API_AUTH = 'api/tokenauth'

@@ -6,7 +6,7 @@ import {useNavigate} from "react-router-dom";
 import {Context} from "../../index";
 import {MAIN_ROUTE} from "../../utils/consts";
 import styles from './Login.module.css'
-import LoginSpinner from "./LoginSpinner";
+import Spin from "../Spin";
 
 const Login = observer(() => {
 
@@ -20,6 +20,10 @@ const Login = observer(() => {
 
     const click = async e => {
         e.preventDefault()
+        if(!(email && password)) {
+            setIsBadLogin(true)
+            // return
+        }
         setIsLoading(true)
         try {
             let {token, dataUser, moreInfo} = await login(email, password)
@@ -79,7 +83,7 @@ const Login = observer(() => {
                     className={styles.button}
                     onClick={click}
                 >
-                    {isLoading ? <LoginSpinner /> : 'Войти'}
+                    {isLoading ? <Spin cl={styles.spinner}/> : 'Войти'}
                 </Button>
             </form>
         </Container>

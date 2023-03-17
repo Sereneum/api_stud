@@ -19,14 +19,6 @@ export const authRoutes = [
         Component: Main
     },
     {
-        path: DB_ROUTE,
-        Component: Db
-    },
-    {
-        path: SERVER_ROUTE,
-        Component: Server
-    },
-    {
         path: CONFIG_ROUTE,
         Component: Config
     }

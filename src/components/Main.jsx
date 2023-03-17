@@ -16,14 +16,6 @@ const Main = observer(() => {
     const {user, course} = useContext(Context)
     let id = user.user.anotherID
 
-    // useLoading(
-    //     {
-    //         func: preloadingCourse,
-    //         args: settings.courses,
-    //         setter: d => course.setCourses(d),
-    //         loader: () => setLoadingCourse(false)
-    //     }
-    // ).then()
 
 
     useEffect(() => {
