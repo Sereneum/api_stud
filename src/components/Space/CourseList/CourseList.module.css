@@ -34,6 +34,7 @@
     font-size: 28px;
     margin: 40px 30px 40px;
     text-align: left;
+    
 }
 
 .course_settings {
@@ -44,11 +45,12 @@
     margin-top: 25px;
     margin-bottom: 30px;
     border: 2px solid transparent;
-    text-indent: 10px;
+    /* text-indent: 10px; */
     margin-left: 15px;
     font-size: 18px;
     margin-right: 16.5px;
     cursor: pointer;
+    padding-left: 10px;
 }
 
 .course_settings:hover {
@@ -65,7 +67,7 @@
     vertical-align: center;
     user-select: none;
     margin-bottom: 5px;
-    text-indent: 10px;
+    padding-left: 10px;
     font-size: 18px;
     cursor: pointer;
 }
