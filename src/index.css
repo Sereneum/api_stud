@@ -1,7 +1,7 @@
 html {
     margin-left: calc(100vw - 100%);
     margin-right: 0;
-    /*overflow-x: hidden;*/
+    overflow-x: hidden;
     /*display: table-cell;*/
 }
 
@@ -44,4 +44,13 @@ body {
     background-color: #000000;
     margin: 0;
     padding: 0;
+}
+
+.sky {
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: -100;
+    width: 100vw;
+    height: 100vh;
 }

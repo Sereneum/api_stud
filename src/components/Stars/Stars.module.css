@@ -40,10 +40,10 @@
     clip: rect(auto, auto, auto, auto);
     /*clip-path: inset(0px 0px 200px 200px);*/
     transform-origin: 50% 50%;
-    overflow: visible;
+
     animation: spin 5s linear 0s infinite normal;
     /*background-color: transparent;*/
-    background-color: rebeccapurple;
+    /*background-color: rebeccapurple;*/
     background-position: center center;
     z-index: -1000;
 }

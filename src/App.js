@@ -29,7 +29,7 @@ const App = observer(() => {
         <BrowserRouter>
             <NavBar isLoaded={user.isAuth}/>
             <AppRouter/>
-            {/*<Stars />*/}
+
         </BrowserRouter>
     );
 })
