@@ -112,10 +112,6 @@
     transition: background-color 0.017s ease-in-out;
 }
 
-.isActive {
-    border: 7px solid transparent;
-    background-color: rgba(255, 255, 255, 0.3);
-}
 
 .hr {
     margin: 20px 35px;
@@ -173,4 +169,17 @@
     src: local('M_Ying_Hei'),
     url('M_Ying_Hei.woff2') format('truetype');
     font-weight: bold;
+}
+
+.config_in_item {
+    display: flex;
+}
+
+.config_icon_in_item {
+    opacity: 0.8;
+    text-align: center;
+    height: 22px;
+    width: 22px;
+    margin: auto 0px auto 0px; /* top | right | bottom | left */
+    border-width: 3px;
 }

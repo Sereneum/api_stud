@@ -4,7 +4,7 @@ import ConfigItem from "./ConfigItem";
 import MySpinner from "../../MySpinner";
 import ConfigSpinner from "./ConfigSpinner";
 
-const ConfigBlock = ({list, title, click}) => {
+const ConfigBlock = ({list, title, click, isActiveList}) => {
 
     // selected[index]
     // console.log(selected[0])
@@ -17,7 +17,7 @@ const ConfigBlock = ({list, title, click}) => {
                 {
                     list.map((i, index) => <ConfigItem
                         key={i.course_id}
-                        // isActive={selected[index]}
+                        isActive={isActiveList}
                         course={i}
                         click={click}
                         index={index}
