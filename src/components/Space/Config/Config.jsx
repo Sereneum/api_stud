@@ -76,7 +76,7 @@ const Config = observer(() => {
 
             {loadingCourses
                 ?
-                <ConfigSpinner/>
+                <Spin cl={styles.config_main_spinner}/>
                 :
                 <>
                     <ConfigBlock
