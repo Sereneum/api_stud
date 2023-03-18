@@ -1,12 +1,26 @@
-import React, { useRef, useEffect } from 'react';
+import React, {useRef, useEffect, useLayoutEffect} from 'react';
 
 const Sky = () => {
     const canvasRef = useRef(null);
 
+    useLayoutEffect(() => {
+        function handleResize() {
+            const canvas = canvasRef.current;
+            canvas.width = canvas.clientWidth;
+            canvas.height = canvas.clientHeight;
+        }
+
+        window.addEventListener("resize", handleResize);
+
+        handleResize();
+
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
+
     useEffect(() => {
         const canvas = canvasRef.current;
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
+        canvas.width = canvas.clientWidth;
+        canvas.height = canvas.clientHeight;
         const ctx = canvas.getContext('2d');
         let animationFrameId;
 
@@ -48,15 +62,15 @@ const Sky = () => {
                 // Движение
                 star.x -= 0.05
                 star.y -= 0.05
-                if(star.x < -star.radius) star.x = canvas.width + star.radius
-                if(star.x > canvas.width + star.radius ) star.x = 0
-                if(star.y < -star.radius) star.y = canvas.height + star.radius
-                if(star.y > canvas.height + star.radius ) star.y = 0
+                if (star.x < -star.radius) star.x = canvas.width + star.radius
+                if (star.x > canvas.width + star.radius) star.x = 0
+                if (star.y < -star.radius) star.y = canvas.height + star.radius
+                if (star.y > canvas.height + star.radius) star.y = 0
 
                 // Мерцание
 
                 star.life -= 1
-                if(star.life < 0) {
+                if (star.life < 0) {
                     star.life = star.fullLifeTime
                 }
 

@@ -83,6 +83,7 @@ const Config = observer(() => {
                         title={'Закрепленные курсы'}
                         list={active}
                         click={clickOnActive}
+                        isActiveList={true}
                     />
 
                     <hr className={styles.hr}/>
@@ -91,6 +92,7 @@ const Config = observer(() => {
                         title={'Незакрепленные курсы'}
                         list={passive}
                         click={clickOnPassive}
+                        isActiveList={false}
                     />
                 </>
             }

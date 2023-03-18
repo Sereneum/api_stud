@@ -29,11 +29,12 @@
     padding: 5px 10px;
     display: flex;
     margin: auto 0px auto 45px;
+    cursor: pointer;
 }
 
 .config_save:hover {
     background-color: rgba(255, 255, 255, 0.3);
-    transition: background-color 0.017s ease-in-out;
+    transition: background-color 0.1s ease-in-out;
 }
 .config_save:active {
     background-color: rgba(255, 255, 255, 0.3);
@@ -104,18 +105,13 @@
     user-select: none;
     vertical-align: center;
     width: 100%;
-    cursor: pointer;
 }
 
-.config_item:hover {
+/* .config_item:hover {
     background-color: rgba(255, 255, 255, 0.3);
-    transition: background-color 0.017s ease-in-out;
-}
+    transition: background-color 0.1s ease-in-out;
+} */
 
-.isActive {
-    border: 7px solid transparent;
-    background-color: rgba(255, 255, 255, 0.3);
-}
 
 .hr {
     margin: 20px 35px;
@@ -173,4 +169,32 @@
     src: local('M_Ying_Hei'),
     url('M_Ying_Hei.woff2') format('truetype');
     font-weight: bold;
+}
+
+.config_in_item {
+    display: flex;
+    position: relative;
+}
+
+.config_in_item :first-child {
+width: 560px;
+}
+
+.config_icon_in_item {
+    opacity: 0.5;
+    text-align: center;
+    height: 35px;
+    width: 35px;
+    margin: auto 0px auto 10px; /* top | right | bottom | left */
+    border-width: 3px;
+    position: relative;
+    flex: auto auto auto;
+    border: 4px solid transparent;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.config_icon_in_item:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    transition: background-color 0.1s ease-in-out;
 }
