@@ -1,37 +1,64 @@
-import React from 'react';
+import React, {memo, useState} from 'react';
 import styles from "./Config.module.css";
 import edit_icon from '../../../resources/edit_icon.svg'
 import pin_icon from '../../../resources/pin_icon.svg'
 import unpin_icon from '../../../resources/unpin_icon.svg'
 
-const ConfigItem = ({course, click, index, isActive}) => {
+const ConfigItem = memo(({course, click, index, isActive, rename}) => {
+
+    const [input, setInput] = useState(typeof course.course_name == 'string' ? course.course_name : '')
+    const [readMode, setReadMode] = useState(false)
+
+    const readController = () => {
+        setReadMode(!readMode)
+    }
+
+    const change = e => {
+        setInput(e.target.value)
+        rename(e.target.value, index)
+    }
+
     return (
         <div
             className={styles.config_item}
-            onClick={() => click(index)}
         >
             <div className={styles.config_in_item}>
-                <div>{course.course_name}</div>
+
+
                 {
                     isActive
                         ?
-                        <img
-                            alt=""
-                            src={edit_icon}
-                            className={styles.config_icon_in_item}
-                        />
+                        <>
+                            {readMode
+                                ?
+                                <input
+                                    onChange={change}
+                                    value={input}
+                                    className={styles.config_rename}
+                                    // onFocus={e => console.log(e)}
+                                />
+                            :
+                                <div>{course.course_name}</div>
+                            }
+                            <img
+                                alt=""
+                                src={edit_icon}
+                                className={styles.config_icon_in_item}
+                                onClick={readController}
+                            />
+                        </>
                         :
-                        ''
+                        <div>{course.course_name}</div>
                 }
                 <img
                     alt=""
-                    src={isActive ? pin_icon : unpin_icon}
+                    src={isActive ? unpin_icon : pin_icon}
                     className={styles.config_icon_in_item}
+                    onClick={() => click(index)}
                 />
-
             </div>
         </div>
     );
-};
+});
 
 export default ConfigItem;

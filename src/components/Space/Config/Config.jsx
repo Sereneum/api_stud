@@ -1,4 +1,4 @@
-import React, {useContext, useEffect, useState} from 'react';
+import React, {memo, useCallback, useContext, useEffect, useState} from 'react';
 import {Container} from "react-bootstrap";
 import styles from './Config.module.css'
 import ConfigBlock from "./ConfigBlock";
@@ -8,14 +8,11 @@ import {
     gettingCoursesFromServer,
     recordingChangesToServer
 } from "../../../chain/serverConfig";
-import ConfigSpinner from "./ConfigSpinner";
-import {bbErase} from "../../../chain/clientConfig";
 import Spin from "../../Spin";
 import ConfigSpinController from "./ConfigSpinController";
 
 
 const Config = observer(() => {
-
 
     const {user, course} = useContext(Context)
 
@@ -26,30 +23,29 @@ const Config = observer(() => {
     const [loadingCourses, setLoadingCourses] = useState(true)
     const [loadingReqOnGoogleTables, setLoadingReqOnGoogleTables] = useState(false)
 
-
-    const info = () => {
-        console.log('active: ', active)
-        console.log('passive: ', passive)
-    }
-
-    const clickOnActive = item => {
+    const clickOnActive = useCallback(item => {
         setPassive([active[item], ...passive])
         setActive(active.filter((i, index) => item !== index))
-    }
+    }, [active, passive])
 
-    const clickOnPassive = item => {
+    const clickOnPassive = useCallback(item => {
         setActive([...active, passive[item]])
         setPassive(passive.filter((i, index) => item !== index))
-    }
+    }, [passive])
 
 
-    const recording = () => {
+    const recording = useCallback(() => {
         setLoadingReqOnGoogleTables(true)
         recordingChangesToServer({id: id, active: active}).then(r => {
-            // console.log('r', r)
             setLoadingReqOnGoogleTables(false)
         })
-    }
+    }, [id, active])
+
+    const rename = useCallback((value, localIndex) => {
+        setActive(active.map((i, mapIndex) =>
+            mapIndex === localIndex ? {...i, course_name: value} : i
+        ))
+    }, [active])
 
 
     useEffect(() => {
@@ -61,6 +57,7 @@ const Config = observer(() => {
 
     }, [])
 
+    const liar = useCallback(() => {}, [])
 
     return (
         <Container className={styles.config_main_block}>
@@ -84,6 +81,7 @@ const Config = observer(() => {
                         list={active}
                         click={clickOnActive}
                         isActiveList={true}
+                        rename={rename}
                     />
 
                     <hr className={styles.hr}/>
@@ -93,6 +91,7 @@ const Config = observer(() => {
                         list={passive}
                         click={clickOnPassive}
                         isActiveList={false}
+                        rename={liar}
                     />
                 </>
             }
@@ -101,4 +100,4 @@ const Config = observer(() => {
     );
 });
 
-export default Config;
+export default memo(Config);

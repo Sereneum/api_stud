@@ -1,4 +1,4 @@
-import React, {useContext, useEffect, useState} from 'react';
+import React, {memo, useContext, useEffect, useState} from 'react';
 import {Button, Container, Nav, Navbar} from "react-bootstrap";
 import {NavLink, useNavigate} from "react-router-dom";
 import {observer} from "mobx-react-lite";
@@ -58,7 +58,4 @@ const NavBar = observer(({isLoaded}) => {
     );
 });
 
-export default NavBar;
-
-// {'d-flex d-inline-block align-top'}>
-// {`ml-auto font_M_Ying_Hei d-flex d-inline-block align-top`}
+export default memo(NavBar);

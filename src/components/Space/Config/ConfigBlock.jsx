@@ -1,13 +1,9 @@
-import React from 'react';
+import React, {memo, useEffect, useRef} from 'react';
 import styles from "./Config.module.css";
 import ConfigItem from "./ConfigItem";
-import MySpinner from "../../MySpinner";
-import ConfigSpinner from "./ConfigSpinner";
 
-const ConfigBlock = ({list, title, click, isActiveList}) => {
+const ConfigBlock = ({list, title, click, isActiveList, rename}) => {
 
-    // selected[index]
-    // console.log(selected[0])
     return (
         <div className={styles.config_block}>
             <div className={styles.config_local_title}>
@@ -21,6 +17,7 @@ const ConfigBlock = ({list, title, click, isActiveList}) => {
                         course={i}
                         click={click}
                         index={index}
+                        rename={rename}
                     />)
                 }
             </div>
@@ -29,4 +26,4 @@ const ConfigBlock = ({list, title, click, isActiveList}) => {
     );
 };
 
-export default ConfigBlock;
+export default memo(ConfigBlock);
