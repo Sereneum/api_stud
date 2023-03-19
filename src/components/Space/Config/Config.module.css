@@ -34,7 +34,7 @@
 }
 
 .config_save:hover {
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.1);
     transition: background-color 0.1s ease-in-out;
 }
 .config_save:active {
@@ -227,6 +227,8 @@ margin-top: 2px;
     transition: background-color 0.1s ease-in-out;
 }
 
-.config_icon_in_item:focus {
-    background-color: rgba(255, 255, 255, 0.3);
+.config_icon_in_item:active {
+    background-color: rgba(255, 255, 255, 0.6);
 }
+
+
