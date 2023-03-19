@@ -1,4 +1,4 @@
-import React, {memo, useState} from 'react';
+import React, {memo, useEffect, useRef, useState} from 'react';
 import styles from "./Config.module.css";
 import edit_icon from '../../../resources/edit_icon.svg'
 import pin_icon from '../../../resources/pin_icon.svg'
@@ -8,15 +8,21 @@ const ConfigItem = memo(({course, click, index, isActive, rename}) => {
 
     const [input, setInput] = useState(typeof course.course_name == 'string' ? course.course_name : '')
     const [readMode, setReadMode] = useState(false)
+    const ref = useRef(null)
 
     const readController = () => {
         setReadMode(!readMode)
     }
 
+    useEffect(() => {
+        if(readMode) ref.current.focus()
+    }, [readMode])
+
     const change = e => {
         setInput(e.target.value)
         rename(e.target.value, index)
     }
+
 
     return (
         <div
@@ -35,7 +41,7 @@ const ConfigItem = memo(({course, click, index, isActive, rename}) => {
                                     onChange={change}
                                     value={input}
                                     className={styles.config_rename}
-                                    // onFocus={e => console.log(e)}
+                                    ref={ref}
                                 />
                             :
                                 <div>{course.course_name}</div>
