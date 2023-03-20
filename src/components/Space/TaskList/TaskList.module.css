@@ -70,6 +70,10 @@
     transition: background-color 0.15s ease-in-out;
 }
 
+.task:active {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
 .hr {
     margin: 20px 10px;
     padding: 0;

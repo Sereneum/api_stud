@@ -12,6 +12,7 @@
 
     box-shadow: 0px 0px 20px 0px rgba(0,0,0,1);
     margin-top: 60px;
+    margin-bottom: 60px;
     padding-bottom: 20px;
 }
 
@@ -33,7 +34,7 @@
 }
 
 .config_save:hover {
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.1);
     transition: background-color 0.1s ease-in-out;
 }
 .config_save:active {
@@ -112,24 +113,30 @@
     font-size: 17px;
     color: #ABABAB;
     background-color: #262626;
-    border: 7px solid transparent;
-    border-radius: 10px;
+    border: 0px solid transparent;
+    /* border-radius: 7px; */
     text-align: left;
 
 
     /*padding: 0 10px;*/
-    /*margin-bottom: 10px;*/
+    margin-bottom: 2px;
 
     padding: 0;
-    margin: 0;
+    /* margin: 0; */
     -webkit-user-select: none;
     user-select: none;
     vertical-align: center;
     width: 100%;
+    line-height: normal;
 }
 
 .config_rename:focus {
     outline: none;
+}
+
+.config_rename:focus {
+    outline: none;
+    /* margin-bottom: 4px; */
 }
 
 .hr {
@@ -199,6 +206,7 @@
 
 .config_in_item :first-child {
 width: 560px;
+margin-top: 2px;
 }
 
 .config_icon_in_item {
@@ -219,3 +227,9 @@ width: 560px;
     background-color: rgba(255, 255, 255, 0.3);
     transition: background-color 0.1s ease-in-out;
 }
+
+.config_icon_in_item:active {
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+

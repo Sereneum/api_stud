@@ -47,6 +47,10 @@
     transition: background-color 0.15s ease-in-out;
 }
 
+.deadline_item:active {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
 .dl_item_course_name {
     font-size:  16px;
     color: #ffffff;
