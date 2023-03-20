@@ -17,7 +17,6 @@ const Main = observer(() => {
     let id = user.user.anotherID
 
 
-
     useEffect(() => {
         loadingCoursesOnMain(id).then(d => {
             course.setCourses(d)
@@ -26,16 +25,7 @@ const Main = observer(() => {
     }, [])
 
 
-
-
-
     if (loadingCourse) return <MySpinner/>
-
-
-    let c = {
-        course_id: null,
-        course_name: null,
-    }
 
     return (
         <div>

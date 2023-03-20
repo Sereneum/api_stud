@@ -128,7 +128,8 @@
     width: 100%;
 }
 
-.config_rename:active {
+.config_rename:focus {
+    outline: none;
 }
 
 .hr {

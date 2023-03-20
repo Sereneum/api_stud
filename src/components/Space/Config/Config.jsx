@@ -12,7 +12,7 @@ import Spin from "../../Spin";
 import ConfigSpinController from "./ConfigSpinController";
 
 
-const Config = observer(() => {
+const Config = observer(({updateCourseFromConfig}) => {
 
     const {user, course} = useContext(Context)
 
@@ -38,6 +38,7 @@ const Config = observer(() => {
         setLoadingReqOnGoogleTables(true)
         recordingChangesToServer({id: id, active: active}).then(r => {
             setLoadingReqOnGoogleTables(false)
+            updateCourseFromConfig(active)
         })
     }, [id, active])
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {memo} from 'react';
 import styles from './CourseList.module.css'
 
 const CourseItem = ({isActive, course, click, index}) => {
@@ -12,4 +12,4 @@ const CourseItem = ({isActive, course, click, index}) => {
 };
 
 
-export default CourseItem;
+export default memo(CourseItem);

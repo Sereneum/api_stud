@@ -8,12 +8,25 @@ import {Context} from "../../index";
 import CourseList from "./CourseList/CourseList";
 import TaskList from "./TaskList/TaskList";
 import DeadlineList from "./DeadlineList/DeadlineList";
+import Config from "./Config/Config";
+import {preloadingCourse} from "../../http/studAPI";
 
 const Space = observer(() => {
 
     const {course} = useContext(Context)
+    const [isActiveConfig, setIsActiveConfig] = useState(false)
+
+    const updateCourseFromConfig = (updatedCoursesList) => {
+        preloadingCourse(updatedCoursesList).then(d => course.setCourses(d))
+    }
+
+    const clickOnConfig = () => {
+        setIsActiveConfig(!isActiveConfig)
+    }
+
 
     const activeCourse = (index) => {
+        if(isActiveConfig) setIsActiveConfig(false)
         course.setActiveCourse(index)
     }
 
@@ -28,20 +41,25 @@ const Space = observer(() => {
             let tasks = []
             for (let cour of course.courses) {
                 for (let task of cour.tasks) {
-                    if(task.statusID === 0) tasks.push(task)
+                    if (task.statusID === 0) tasks.push(task)
                 }
             }
-            return tasks
+            return tasks.reverse()
         } catch (e) {
         }
     }
 
 
-
     return (
         <Container className='space'>
-            <CourseList course={course} activeCourse={activeCourse}/>
-            <TaskList course={course}/>
+            <CourseList course={course} activeCourse={activeCourse} isActiveConfig={isActiveConfig} clickOnConfig={clickOnConfig}/>
+            {
+                isActiveConfig
+                    ?
+                    <Config updateCourseFromConfig={updateCourseFromConfig}/>
+                    :
+                    <TaskList course={course}/>
+            }
             <DeadlineList tasks={deadlineTasks}/>
         </Container>
     );
