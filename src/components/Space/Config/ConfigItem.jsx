@@ -49,7 +49,7 @@ const ConfigItem = memo(({course, click, index, isActive, rename}) => {
                             <img
                                 alt=""
                                 src={edit_icon}
-                                className={styles.config_icon_in_item}
+                                className={`${styles.config_icon_in_item} ${readMode ? styles.edit_active : ''}`}
                                 onClick={readController}
                             />
                         </>
