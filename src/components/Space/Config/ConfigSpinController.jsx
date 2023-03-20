@@ -7,7 +7,6 @@ const ConfigSpinController = ({isLoading}) => {
 
     const [loadMode, setLoadMode] = useState(0)
 
-
     const end = () => {
         return loadMode === 2
             ? <img
