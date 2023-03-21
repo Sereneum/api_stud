@@ -2,19 +2,19 @@ import React, {useRef, useEffect, useLayoutEffect} from 'react';
 
 const Sky = () => {
     const canvasRef = useRef(null);
-    // useLayoutEffect(() => {
-    //     function handleResize() {
-    //         const canvas = canvasRef.current;
-    //         canvas.width = canvas.clientWidth;
-    //         canvas.height = canvas.clientHeight;
-    //     }
-    //
-    //     window.addEventListener("resize", handleResize);
-    //
-    //     handleResize();
-    //
-    //     return () => window.removeEventListener("resize", handleResize);
-    // }, []);
+    useLayoutEffect(() => {
+        function handleResize() {
+            const canvas = canvasRef.current;
+            canvas.width = canvas.clientWidth;
+            canvas.height = canvas.clientHeight;
+        }
+
+        window.addEventListener("resize", handleResize);
+
+        handleResize();
+
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
 
     useEffect(() => {
         const canvas = canvasRef.current;
