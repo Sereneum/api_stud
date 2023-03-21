@@ -2,7 +2,7 @@ import React from 'react';
 import '../Space.css'
 import styles from './TaskList.module.css'
 
-const Task = ({task, size, index}) => {
+const Task = ({task, size, index, toDuty}) => {
 
     const styleStatus = status => {
         switch (status) {
@@ -16,7 +16,7 @@ const Task = ({task, size, index}) => {
 
 
     return (
-        <div>
+        <div onClick={toDuty}>
             <div className={styles.task}>
                 <div className={styles.task_name}>{`${index}. ${task.name}`}</div>
                 <div className={styles.status_name}>{'Статус: '} <span style={styleStatus(task.statusID)}>{task.statusName}</span></div>

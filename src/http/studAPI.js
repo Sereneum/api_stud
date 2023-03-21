@@ -25,6 +25,15 @@ export const getDataDuty = async ({course_id, course_name=null}) => {
     return {user_data: res[0], duty_data: res[1]}
 }
 
+export const fullGetDataDuty = async (courses) => {
+    const promises = courses.map(i => getDataDuty({course_id: i.course_id}))
+    const res = await Promise.all(
+        promises.map(p => p.then())
+    )
+
+    return res
+}
+
 export const preloadingCourse = async (courses) => {
     const promises = courses.map(i => getCourseStatus({course_id: i.course_id, course_name: i.course_name}))
     const res = await Promise.all(

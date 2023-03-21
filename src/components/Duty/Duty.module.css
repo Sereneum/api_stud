@@ -4,14 +4,25 @@
     border-color: transparent;
     border-style: solid;
     font-family: 'M_Ying_Hei';
-    min-width: 630px;
-    max-width: 630px;
+    min-width: 560px;
+    max-width: 560px;
     min-height: 500px;
     height: fit-content;
     text-align: left;
 
-    box-shadow: 0px 0px 20px 0px rgba(0,0,0,1);
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 1);
     margin: auto;
+}
+
+.duty_nav {
+    display: flex;
+}
+
+.duty_back {
+    width: 28px;
+    height: 28px;
+    margin: auto 0px auto 30px;
+    cursor: pointer;
 }
 
 .duty_title {
@@ -21,8 +32,83 @@
     text-align: left;
 }
 
-.duty_files {
+.duty_files_list {
+    width: 505px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    /*margin-left: calc(55px / 2);*/
+    /*margin-right: calc(55px / 2);*/
+    margin: 30px auto 0px auto;
+    /*margin-top: 30px;*/
+}
 
+.duty_file {
+    width: 150px;
+    height: 200px;
+    margin-bottom: 20px;
+
+    color: #c4c4c4;
+    border-radius: 23px;
+    font-size: 12px;
+    background-color: #1c1c1c;
+    border-color: transparent;
+    border-style: solid;
+    font-family: 'M_Ying_Hei';
+
+    text-align: center;
+}
+
+/*.duty_file:nth-child(3n+1) {*/
+/*    !*margin-left: calc(55px / 2);*!*/
+/*    !*margin-left: 0;*!*/
+/*    !*margin-right: calc(55px / 4);*!*/
+
+/*}*/
+
+/*.duty_file:nth-child(3n+2) {*/
+/*    !*margin-left: calc(55px / 4);*!*/
+/*    !*margin-right: calc(55px / 4);*!*/
+/*    color: green;*/
+/*}*/
+
+/*.duty_file:nth-child(3n) {*/
+/*    !*margin-left: calc(55px / 4);*!*/
+/*    !*margin-right: calc(55px / 2);*!*/
+/*    margin-right: 0;*/
+/*}*/
+
+.item:nth-child(3n+1) {
+    margin-left: 0;
+}
+
+/* Оставляем нулевой отступ для последнего элемента в каждой строке */
+.item:nth-child(3n) {
+    margin-right: 0;
+}
+
+.duty_deadline {
+    color: #adacac;
+    margin-left: 14px;
+    font-size: 14px;
+}
+
+.duty_desc_block {
+    display: flex;
+    margin-left: 8px;
+    margin-top: 16px;
+    padding: 2px;
+}
+
+.duty_desc_icon {
+    width: 20px;
+    height: 20px;
+    margin: auto 6px auto 2px;
+}
+
+.duty_desc_text {
+    font-size: 14px;
+    color: #adacac;
 }
 
 .duty_loader {
@@ -33,4 +119,16 @@
     margin-left: 292px;
     margin-top: 155px;
     border-width: 3.5px;
+}
+
+.duty_file_icon {
+    border-radius: 10px;
+    margin: 15px auto 0px auto;
+    width: 85px;
+    height: 85px;
+    background-color: #474747;
+}
+
+.duty_file_signature {
+    margin: 30px auto 30px auto;
 }
