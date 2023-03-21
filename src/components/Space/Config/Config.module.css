@@ -4,14 +4,14 @@
     border-color: transparent;
     border-style: solid;
     font-family: 'M_Ying_Hei';
-    min-width: 630px;
-    max-width: 630px;
+    min-width: 560px;
+    max-width: 560px;
     min-height: 500px;
     height: fit-content;
     text-align: left;
 
     box-shadow: 0px 0px 20px 0px rgba(0,0,0,1);
-    margin-top: 60px;
+    /* margin-top: 60px; */
     margin-bottom: 60px;
     padding-bottom: 20px;
 }
@@ -22,15 +22,16 @@
 
 .config_save {
     color: lightgray;
-    font-size: 14px;
+    font-size: 12px;
     user-select: none;
     /*margin: auto;*/
     border: 2px solid transparent;
     border-radius: 7px;
     padding: 5px 10px;
     display: flex;
-    margin: auto 0px auto 45px;
+    margin: auto 0px auto 0px;
     cursor: pointer;
+    margin-top: 46px;
 }
 
 .config_save:hover {
@@ -61,8 +62,12 @@
     text-align: left;
     user-select: none;
     /*margin-left: 50px;*/
-    /*margin: 40px 0 50px 40px;*/
-    margin: 40px 50px 40px 35px;
+    /*margin: 40px 0 30px 40px;*/
+    margin: 38px 30px 40px 28px;
+}
+
+.config_title:first-child {
+    width: 280px;
 }
 
 .config_local_title {
@@ -168,6 +173,7 @@
     animation-timing-function: ease-out;
     animation-fill-mode: forwards;
     animation-delay: 1.7s;
+    margin-top: 51px;
 }
 
 .config_spinner {
@@ -178,6 +184,7 @@
     /*margin-left: 10px;*/
     margin: auto;
     border-width: 3px;
+    margin-top: 54px;
 }
 
 .config_main_spinner {
@@ -185,9 +192,10 @@
     height: 18px;
     width: 18px;
     opacity: 0.7;
-    margin-left: 292px;
-    margin-top: 155px;
+    margin-left: 260px;
+    margin-top: 130px;
     border-width: 3.5px;
+    
 }
 
 @font-face {
