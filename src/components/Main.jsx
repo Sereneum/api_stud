@@ -8,7 +8,7 @@ import {Context} from "../index";
 import MySpinner from "./MySpinner";
 import NavBar from "./Navbar/NavBar";
 import {useLoading} from "../hooks/useLoading";
-import {loadingCoursesOnMain} from "../chain/serverConfig";
+import {loadingCoursesOnMain, superFullLoadingCourses} from "../chain/serverConfig";
 
 const Main = observer(() => {
 
@@ -16,19 +16,34 @@ const Main = observer(() => {
     const {user, course} = useContext(Context)
     let id = user.user.anotherID
 
-    useEffect(() => {
-        loadingCoursesOnMain(id).then(d => {
-            course.setCourses(d)
-            fullGetDataDuty(d).then(res => {
-                let full_answer = []
-                for(let i = 0; i < res.length; ++i) {
-                    full_answer.push({...res[i], course_name: d[i].course.course_name, course_id: d[i].course.course_id})
-                }
-                course.setFull(full_answer)
-                setLoadingCourse(false)
-            })
+
+    const reCourse = () => {
+        superFullLoadingCourses({id: id}).then(d => {
+            course.setCourses(d.course)
+            course.setFull(d.full)
+            if(loadingCourse) setLoadingCourse(false)
         })
-    }, [])
+    }
+
+    useEffect(() => {
+        // loadingCoursesOnMain(id).then(d => {
+        //     course.setCourses(d)
+        //     fullGetDataDuty(d).then(res => {
+        //         let full_answer = []
+        //         for(let i = 0; i < res.length; ++i) {
+        //             full_answer.push({...res[i], course_name: d[i].course.course_name, course_id: d[i].course.course_id})
+        //         }
+        //         course.setFull(full_answer)
+        //         setLoadingCourse(false)
+        //     })
+        // })
+        // superFullLoadingCourses({id: id, mode: 'first'}).then(d => {
+        //     course.setCourses(d.course)
+        //     course.setFull(d.full)
+        //     setLoadingCourse(false)
+        // })
+        reCourse()
+    }, [course])
 
 
     if (loadingCourse) return <MySpinner/>
@@ -36,7 +51,7 @@ const Main = observer(() => {
     return (
         <div>
             <Container className='d-flex justify-content-center align-content-center' style={{width: '50vw'}}>
-                <Space/>
+                <Space reCourse={() => reCourse()}/>
             </Container>
         </div>
     );

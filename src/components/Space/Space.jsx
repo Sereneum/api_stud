@@ -10,14 +10,18 @@ import DeadlineList from "./DeadlineList/DeadlineList";
 import Config from "./Config/Config";
 import {preloadingCourse} from "../../http/studAPI";
 import Duty from "../Duty/Duty";
+import {superFullLoadingCourses} from "../../chain/serverConfig";
 
-const Space = observer(() => {
+const Space = observer(({reCourse}) => {
 
     const {course} = useContext(Context)
     const [isActiveConfig, setIsActiveConfig] = useState(false)
 
     const updateCourseFromConfig = (updatedCoursesList) => {
-        preloadingCourse(updatedCoursesList).then(d => course.setCourses(d))
+        // preloadingCourse(updatedCoursesList).then(d => course.setCourses(d))
+        // console.log('updatedCoursesList', updatedCoursesList)
+        // superFullLoadingCourses({update: updatedCoursesList, mode: 'update'})
+        reCourse()
     }
 
     const clickOnConfig = () => {
@@ -28,6 +32,7 @@ const Space = observer(() => {
 
 
     const activeCourse = (index) => {
+        if(dutyActive.isActive) toBack()
         if (isActiveConfig) setIsActiveConfig(false)
         course.setActiveCourse(index)
     }
