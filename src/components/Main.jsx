@@ -16,7 +16,6 @@ const Main = observer(() => {
     const {user, course} = useContext(Context)
     let id = user.user.anotherID
 
-
     useEffect(() => {
         loadingCoursesOnMain(id).then(d => {
             course.setCourses(d)

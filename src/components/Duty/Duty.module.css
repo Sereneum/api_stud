@@ -1,0 +1,36 @@
+.duty_main_block {
+    border-radius: 23px;
+    background-color: #121212;
+    border-color: transparent;
+    border-style: solid;
+    font-family: 'M_Ying_Hei';
+    min-width: 630px;
+    max-width: 630px;
+    min-height: 500px;
+    height: fit-content;
+    text-align: left;
+
+    box-shadow: 0px 0px 20px 0px rgba(0,0,0,1);
+    margin: auto;
+}
+
+.duty_title {
+    color: white;
+    font-size: 28px;
+    margin: 40px 30px 40px;
+    text-align: left;
+}
+
+.duty_files {
+
+}
+
+.duty_loader {
+    text-align: center;
+    height: 18px;
+    width: 18px;
+    opacity: 0.7;
+    margin-left: 292px;
+    margin-top: 155px;
+    border-width: 3.5px;
+}

@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom/client';
 import App from './App';
 import UserStore from "./store/userStore";
 import CourseStore from "./store/courseStore";
-import Stars from "./components/Stars/Stars";
 import Sky from "./components/Sky/Sky";
 
 export const Context = createContext(null)
