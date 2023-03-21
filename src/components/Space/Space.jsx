@@ -44,7 +44,7 @@ const Space = observer(() => {
                     if (task.statusID === 0) tasks.push(task)
                 }
             }
-            return tasks.reverse()
+            return tasks.sort((a, b) => a.deadline - b.deadline)
         } catch (e) {
         }
     }
