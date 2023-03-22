@@ -5,7 +5,7 @@ import DutyFile from "./DutyFile";
 const DutyFilesList = ({files}) => {
     return (
        <div className={styles.duty_title}>
-           <div>Файлы курса</div>
+           <div>Материалы курса</div>
            <div className={styles.duty_files_list}>
                {
                    files.map(i => <DutyFile key={i.fileID} file={i}/>)
