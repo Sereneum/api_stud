@@ -21,7 +21,7 @@ const Space = observer(() => {
     }
 
     const clickOnConfig = () => {
-        setIsActiveConfig(!isActiveConfig)
+        if(!isActiveConfig) setIsActiveConfig(!isActiveConfig)
     }
 
 

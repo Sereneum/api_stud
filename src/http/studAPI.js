@@ -1,10 +1,28 @@
 import {$authHost, $host} from './index'
-import {API_ALL_COURSES, API_COURSE} from "../utils/consts";
+import {API_ALL_COURSES, API_COURSE, API_DUTY} from "../utils/consts";
 import {parserCourseStatus} from "../parsers/parser";
 
 export const getCourseStatus = async ({course_id, course_name}) => {
     const {data} = await $authHost(API_COURSE + course_id)
     return parserCourseStatus({data: data.data, course_name})
+}
+
+export const getDataDuty = async ({course_id, course_name=null}) => {
+
+    let user_data = new Promise((resolve, reject) => {
+        $authHost(API_COURSE + course_id).then(d => resolve(d.data.data))
+    })
+
+    let duty_data = new Promise((resolve, reject) => {
+        $authHost(API_DUTY + course_id).then(d => resolve(d.data.data))
+    })
+
+    const promises = [user_data, duty_data]
+    const res = await Promise.all(
+        promises.map(p => p.then())
+    )
+
+    return {user_data: res[0], duty_data: res[1]}
 }
 
 export const preloadingCourse = async (courses) => {

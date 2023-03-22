@@ -6,7 +6,6 @@ import {Context} from "./index";
 import {check} from "./http/userAPI";
 import MySpinner from "./components/MySpinner";
 import NavBar from "./components/Navbar/NavBar";
-import Stars from "./components/Stars/Stars";
 
 const App = observer(() => {
     const {user} = useContext(Context)

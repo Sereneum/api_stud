@@ -3,13 +3,12 @@ import {Button, Container, Nav, Navbar} from "react-bootstrap";
 import {NavLink, useNavigate} from "react-router-dom";
 import {observer} from "mobx-react-lite";
 import {Context} from "../../index";
-import {LOGIN_ROUTE, MAIN_ROUTE} from "../../utils/consts";
 import mgriLogo from '../../resources/mgri.svg'
 import humanLogo from '../../resources/human_logo.svg'
 
 
 import styles from './NavBar.module.css'
-import Stars from "../Stars/Stars";
+
 
 const NavBar = observer(({isLoaded}) => {
 
