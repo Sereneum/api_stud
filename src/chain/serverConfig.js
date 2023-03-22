@@ -1,6 +1,7 @@
 import {useLoading} from "../hooks/useLoading";
 import {addUserData, getUserData} from "../http/serverAPI";
-import {getAllCourses, preloadingCourse} from "../http/studAPI";
+import {fullGetDataDuty, getAllCourses, preloadingCourse} from "../http/studAPI";
+
 
 const loadingActiveCourses = id => {
     return new Promise((resolve, reject) => {
@@ -71,6 +72,41 @@ export const loadingCoursesOnMain = id => {
             })
         })
     })
+}
+
+export const superFullLoadingCourses = ({id=null, update=null, mode=null}) => {
+    return new Promise((resolve, reject) => {
+
+        let assistant = (res, d) => {
+            let full_answer = []
+            // console.log('assistant', mode)
+            // console.log('update', update)
+            // console.log('if first', d)
+            for(let i = 0; i < res.length; ++i) {
+                full_answer.push({...res[i], course_name: d[i].course.course_name, course_id: d[i].course.course_id})
+            }
+
+            return full_answer
+        }
+
+        if(mode=='update') {
+            fullGetDataDuty(update).then(res => {
+                let full_answer = assistant(res, update)
+                resolve({course: update, full: full_answer})
+            })
+
+        } else {
+            loadingCoursesOnMain(id).then(d => {
+                fullGetDataDuty(d).then(res => {
+                    let full_answer = assistant(res, d)
+                    resolve({course: d, full: full_answer})
+                })
+            })
+        }
+
+
+    })
+
 }
 
 
