@@ -8,7 +8,7 @@ import file_icon from '../../resources/file.svg'
 import DutyFilesList from "./DutyFilesList";
 import DutyDesc from "./DutyDesc";
 
-// {course_name, course_id, user_data, duty_data}
+
 const Duty = ({full, task_id, toBack}) => {
 
     let files = full.duty_data.listFiles
@@ -22,6 +22,25 @@ const Duty = ({full, task_id, toBack}) => {
 
         return `${day}.${month}.${year}`
     }
+
+    const localDeadline = (birth, final) => {
+        let comp = `${dataConv(selectedTask.dateAdded)} - ${dataConv(selectedTask.periodRealization)}`
+        let hours = (Date.parse(final) - Date.now()) / (1000 * 60 * 60) + 24
+        hours = hours < 0 ? 0 : Math.round(hours)
+        let str = ''
+        if(hours > 24) str = `Дней до закрытия: ${Math.round(hours / 24)}`
+        else if(hours > 0) str = `Часов до закрытия: ${hours}`
+        else str = ``
+
+        return <> <span>{comp}</span>{str ? ' / ' : ''}<span style={{color: '#D17575'}}>{str}</span> </>
+    }
+
+    const statusComp = (st_id) => {
+        let colors = ['lightslategrey', 'lightcoral', 'lightskyblue', 'lightgoldenrodyellow', 'lightgreen']
+        if(st_id == null) return <span style={{color: `${colors[0]}`}}>{'Не отправлено'}</span>
+        else return <span style={{color: `${colors[st_id]}`}}>{full.user_data.listStatus[st_id-1].statusName}</span>
+    }
+
 
     const taskFile = (s) => {
         try {
@@ -44,14 +63,11 @@ const Duty = ({full, task_id, toBack}) => {
                     src={back}
                     onClick={toBack}
                     className={styles.duty_back}/>
-                <div className={styles.duty_title}>{full.course_name}</div>
+                <div className={styles.duty_title}>{selectedTask.nameTask}</div>
             </div>
 
-            <div className={styles.duty_deadline}>{`Выполнить до: ${dataConv(selectedTask.periodRealization)}`}</div>
 
             <>
-
-
                 <div className={styles.duty_desc_block} style={{cursor: 'pointer'}}>
                     <img alt="" src={file_icon} className={styles.duty_desc_icon}/>
                     <a
@@ -66,8 +82,14 @@ const Duty = ({full, task_id, toBack}) => {
                 </div>
 
                 <DutyDesc icon={teacher_icon} text={selectedTask.userFIO}/>
-                <DutyDesc icon={date_icon} text={dataConv(selectedTask.dateAdded)}/>
-                <DutyDesc icon={status_icon} text={'Стутус'}/>
+                <DutyDesc
+                    icon={date_icon}
+                    text={localDeadline(selectedTask.dateAdded, selectedTask.periodRealization)}
+                />
+                <DutyDesc
+                    icon={status_icon}
+                    text={statusComp(selectedTask.taskExpired.statusID)}
+                />
             </>
 
 
