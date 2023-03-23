@@ -1,12 +1,12 @@
 .duty_materials_block {
-
+    margin-bottom: 10px;
 }
 
 
 .duty_materials_title {
     color: white;
-    font-size: 26px;
-    margin: 40px 17px 10px;
+    font-size: 24px;
+    margin: 40px 37px 40px;
     text-align: left;
 }
 
@@ -27,13 +27,13 @@
 
     background-color: #1c1c1c;
 
-    height: 55px;
-    margin: 5px 5px 5px 0px;
+    height: 60px;
+    margin: 0px 20px 10px 20px;
     padding-left: 5px;
 
     border-color: transparent;
     border-style: solid;
-    border-radius: 5px;
+    border-radius: 12px;
 
     cursor: pointer;
     text-decoration: none;
@@ -46,21 +46,26 @@
     width: 45px;
     height: 45px;
     opacity: 0.5;
+    margin: auto;
 }
 
 .duty_materials_file_name {
     font-size: 14px;
     width: 400px;
+    margin: auto;
+    margin-left: 6px;
 }
 
 .duty_materials_preview_button {
     width: 30px;
     height: 30px;
     opacity: 0.5;
+    margin: auto 5px;
 }
 
 .duty_materials_download_button {
     width: 25px;
     height: 25px;
     opacity: 0.5;
+    margin: auto 15px auto 10px;
 }
