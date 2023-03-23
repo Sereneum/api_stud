@@ -1,0 +1,66 @@
+.duty_materials_block {
+
+}
+
+
+.duty_materials_title {
+    color: white;
+    font-size: 26px;
+    margin: 40px 17px 10px;
+    text-align: left;
+}
+
+.duty_materials_list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+.duty_materials_item {
+    font-family: 'M_Ying_Hei';
+    color: #c4c4c4;
+    font-size: 16px;
+    line-height: 1.55;
+    text-align: left;
+
+    background-color: #1c1c1c;
+
+    height: 55px;
+    margin: 5px 5px 5px 0px;
+    padding-left: 5px;
+
+    border-color: transparent;
+    border-style: solid;
+    border-radius: 5px;
+
+    cursor: pointer;
+    text-decoration: none;
+
+    display: flex;
+}
+
+
+.duty_materials_icon {
+    width: 45px;
+    height: 45px;
+    opacity: 0.5;
+}
+
+.duty_materials_file_name {
+    font-size: 14px;
+    width: 400px;
+}
+
+.duty_materials_preview_button {
+    width: 30px;
+    height: 30px;
+    opacity: 0.5;
+}
+
+.duty_materials_download_button {
+    width: 25px;
+    height: 25px;
+    opacity: 0.5;
+}

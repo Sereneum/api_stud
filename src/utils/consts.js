@@ -2,6 +2,7 @@ export const LOGIN_ROUTE = '/login'
 export const MAIN_ROUTE = ''
 export const CONFIG_ROUTE = '/config'
 export const DUTY_ROUTE = '/duty'
+export const UI_ROUTE = '/ui'
 
 export const API_AUTH = 'api/tokenauth'
 export const API_COURSE = 'api/ElectronicEducation/Task?courseID='

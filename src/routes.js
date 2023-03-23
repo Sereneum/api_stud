@@ -1,8 +1,9 @@
-import {CONFIG_ROUTE, DUTY_ROUTE, MAIN_ROUTE} from "./utils/consts";
+import {CONFIG_ROUTE, DUTY_ROUTE, MAIN_ROUTE, UI_ROUTE} from "./utils/consts";
 import Login from "./components/Login/Login";
 import Main from "./components/Main";
 import Config from "./components/Space/Config/Config";
 import Duty from "./components/Duty/Duty";
+import TestUI from "./components/TestUI/TestUI";
 
 
 export const anonRoutes = [
@@ -24,5 +25,9 @@ export const authRoutes = [
     {
         path: DUTY_ROUTE,
         Component: Duty
+    },
+    {
+        path: UI_ROUTE,
+        Component: TestUI
     }
 ]

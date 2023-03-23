@@ -1,59 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fc4bc475-f70f-4480-9533-2c8d19d48ce8" name="Changes" comment="" />
+    <list default="true" id="062e48f7-2eb0-4883-8627-50c807327ef0" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="CSS File" />
-        <option value="JavaScript File" />
-      </list>
-    </option>
-  </component>
-  <component name="MarkdownSettingsMigration">
-    <option name="stateVersion" value="1" />
-  </component>
-  <component name="ProjectId" id="2LjVSHNE1SgP1nk6qxHo4ErndtQ" />
-  <component name="ProjectViewState">
-    <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showLibraryContents" value="true" />
-  </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/projects/stud_api/src/components/Duty&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;io.unthrottled.amii.config.ui.PluginSettingsUI&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\WebStorm 2022.2.2\\plugins\\JavaScriptLanguage\\jsLanguageServicesImpl\\external&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
-  }
-}</component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\projects\stud_api\src\components\Duty" />
-      <recent name="D:\projects\stud_api\src\components\Login" />
-      <recent name="D:\projects\stud_api\src\components\Space\CourseConfig" />
-      <recent name="D:\projects\stud_api\src\components\Navbar" />
-      <recent name="D:\projects\stud_api\src" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\projects\stud_api\src" />
-      <recent name="D:\projects\stud_api\src\components\Login" />
-      <recent name="D:\projects\stud_api\src\components\Space\Config" />
-      <recent name="D:\projects\stud_api\src\components\Navbar" />
-      <recent name="D:\projects\stud_api\src\components\Space\TaskList" />
-    </key>
-  </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
+<HEAD
     <task active="true" id="Default" summary="Default task">
       <changelist id="fc4bc475-f70f-4480-9533-2c8d19d48ce8" name="Changes" comment="" />
       <created>1676384477351</created>
@@ -94,9 +49,8 @@
       <workItem from="1679388884170" duration="12360000" />
       <workItem from="1679417852034" duration="8548000" />
     </task>
+=======
+>>>>>>> adca54aa7f0060dc78b10548f8745488c221a315
     <servers />
-  </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
   </component>
 </project>

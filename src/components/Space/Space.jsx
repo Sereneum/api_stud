@@ -84,9 +84,9 @@ const Space = observer(({reCourse}) => {
     }
 
     // ##################
-    // useEffect(() => {
-    //     setTimeout(() => {toDuty(0, 0)}, 0)
-    // }, [])
+    useEffect(() => {
+        setTimeout(() => {toDuty(0, 0)}, 0)
+    }, [])
     // ##################
 
     return (
