@@ -5,12 +5,12 @@ import styles from './DutyMaterials.module.css'
 import download_icon from '../../resources/duty/download.svg'
 import preview_icon from '../../resources/duty/view.svg'
 import pdf_file from '../../resources/duty/pdf_file.svg'
-import excel_file from '../../resources/duty/excel_file.svg'
-import pptx_file from '../../resources/duty/pptx_file.svg'
-import picture_file from '../../resources/duty/picture_file.svg'
-import unknown_file from '../../resources/duty/unknown_file.svg'
-import word_file from '../../resources/duty/word_file.svg'
-import zip_file from '../../resources/duty/zip_file.svg'
+// import excel_file from '../../resources/duty/excel_file.svg'
+// import pptx_file from '../../resources/duty/pptx_file.svg'
+// import picture_file from '../../resources/duty/picture_file.svg'
+// import unknown_file from '../../resources/duty/unknown_file.svg'
+// import word_file from '../../resources/duty/word_file.svg'
+// import zip_file from '../../resources/duty/zip_file.svg'
 
 
 const DutyFile = ({file}) => {
