@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import styles from './DutyMaterials.module.css'
 
 
@@ -18,32 +18,71 @@ import zip_file from '../../resources/duty/zip_file.svg'
 
 const DutyFile = ({file}) => {
 
-    const assignorIcon = () => {
+    const assignorIconDownload = () => {
+        if (!file.nameFile) return link_open
+        else {
+            if (file.nameFile.slice(file.nameFile.lastIndexOf('.') + 1) == 'pdf')
+                return link_open
+            else
+                return download_icon
+        }
+    }
 
+    const assignorIcon = () => {
+        if (!file.nameFile) return link_icon
+        let format = file.nameFile.slice(file.nameFile.lastIndexOf('.') + 1)
+
+        switch (format) {
+            case 'xlsx':
+                return excel_file
+            case 'xls':
+                return excel_file
+            case 'docx':
+                return word_file
+            case 'pdf':
+                return pdf_file
+            case 'pptx':
+                return pptx_file
+            case 'zip':
+                return zip_file
+            case 'png':
+                return picture_file
+            case 'jpg':
+                return picture_file
+            default:
+                return unknown_file
+        }
     }
 
     const handleDownload = () => {
         let url = file.nameFile ? `https://stud.mgri.ru${file.link}` : file.link
         if (url.slice(url.lastIndexOf('.') + 1) == 'pdf')
             window.open(url, '_blank')
+        else if (file.nameFile)
+            window.location.href = url
         else
-            if(file.nameFile)
-                window.location.href = url
-            else
-                window.open(url)
+            window.open(url)
     };
+
+    const [icon, setIcon] = useState(null)
+    const [downloadIcon, setDownloadIcon] = useState(null)
+
+    useEffect(() => {
+        setIcon(() => assignorIcon())
+        setDownloadIcon(() => assignorIconDownload())
+    }, [])
 
 
     return (
         <div className={styles.duty_materials_item}>
-            <img alt="" src={pdf_file} className={styles.duty_materials_icon}/>
+            <img alt="" src={icon} className={styles.duty_materials_icon}/>
             <div className={styles.duty_materials_file_name}>
                 {file.nameFile ? file.nameFile : file.nameLink}
             </div>
-            <img alt="" src={preview_icon} className={styles.duty_materials_preview_button}/>
+            {/*<img alt="" src={preview_icon} className={styles.duty_materials_preview_button}/>*/}
             <img
                 alt=""
-                src={file.nameFile ? download_icon : link_open}
+                src={downloadIcon}
                 className={styles.duty_materials_download_button}
                 onClick={handleDownload}
             />
