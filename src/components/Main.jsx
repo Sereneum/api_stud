@@ -18,10 +18,14 @@ const Main = observer(() => {
 
 
     const reCourse = () => {
-        superFullLoadingCourses({id: id}).then(d => {
-            course.setCourses(d.course)
-            course.setFull(d.full)
-            if(loadingCourse) setLoadingCourse(false)
+        return new Promise((resolve, reject) => {
+            superFullLoadingCourses({id}).then(d => {
+                // console.log('d', d)
+                course.setCourses(d.course)
+                course.setFull(d.full)
+                resolve(true)
+                if(loadingCourse) setLoadingCourse(false)
+            })
         })
     }
 
@@ -42,7 +46,7 @@ const Main = observer(() => {
         //     course.setFull(d.full)
         //     setLoadingCourse(false)
         // })
-        reCourse()
+        reCourse().then()
     }, [course])
 
 

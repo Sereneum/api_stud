@@ -12,7 +12,7 @@ import Spin from "../../Spin";
 import ConfigSpinController from "./ConfigSpinController";
 
 
-const Config = observer(({updateCourseFromConfig}) => {
+const Config = observer(({reCourse}) => {
 
     const {user, course} = useContext(Context)
 
@@ -22,6 +22,7 @@ const Config = observer(({updateCourseFromConfig}) => {
     const [passive, setPassive] = useState([])
     const [loadingCourses, setLoadingCourses] = useState(true)
     const [loadingReqOnGoogleTables, setLoadingReqOnGoogleTables] = useState(false)
+    const [loadingFromMain, setLoadingFromMain] = useState(false)
 
     const clickOnActive = useCallback(item => {
         setPassive([active[item], ...passive])
@@ -36,9 +37,11 @@ const Config = observer(({updateCourseFromConfig}) => {
 
     const recording = useCallback(() => {
         setLoadingReqOnGoogleTables(true)
+        setLoadingFromMain(true)
         recordingChangesToServer({id: id, active: active}).then(r => {
             setLoadingReqOnGoogleTables(false)
-            updateCourseFromConfig(active)
+            // updateCourseFromConfig().that
+            reCourse().then(e => setLoadingFromMain(false))
         })
     }, [id, active])
 
@@ -69,7 +72,7 @@ const Config = observer(({updateCourseFromConfig}) => {
                 <div className={styles.config_save} onClick={recording}>
                     Сохранить изменения
                 </div>
-                <ConfigSpinController isLoading={loadingReqOnGoogleTables}/>
+                <ConfigSpinController isLoading={loadingFromMain}/>
             </div>
 
             {loadingCourses

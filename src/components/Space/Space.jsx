@@ -17,12 +17,12 @@ const Space = observer(({reCourse}) => {
     const {course} = useContext(Context)
     const [isActiveConfig, setIsActiveConfig] = useState(false)
 
-    const updateCourseFromConfig = (updatedCoursesList) => {
-        // preloadingCourse(updatedCoursesList).then(d => course.setCourses(d))
-        // console.log('updatedCoursesList', updatedCoursesList)
-        // superFullLoadingCourses({update: updatedCoursesList, mode: 'update'})
-        reCourse()
-    }
+    // const updateCourseFromConfig = () => {
+    //     // preloadingCourse(updatedCoursesList).then(d => course.setCourses(d))
+    //     // console.log('updatedCoursesList', updatedCoursesList)
+    //     // superFullLoadingCourses({update: updatedCoursesList, mode: 'update'})
+    //     reCourse()
+    // }
 
     const clickOnConfig = () => {
         if (!isActiveConfig) setIsActiveConfig(!isActiveConfig)
@@ -70,7 +70,7 @@ const Space = observer(({reCourse}) => {
 
 
     const centerWin = () => {
-        if(isActiveConfig) return <Config updateCourseFromConfig={updateCourseFromConfig}/>
+        if(isActiveConfig) return <Config reCourse={reCourse}/>
         else {
             if(dutyActive.isActive)
                 return <Duty
