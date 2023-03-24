@@ -21,23 +21,18 @@
 .duty_back {
     width: 19px;
     height: 19px;
-    margin: 51px 0px 0px 40px;
+    margin: auto 0px auto 40px;
     cursor: pointer;
 }
 
 .duty_title {
     color: white;
-    font-size: 26px;
-    margin: 40px 17px 10px;
+    font-size: 24px;
+    margin: 40px 30px 40px 18px;
     text-align: left;
 }
 
-.duty_title:nth-child(3n+1) {
-    color: white;
-    font-size: 23px;
-    margin: 45px 35px 10px;
-    text-align: left;
-}
+
 
 .duty_files_list {
     width: 100%;
