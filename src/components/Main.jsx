@@ -2,13 +2,10 @@ import React, {useContext, useEffect, useState} from 'react';
 import {observer} from "mobx-react-lite";
 import {Container} from "react-bootstrap";
 import Space from "./Space/Space";
-import {fullGetDataDuty, preloadingCourse} from "../http/studAPI";
-import {settings} from "../utils/settings";
 import {Context} from "../index";
 import MySpinner from "./MySpinner";
-import NavBar from "./Navbar/NavBar";
-import {useLoading} from "../hooks/useLoading";
-import {loadingCoursesOnMain, superFullLoadingCourses} from "../chain/serverConfig";
+import {epoch_allCourseData} from "../epoch/epochServer";
+import {preEpoch_reconstructionCourses} from "../epoch/preEpoch";
 
 const Main = observer(() => {
 
@@ -17,45 +14,32 @@ const Main = observer(() => {
     let id = user.user.anotherID
 
 
-    const reCourse = () => {
+    const reCourse = (before, after) => {
         return new Promise((resolve, reject) => {
-            superFullLoadingCourses({id}).then(d => {
-                // console.log('d', d)
-                course.setCourses(d.course)
-                course.setFull(d.full)
-                resolve(true)
-                if(loadingCourse) setLoadingCourse(false)
-            })
+            preEpoch_reconstructionCourses(before, after, course.courses)
+                .then(r => {
+                    course.setCourses(r)
+                    console.log(r)
+                    resolve(true)
+                })
         })
     }
 
-    useEffect(() => {
-        // loadingCoursesOnMain(id).then(d => {
-        //     course.setCourses(d)
-        //     fullGetDataDuty(d).then(res => {
-        //         let full_answer = []
-        //         for(let i = 0; i < res.length; ++i) {
-        //             full_answer.push({...res[i], course_name: d[i].course.course_name, course_id: d[i].course.course_id})
-        //         }
-        //         course.setFull(full_answer)
-        //         setLoadingCourse(false)
-        //     })
-        // })
-        // superFullLoadingCourses({id: id, mode: 'first'}).then(d => {
-        //     course.setCourses(d.course)
-        //     course.setFull(d.full)
-        //     setLoadingCourse(false)
-        // })
-        reCourse().then()
-    }, [course])
 
+    useEffect(() => {
+        epoch_allCourseData(id).then(r => {
+            // console.log('Main: ', r)
+            course.setCourses(r)
+            if(loadingCourse) setLoadingCourse(false)
+        })
+    }, [])
 
     if (loadingCourse) return <MySpinner/>
 
     return (
         <div>
             <Container className='d-flex justify-content-center align-content-center' style={{width: '50vw'}}>
-                <Space reCourse={() => reCourse()}/>
+                <Space reCourse={reCourse}/>
             </Container>
         </div>
     );

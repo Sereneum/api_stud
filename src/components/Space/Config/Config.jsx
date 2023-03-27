@@ -5,19 +5,20 @@ import ConfigBlock from "./ConfigBlock";
 import {Context} from "../../../index";
 import {observer} from "mobx-react-lite";
 import {
-    gettingCoursesFromServer,
     recordingChangesToServer
 } from "../../../chain/serverConfig";
 import Spin from "../../Spin";
 import ConfigSpinController from "./ConfigSpinController";
+import {epoch_fetchConfigurableCourses, epoch_updateActiveCourses} from "../../../epoch/epochServer";
 
 
 const Config = observer(({reCourse}) => {
 
-    const {user, course} = useContext(Context)
+    const {user} = useContext(Context)
 
     let id = user.user.anotherID
 
+    const [initiallyCourses, setInitiallyCourses] = useState([])
     const [active, setActive] = useState([])
     const [passive, setPassive] = useState([])
     const [loadingCourses, setLoadingCourses] = useState(true)
@@ -38,12 +39,15 @@ const Config = observer(({reCourse}) => {
     const recording = useCallback(() => {
         setLoadingReqOnGoogleTables(true)
         setLoadingFromMain(true)
-        recordingChangesToServer({id: id, active: active}).then(r => {
+
+        epoch_updateActiveCourses(id, active).then(r => {
             setLoadingReqOnGoogleTables(false)
-            // updateCourseFromConfig().that
-            reCourse().then(e => setLoadingFromMain(false))
+            reCourse(initiallyCourses, active).then(r_re => {
+                setLoadingFromMain(false)
+                setInitiallyCourses(active)
+            })
         })
-    }, [id, active])
+    }, [id, active, initiallyCourses])
 
     const rename = useCallback((value, localIndex) => {
         setActive(active.map((i, mapIndex) =>
@@ -53,12 +57,12 @@ const Config = observer(({reCourse}) => {
 
 
     useEffect(() => {
-        gettingCoursesFromServer(id).then(r => {
-            setActive(typeof r.active == 'string' ? JSON.parse(r.active) : r.active)
+        epoch_fetchConfigurableCourses(id).then(r => {
+            setActive(r.active)
+            setInitiallyCourses(r.active)
             setPassive(r.passive)
             setLoadingCourses(false)
         })
-
     }, [])
 
     const liar = useCallback(() => {}, [])

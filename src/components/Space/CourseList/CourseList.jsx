@@ -6,7 +6,7 @@ import {observer} from "mobx-react-lite";
 import {Context} from "../../../index";
 import {useNavigate} from "react-router-dom";
 
-const CourseList = observer(({course, activeCourse, isActiveConfig, clickOnConfig}) => {
+const CourseList = ({courses, activeCourse, isActiveConfig, funcActivateCourse, clickOnConfig}) => {
 
 
     return (
@@ -17,12 +17,12 @@ const CourseList = observer(({course, activeCourse, isActiveConfig, clickOnConfi
             <div className={styles.course_list}>
                 {
 
-                    course.courses
+                    courses
                     ?
-                    course.courses.map((i, index) => <CourseItem key={i.course_id}
-                                                                 isActive={!isActiveConfig && index === course.activeCourse}
-                                                                 course={i.course}
-                                                                 click={activeCourse}
+                        courses.map((i, index) => <CourseItem key={i.course_id}
+                                                                 isActive={!isActiveConfig && index === activeCourse}
+                                                                 course={i}
+                                                                 click={funcActivateCourse}
                                                                  index={index}/>)
                         :
                         "пусто"
@@ -34,6 +34,6 @@ const CourseList = observer(({course, activeCourse, isActiveConfig, clickOnConfi
             </div>
         </Container>
     );
-});
+};
 
 export default CourseList;

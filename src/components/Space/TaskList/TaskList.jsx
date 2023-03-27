@@ -1,24 +1,31 @@
-import React from 'react';
+import React, {useContext, useState} from 'react';
 import Task from "./Task";
 import styles from './TaskList.module.css'
 import {observer} from "mobx-react-lite";
+import {Context} from "../../../index";
 
-const TaskList = observer(({course, toDuty}) => {
+const TaskList = observer(({toDuty, course, activeCourse}) => {
 
 
     return (
         <div className={styles.tasks_block}>
-            {course.courses.length
+            {course
                 ?
                 <>
                     <div
-                        className={styles.title}>{course.courses[course.activeCourse].course.course_name}</div>
+                        className={styles.title}>{course.course_name}</div>
                     <div className={styles.task_list}>
                         {
-                            course.courses[course.activeCourse].tasks.map((i, index) => <Task key={`t${index}`}
-                                                                                              index={index + 1} task={i}
-                                                                                              size={course.courses[course.activeCourse].tasks.length}
-                                                                                              toDuty={() => toDuty(index, course.activeCourse)}/>)}
+                            course.tasks.map((i, index) => <Task key={`t${index}`}
+                                                                         index={index + 1}
+                                                                         task={i}
+                                                                         size={course.tasks.length}
+                                                                         toDuty={
+                                                                             () => toDuty({
+                                                                                 courseIndex: activeCourse,
+                                                                                 taskIndex: index
+                                                                             })}
+                            />)}
                     </div>
                 </>
                 :

@@ -1,8 +1,18 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import styles from './DeadlineList.module.css'
 
-const DeadlineItem = ({task, isLast}) => {
+const DeadlineItem = ({task, isLast, toDuty, findIndexes}) => {
 
+
+    // useEffect(() => {
+    //     console.log('DeadlineItem', task)
+    // }, [])
+
+
+    const click = () => {
+        let indexes = findIndexes(task.courseID, task.courseTaskID)
+        toDuty(indexes)
+    }
 
     const timeParser = (hours) => {
         let days = hours / 24
@@ -12,9 +22,9 @@ const DeadlineItem = ({task, isLast}) => {
 
     return (
        <div>
-           <div className={styles.deadline_item}>
+           <div className={styles.deadline_item} onClick={click}>
                <div className={styles.dl_item_course_name}>{task.course_name}</div>
-               <div className={styles.dl_item_task_name}>{task.name}</div>
+               <div className={styles.dl_item_task_name}>{task.nameTask}</div>
                <div className={styles.dl_item_timer}>{timeParser(task.deadline)}</div>
            </div>
            {isLast
