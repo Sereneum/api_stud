@@ -11,7 +11,7 @@
     text-align: left;
 
     box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 1);
-    margin: auto;
+    margin: 0px auto;
 }
 
 .duty_nav {
@@ -83,7 +83,7 @@
     width: 28px;
     height: 28px;
     margin: auto 15px auto 25px;
-    opacity: 0.5
+    opacity: 0.5;
 }
 
 .duty_desc_text {
@@ -107,7 +107,10 @@
     height: 18px;
     width: 18px;
     opacity: 0.7;
-    margin-left: 260px;
-    margin-top: 130px;
+    /* margin-left: 265px;
+    margin-top: 235px; */
     border-width: 3.5px;
+    /* margin: auto; */
+    margin-left: calc(50% - 9px);
+    margin-top: calc(50% - 48px);
 }

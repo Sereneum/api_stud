@@ -44,7 +44,7 @@
 .duty_materials_icon {
     width: 36px;
     height: 36px;
-    opacity: 0.5;
+    opacity: 0.6;
     margin: auto;
 }
 
@@ -56,21 +56,22 @@
 }
 
 .duty_materials_preview_button {
-    width: 30px;
-    height: 30px;
+    width: 36px;
+    height: 36px;
     opacity: 0.5;
     margin: auto 5px;
     cursor: pointer;
 }
 
 .duty_materials_download_button {
-    width: 36px;
-    height: 36px;
-    opacity: 0.5;
+    width: 38px;
+    height: 38px;
+    opacity: 0.7;
     margin: auto 15px auto 10px;
     cursor: pointer;
     border-radius: 5px;
     border: 7px solid transparent;
+    transition: all 0.1s ease-in-out;
 }
 
 .duty_materials_download_button:hover {
@@ -78,5 +79,5 @@
 }
 
 .duty_materials_download_button:active {
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.4);
 }

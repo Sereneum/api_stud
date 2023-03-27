@@ -229,6 +229,7 @@ margin-top: 2px;
     border: 4px solid transparent;
     border-radius: 5px;
     cursor: pointer;
+    transition: all 0.1s ease-in-out;
 }
 
 .config_icon_in_item:hover {
@@ -237,8 +238,12 @@ margin-top: 2px;
 }
 
 .config_icon_in_item.edit_active {
-    background-color: rgba(255, 255, 255, 0.3);
+    /* background-color: rgba(255, 255, 255, 0.2); */
+    opacity: 1;
+    /* transition: all 0.2s ease-in-out; */
 }
 
-
+.config_icon_in_item:active {
+    background-color: rgba(255, 255, 255, 0.5);
+}
 
