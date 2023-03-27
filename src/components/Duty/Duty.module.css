@@ -12,6 +12,7 @@
 
     box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 1);
     margin: 0px auto;
+    margin-bottom: 50px;
 }
 
 .duty_nav {
@@ -75,6 +76,7 @@
 .duty_desc_block {
     display: flex;
     margin-left: 8px;
+    margin-right: 30px;
     margin-top: 13px;
     padding: 2px;
 }

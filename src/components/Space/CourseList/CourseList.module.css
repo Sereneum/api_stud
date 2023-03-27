@@ -74,6 +74,7 @@
     user-select: none;
     margin-bottom: 5px;
     padding-left: 10px;
+    padding-right: 10px;
     font-size: 18px;
     cursor: pointer;
 }

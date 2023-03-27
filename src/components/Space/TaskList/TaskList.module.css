@@ -19,7 +19,7 @@
     min-height: 400px;
     font-family: 'M_Ying_Hei';
     user-select: none;
-    margin-bottom: 70px;
+    margin-bottom: 50px;
 }
 
 .title {
@@ -64,7 +64,7 @@
 }
 
 .task:hover {
-    border-radius: 7px;
+    border-radius: 10px;
     background-color: rgba(255, 255, 255, 0.1);
     transition: background-color 0.15s ease-in-out;
 }
