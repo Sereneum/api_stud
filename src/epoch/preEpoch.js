@@ -55,6 +55,7 @@ export const preEpoch_mergeCourseData = (user_data, duty_data, course_id, course
         const listStatus = ["Просрочено", "В проверке", "На доработке", "Выполнено", "Не отправлено"]
 
 
+
         // console.log('user_data', user_data)
         // console.log('duty_data', duty_data)
 
@@ -69,6 +70,7 @@ export const preEpoch_mergeCourseData = (user_data, duty_data, course_id, course
                 tasks.push({
                     courseID: preTasks[i].courseID,
                     courseTaskID: preTasks[i].courseTaskID,
+                    courseName: course_name,
                     dateAdded: preTasks[i].dateAdded,
                     taskFile: preTasks[i].file,
                     // studentFiles: detailData[i].files,

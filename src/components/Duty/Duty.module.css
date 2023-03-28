@@ -17,6 +17,7 @@
 
 .duty_nav {
     display: flex;
+    cursor: pointer;
 }
 
 .duty_back {

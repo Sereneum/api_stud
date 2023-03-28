@@ -18,10 +18,15 @@ import zip_file from '../../resources/duty/zip_file.svg'
 
 const DutyFile = ({file}) => {
 
+    let list_preview_format = [
+        'pdf', 'jpeg', 'jpg', 'png', 'tiff'
+    ]
+
     const assignorIconDownload = () => {
         if (!file.nameFile) return link_open
         else {
-            if (file.nameFile.slice(file.nameFile.lastIndexOf('.') + 1) == 'pdf')
+            let format_file = file.nameFile.slice(file.nameFile.lastIndexOf('.') + 1)
+            if (list_preview_format.find(e => e === format_file) !== undefined)
                 return link_open
             else
                 return download_icon
@@ -39,13 +44,21 @@ const DutyFile = ({file}) => {
                 return excel_file
             case 'docx':
                 return word_file
+            case 'doc':
+                return word_file
             case 'pdf':
                 return pdf_file
             case 'pptx':
                 return pptx_file
+            case 'ppt':
+                return pptx_file
             case 'zip':
                 return zip_file
             case 'png':
+                return picture_file
+            case 'jpeg':
+                return picture_file
+            case 'tiff':
                 return picture_file
             case 'jpg':
                 return picture_file
@@ -55,13 +68,18 @@ const DutyFile = ({file}) => {
     }
 
     const handleDownload = () => {
-        let url = file.nameFile ? `https://stud.mgri.ru${file.link}` : file.link
-        if (url.slice(url.lastIndexOf('.') + 1) == 'pdf')
+        if(!file.nameFile) {
+            window.open(file.link)
+            return
+        }
+
+        let url = `https://stud.mgri.ru${file.link}`
+        let format_file = url.slice(url.lastIndexOf('.') + 1)
+
+        if(list_preview_format.find(e => e === format_file) !== undefined)
             window.open(url, '_blank')
-        else if (file.nameFile)
-            window.location.href = url
         else
-            window.open(url)
+            window.location.href = url
     };
 
     const [icon, setIcon] = useState(null)
@@ -77,7 +95,7 @@ const DutyFile = ({file}) => {
         <div className={styles.duty_materials_item}>
             <img alt="" src={icon} className={styles.duty_materials_icon}/>
             <div className={styles.duty_materials_file_name}>
-                {file.nameFile ? file.nameFile : file.nameLink}
+                {file.nameFile ? file.nameFile : file.nameLink ? file.nameLink : 'Безымянная ссылка'}
             </div>
             {/*<img alt="" src={preview_icon} className={styles.duty_materials_preview_button}/>*/}
             <img

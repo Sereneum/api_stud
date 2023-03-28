@@ -4,9 +4,6 @@ import styles from './Config.module.css'
 import ConfigBlock from "./ConfigBlock";
 import {Context} from "../../../index";
 import {observer} from "mobx-react-lite";
-import {
-    recordingChangesToServer
-} from "../../../chain/serverConfig";
 import Spin from "../../Spin";
 import ConfigSpinController from "./ConfigSpinController";
 import {epoch_fetchConfigurableCourses, epoch_updateActiveCourses} from "../../../epoch/epochServer";

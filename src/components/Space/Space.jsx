@@ -45,6 +45,10 @@ const Space = observer(({reCourse}) => {
         })
         if(course.activeCourse !== courseIndex)
             course.setActiveCourse(courseIndex)
+        if(isActiveConfig) {
+            setIsActiveConfig(false)
+        }
+
     }
 
     const createDeadlines = () => {
@@ -53,7 +57,7 @@ const Space = observer(({reCourse}) => {
             for (let task of cour.tasks)
                 if (!task.statusID) tasks.push(task)
 
-        return tasks.sort((a, b) => a.deadline - b.deadline)
+        return tasks.slice(-3).sort((a, b) => a.deadline - b.deadline)
     }
 
     // ##################

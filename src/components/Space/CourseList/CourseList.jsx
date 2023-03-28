@@ -18,18 +18,21 @@ const CourseList = ({courses, activeCourse, isActiveConfig, funcActivateCourse, 
                 {
 
                     courses
-                    ?
+                        ?
                         courses.map((i, index) => <CourseItem key={i.course_id}
-                                                                 isActive={!isActiveConfig && index === activeCourse}
-                                                                 course={i}
-                                                                 click={funcActivateCourse}
-                                                                 index={index}/>)
+                                                              isActive={!isActiveConfig && index === activeCourse}
+                                                              course={i}
+                                                              click={funcActivateCourse}
+                                                              index={index}/>)
                         :
                         "пусто"
                 }
             </div>
             <hr className={styles.hr}/>
-            <div className={styles.course_settings} onClick={clickOnConfig}>
+            <div
+                className={`${styles.course_settings} ${isActiveConfig ? styles.isActiveCourse : ''}`}
+                onClick={clickOnConfig}
+            >
                 {isActiveConfig ? 'Настройка курсов' : 'Настройка курсов'}
             </div>
         </Container>
