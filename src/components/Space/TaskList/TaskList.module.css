@@ -19,7 +19,7 @@
     min-height: 400px;
     font-family: 'M_Ying_Hei';
     user-select: none;
-    margin-bottom: 50px;
+    margin-bottom: 90px;
 }
 
 .title {
@@ -61,16 +61,16 @@
     line-height: 1.55;
     border: 2px solid transparent;
     cursor: pointer;
+    transition: all 0.15s ease-in-out;
 }
 
 .task:hover {
     border-radius: 10px;
-    background-color: rgba(255, 255, 255, 0.1);
-    transition: background-color 0.15s ease-in-out;
+    background-color: rgba(255, 255, 255, 0.07);
 }
 
 .task:active {
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.12);
 }
 
 .hr {

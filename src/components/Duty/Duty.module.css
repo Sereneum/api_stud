@@ -18,19 +18,30 @@
 .duty_nav {
     display: flex;
     cursor: pointer;
+    border-radius: 17px;
+    margin: 20px;
+    transition: all 0.1s ease-in-out;
+}
+
+.duty_nav:hover {
+    background-color: rgba(255, 255, 255, 0.06);
+}
+
+.duty_nav:active {
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
 .duty_back {
     width: 19px;
     height: 19px;
-    margin: auto 0px auto 40px;
+    margin: auto 0px auto 20px;
     cursor: pointer;
 }
 
 .duty_title {
     color: white;
     font-size: 24px;
-    margin: 40px 30px 40px 18px;
+    margin: 20px 20px 20px 18px;
     text-align: left;
 }
 
