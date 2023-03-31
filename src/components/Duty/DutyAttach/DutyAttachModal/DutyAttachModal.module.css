@@ -1,0 +1,71 @@
+.modal {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    background-color: #646464;
+    margin: auto;
+    border-radius: 20px;
+
+    min-width: 560px;
+    max-width: 620px;
+    max-height: 500px;
+}
+
+
+.modal_close {
+    width: 28px;
+    height: 28px;
+    position: absolute;
+    right: 14px;
+    top: 14px;
+    cursor: pointer;
+}
+
+.modal_title {
+    font-size: 20px;
+    color: white;
+    font-family: 'M_Ying_Hei';
+    margin-top: 30px;
+    display: flex;
+    height: 30px;
+    width: 100%;
+}
+
+.modal_title_text {
+    margin-left: 10px;
+}
+
+.modal_title_icon {
+    width: 26px;
+    height: 26px;
+    margin: auto;
+}
+
+.modal_attach_block {
+    width: 100%;
+    height: 240px;
+    display: flex;
+}
+
+.modal_upload_icon {
+    width: 56px;
+    height: 56px;
+    margin: auto;
+}
+
+.modal_submit {
+
+}
+
+@font-face {
+    font-family: 'M_Ying_Hei';
+    src: local('M_Ying_Hei'),
+    url('M_Ying_Hei.woff2') format('truetype');
+    font-weight: bold;
+}

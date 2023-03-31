@@ -128,3 +128,10 @@
     margin-left: calc(50% - 9px);
     margin-top: calc(50% - 48px);
 }
+
+@font-face {
+    font-family: 'M_Ying_Hei';
+    src: local('M_Ying_Hei'),
+    url('M_Ying_Hei.woff2') format('truetype');
+    font-weight: bold;
+}

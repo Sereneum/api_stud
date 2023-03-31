@@ -2,10 +2,10 @@ import React, {useState} from 'react';
 import styles from './DutyAttach.module.css'
 import DutyAttachFile from "./DutyAttachFile";
 import DutyAttachAddButton from "./DutyAttachAddButton";
-import DutyAttachModal from "./DutyAttachModal";
+import DutyAttachModal from "./DutyAttachModal/DutyAttachModal";
 
 const DutyAttach = ({files, task, detail}) => {
-    const [isModal, setIsModal] = useState(false)
+    const [isModal, setIsModal] = useState(true)
 
     const setModal = () => {
         setIsModal(!isModal)
@@ -17,7 +17,7 @@ const DutyAttach = ({files, task, detail}) => {
                 files.map(i => <DutyAttachFile key={i.fileID} file={i}/>)
             }
             <DutyAttachAddButton setModal={setModal}/>
-            {isModal ? <DutyAttachModal /> : <></>}
+            {isModal ? <DutyAttachModal setModal={setModal}/> : <></>}
         </div>
     );
 };
