@@ -12,6 +12,7 @@ import DutyFilesList from "./DutyFilesList";
 import DutyDesc from "./DutyDesc";
 import {preEpoch_getDetailTaskData} from "../../epoch/preEpoch";
 import Spin from "../Spin";
+import DutyAttach from "./DutyAttach/DutyAttach";
 
 
 const Duty = ({course, task, toBack}) => {
@@ -50,7 +51,7 @@ const Duty = ({course, task, toBack}) => {
 
     const markPusher = (mark) => {
         switch (mark) {
-            case 0:
+            case -1:
                 return 'Незачёт'
             case 1:
                 return 'Не явился'
@@ -151,7 +152,11 @@ const Duty = ({course, task, toBack}) => {
                             }
                         </>
 
-
+                        <DutyAttach
+                            files={detailTaskData.files}
+                            task={task}
+                            detail={detailTaskData}
+                        />
                         <DutyFilesList files={course.courseMaterials}/>
                     </>
             }
