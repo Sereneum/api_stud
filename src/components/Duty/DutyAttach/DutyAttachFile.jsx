@@ -10,7 +10,9 @@ const DutyAttachFile = ({file}) => {
 
     return (
         <div className={styles.duty_attach_file}>
-            <div className={styles.duty_attach_file_name}> {file.nameFile}</div>
+            <div className={styles.duty_attach_file_name}>
+                {file.nameFile ? file.nameFile : file.nameLink ? file.nameLink : 'Безымянная ссылка'}
+            </div>
             <img
                 alt=""
                 className={styles.duty_attach_file_icon}

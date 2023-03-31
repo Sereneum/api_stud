@@ -47,7 +47,6 @@ const Space = observer(({reCourse}) => {
         if(isActiveConfig) {
             setIsActiveConfig(false)
         }
-
     }
 
     const createDeadlines = () => {
@@ -86,8 +85,8 @@ const Space = observer(({reCourse}) => {
                     dutyActive.isActive
                         ?
                         <Duty
-                            course={course.courses[dutyActive.courseIndex]}
-                            task={course.courses[dutyActive.courseIndex].tasks[dutyActive.taskIndex]}
+                            course={course.courses[course.activeCourse]}
+                            task={course.courses[course.activeCourse].tasks[dutyActive.taskIndex]}
                             toBack={toBack}
                         />
                         :
