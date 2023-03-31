@@ -24,11 +24,11 @@
 }
 
 .duty_nav:hover {
-    background-color: rgba(255, 255, 255, 0.06);
+    background-color: rgba(255, 255, 255, 0.08);
 }
 
 .duty_nav:active {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.16);
 }
 
 .duty_back {
@@ -127,4 +127,11 @@
     /* margin: auto; */
     margin-left: calc(50% - 9px);
     margin-top: calc(50% - 48px);
+}
+
+@font-face {
+    font-family: 'M_Ying_Hei';
+    src: local('M_Ying_Hei'),
+    url('M_Ying_Hei.woff2') format('truetype');
+    font-weight: bold;
 }

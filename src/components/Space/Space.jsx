@@ -15,7 +15,6 @@ const Space = observer(({reCourse}) => {
     const {course} = useContext(Context)
     const [isActiveConfig, setIsActiveConfig] = useState(false)
 
-
     const clickOnConfig = () => {
         if (!isActiveConfig) setIsActiveConfig(!isActiveConfig)
     }
@@ -48,7 +47,6 @@ const Space = observer(({reCourse}) => {
         if(isActiveConfig) {
             setIsActiveConfig(false)
         }
-
     }
 
     const createDeadlines = () => {
@@ -62,10 +60,11 @@ const Space = observer(({reCourse}) => {
 
     // ##################
     useEffect(() => {
-        // setTimeout(() => {
-        //     toDuty(0, 0)
-        // }, 0)
-
+       // setDutyActive({
+       //     courseIndex: 2,
+       //     taskIndex: 0,
+       //     isActive: true
+       // })
     }, [])
     // ##################
 

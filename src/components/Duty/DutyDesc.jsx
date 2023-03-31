@@ -4,12 +4,6 @@ import teacher from "../../resources/teacher.svg";
 
 const DutyDesc = ({icon, text, mode=null}) => {
 
-    // const modeStyle = () => {
-    //     if(mode == 'taskFile') return {
-    //         cursor: 'pointer',
-    //         color: '#6197E8'
-    //     }
-    // }
 
     return (
         <div className={styles.duty_desc_block}>
