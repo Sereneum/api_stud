@@ -5,7 +5,7 @@ import DutyAttachAddButton from "./DutyAttachAddButton";
 import DutyAttachModal from "./DutyAttachModal/DutyAttachModal";
 
 const DutyAttach = ({files, task, detail}) => {
-    const [isModal, setIsModal] = useState(true)
+    const [isModal, setIsModal] = useState(false)
 
     const setModal = () => {
         setIsModal(!isModal)

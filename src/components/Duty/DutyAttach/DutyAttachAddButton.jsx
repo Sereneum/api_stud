@@ -6,12 +6,11 @@ const DutyAttachAddButton = ({setModal}) => {
 
 
     return (
-        <div className={styles.duty_attach_file}>
+        <div className={styles.duty_attach_file} onClick={setModal}>
             <img
                 alt=""
                 src={add_icon}
                 className={styles.duty_attach_add_icon}
-                onClick={setModal}
             />
         </div>
     );

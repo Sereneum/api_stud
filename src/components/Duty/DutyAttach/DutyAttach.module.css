@@ -1,11 +1,57 @@
 .duty_attach_main_block {
-
+    background-color: #1c1c1c;
+    margin: 40px 20px 40px 20px;
+    border-radius: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+    
 }
 
+
+.duty_attach_modal {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #646464;
+    margin: auto;
+    border-radius: 20px;
+
+    min-width: 560px;
+    max-width: 620px;
+    max-height: 500px;
+}
+
+
 .duty_attach_file {
+    display: flex;
+    background-color: #262626;
     color: #c4c4c4;
-    border: 1px solid #ABABAB;
-    border-radius: 6px;
+    /* border: 1px solid #ABABAB; */
+    border-radius: 10px;
+    height: 180px;
+    width: 144px;
+    margin: 10px;
+    overflow-x: hidden; 
+    padding: 10px;
+    transition: all 0.1s ease-in-out;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.duty_attach_file:hover {
+    background-color: rgba(255, 255, 255, 0.06);
+}
+
+.duty_attach_file:active {
+    background-color: rgba(255, 255, 255, 0.12);
 }
 
 .duty_attach_add_file_button {
@@ -15,9 +61,25 @@
 }
 
 .duty_attach_add_icon {
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
+    margin: auto;
+    opacity: 0.7;
+}
+
+.duty_attach_file_name {
+
+}
+
+.duty_attach_file_icon {
     width: 24px;
     height: 24px;
-    cursor: pointer;
+}
+
+.duty_attach_file_delete {
+    width: 24px;
+    height: 24px;
 }
 
 

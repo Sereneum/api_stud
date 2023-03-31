@@ -61,11 +61,11 @@ const Space = observer(({reCourse}) => {
 
     // ##################
     useEffect(() => {
-       setDutyActive({
-           courseIndex: 2,
-           taskIndex: 0,
-           isActive: true
-       })
+       // setDutyActive({
+       //     courseIndex: 2,
+       //     taskIndex: 0,
+       //     isActive: true
+       // })
     }, [])
     // ##################
 
@@ -86,8 +86,8 @@ const Space = observer(({reCourse}) => {
                     dutyActive.isActive
                         ?
                         <Duty
-                            course={course.courses[course.activeCourse]}
-                            task={course.courses[course.activeCourse].tasks[dutyActive.taskIndex]}
+                            course={course.courses[dutyActive.courseIndex]}
+                            task={course.courses[dutyActive.courseIndex].tasks[dutyActive.taskIndex]}
                             toBack={toBack}
                         />
                         :
