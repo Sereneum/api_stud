@@ -1,5 +1,5 @@
 import {$authHost, $authServerHost, $serverHost} from "../http";
-import {API_ALL_COURSES, API_COURSE, API_DUTY, API_UPLOAD_FILE} from "../utils/consts";
+import {API_ALL_COURSES, API_COURSE, API_DELETE_FILE, API_DUTY, API_UPLOAD_FILE} from "../utils/consts";
 import {preEpoch_division, preEpoch_mergeCourseData} from "./preEpoch";
 
 const conv = data => {
@@ -97,3 +97,8 @@ export const epoch_uploadFile = ({formData}) => {
     })
 }
 
+export const epoch_deleteFile = (fileID) =>  new Promise((resolve, reject) => {
+    $authServerHost.delete(API_DELETE_FILE + fileID)
+        .then(d => resolve(d.data))
+        .catch(e => e)
+})

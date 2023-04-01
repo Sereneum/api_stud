@@ -19,6 +19,7 @@ const DutyAttachModal = ({setModal, sendData, courseID, loadingTaskData}) => {
             .then(r => {
                 console.log(r, courseID)
                 loadingTaskData()
+                setModal(false)
             })
     }
 

@@ -47,12 +47,12 @@
 
 .deadline_item:hover {
     border-radius: 10px;
-    background-color: rgba(255, 255, 255, 0.07);
+    background-color: rgba(255, 255, 255, 0.08);
     transition: background-color 0.15s ease-in-out;
 }
 
 .deadline_item:active {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.16);
 }
 
 .dl_item_course_name {

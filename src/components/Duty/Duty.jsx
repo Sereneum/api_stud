@@ -92,7 +92,7 @@ const Duty = ({course, task, toBack}) => {
                 })
 
                 // console.log('task: ', task)
-                console.log('detailTaskData: ', r)
+                // console.log('detailTaskData: ', r)
             })
     }
 
