@@ -32,6 +32,13 @@ const $serverHost = axios.create({
         dataType: "jsonp"
     })
 
+export const $authServerHost = axios.create({
+        baseURL: `https://stud.mgri.ru/`,
+        headers: {
+            'Content-Type': 'multipart/form-data',
+            Authorization: `Bearer ${localStorage.getItem('token')}`
+        }
+    })
 
 const authInterceptor = config => {
     config.headers.authorization = `Bearer ${localStorage.getItem('token')}`
@@ -43,6 +50,9 @@ const bedAuth = error => {
 }
 
 $authHost.interceptors.request.use(authInterceptor, bedAuth)
+
+
+
 
 export {
     $host,

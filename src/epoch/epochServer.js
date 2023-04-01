@@ -1,5 +1,5 @@
-import {$authHost, $serverHost} from "../http";
-import {API_ALL_COURSES, API_COURSE, API_DUTY} from "../utils/consts";
+import {$authHost, $authServerHost, $serverHost} from "../http";
+import {API_ALL_COURSES, API_COURSE, API_DUTY, API_UPLOAD_FILE} from "../utils/consts";
 import {preEpoch_division, preEpoch_mergeCourseData} from "./preEpoch";
 
 const conv = data => {
@@ -84,3 +84,16 @@ export const epoch_allCourseData = (id) => {
             })
     })
 }
+
+
+export const epoch_uploadFile = ({formData}) => {
+    return new Promise((resolve, reject) => {
+
+        $authServerHost.post(API_UPLOAD_FILE, formData)
+            .then(d => {
+                resolve(d.data)
+            })
+            .catch(e => e)
+    })
+}
+

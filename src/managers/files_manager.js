@@ -67,9 +67,9 @@ export const handleDownload = ({fileName, link}) => {
     let url = `https://stud.mgri.ru${link}`
     let format_file = url.slice(url.lastIndexOf('.') + 1)
 
-
     if(list_preview_format.find(e => e === format_file) !== undefined)
         window.open(url, '_blank')
     else
         window.location.href = url
 };
+

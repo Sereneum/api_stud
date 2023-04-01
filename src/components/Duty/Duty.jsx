@@ -19,6 +19,7 @@ const Duty = ({course, task, toBack}) => {
 
     const [detailTaskData, setDetailTaskData] = useState({})
     const [loading, setLoading] = useState(true)
+    const [sendData, setSendData] = useState({})
 
 
     const dataConv = (dateStr) => {
@@ -78,14 +79,25 @@ const Duty = ({course, task, toBack}) => {
         }
     }
 
-    useEffect(() => {
+    const loadingTaskData = () => {
         preEpoch_getDetailTaskData(task.courseTaskID)
             .then(r => {
                 setDetailTaskData(r)
                 setLoading(false)
-                console.log('task: ', task)
+
+                setSendData({
+                    studentID: r.studentID,
+                    courseTaskID: r.courseTaskID,
+                    courseStudentID: r.courseStudentID,
+                })
+
+                // console.log('task: ', task)
                 console.log('detailTaskData: ', r)
             })
+    }
+
+    useEffect(() => {
+        loadingTaskData()
     }, [])
 
 
@@ -156,6 +168,8 @@ const Duty = ({course, task, toBack}) => {
                             files={detailTaskData.files}
                             task={task}
                             detail={detailTaskData}
+                            sendData={sendData}
+                            loadingTaskData={loadingTaskData}
                         />
                         <DutyFilesList files={course.courseMaterials}/>
                     </>

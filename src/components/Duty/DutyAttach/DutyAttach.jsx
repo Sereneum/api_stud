@@ -4,7 +4,7 @@ import DutyAttachFile from "./DutyAttachFile";
 import DutyAttachAddButton from "./DutyAttachAddButton";
 import DutyAttachModal from "./DutyAttachModal/DutyAttachModal";
 
-const DutyAttach = ({files, task, detail}) => {
+const DutyAttach = ({files, task, detail, sendData, loadingTaskData}) => {
     const [isModal, setIsModal] = useState(false)
 
     const setModal = () => {
@@ -17,7 +17,12 @@ const DutyAttach = ({files, task, detail}) => {
                 files.map(i => <DutyAttachFile key={i.fileID} file={i}/>)
             }
             <DutyAttachAddButton setModal={setModal}/>
-            {isModal ? <DutyAttachModal setModal={setModal}/> : <></>}
+            {isModal && <DutyAttachModal
+                setModal={setModal}
+                sendData={sendData}
+                courseID={task.courseID}
+                loadingTaskData={loadingTaskData}
+            />}
         </div>
     );
 };

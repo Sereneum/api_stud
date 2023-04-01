@@ -60,11 +60,7 @@ const Space = observer(({reCourse}) => {
 
     // ##################
     useEffect(() => {
-       // setDutyActive({
-       //     courseIndex: 2,
-       //     taskIndex: 0,
-       //     isActive: true
-       // })
+        toDuty({courseIndex: 2, taskIndex: 0})
     }, [])
     // ##################
 

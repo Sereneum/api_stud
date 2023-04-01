@@ -10,5 +10,6 @@ export const API_DUTY = 'api/ElectronicEducation/ListCourseThemes?courseID='
 export const API_MORE_INFO = 'api/UserInfo/Student?studentID=-'
 export const API_ALL_COURSES='api/ElectronicEducation/ListCourse'
 export const API_DETAIL_TASK = 'api/ElectronicEducation/TaskStudent?courseTaskID='
+export const API_UPLOAD_FILE = 'api/ElectronicEducation/FileSave'
 
 export const SERVER_API_NEW_SETTINGS = ''
