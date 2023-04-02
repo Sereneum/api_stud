@@ -9,6 +9,7 @@
     height: fit-content;
     text-align: left;
     user-select: none;
+    -webkit-user-select: none;
     min-height: 250px;
     position: sticky;
     position: -webkit-sticky;
@@ -21,6 +22,7 @@
     margin: 40px 32.5px 50px;
     text-align: left;
     line-height: 1.4;
+    cursor: default;
 }
 
 .deadline_list {

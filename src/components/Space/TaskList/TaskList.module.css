@@ -19,6 +19,7 @@
     min-height: 400px;
     font-family: 'M_Ying_Hei';
     user-select: none;
+    -webkit-user-select: none;
     margin-bottom: 90px;
 }
 
@@ -37,6 +38,7 @@
     margin: 40px 40px 40px;
     text-align: left;
     line-height: 1.4;
+    cursor: default;
 }
 
 .task_not_found {

@@ -24,6 +24,8 @@
     position: sticky;
     position: -webkit-sticky;
     top: 50px;
+    user-select: none;
+    -webkit-user-select: none;
 }
 
 @font-face {
@@ -37,6 +39,7 @@
     font-size: 28px;
     margin: 40px 30px 40px;
     text-align: left;
+    cursor: default;
 }
 
 .course_settings {

@@ -50,12 +50,24 @@
 
 
 .modal_close {
-    width: 28px;
-    height: 28px;
+    width: 38px;
+    height: 38px;
     position: absolute;
     right: 34px;
-    top: 34px;
+    top: 30px;
     cursor: pointer;
+    border: 6px solid transparent;
+    border-radius: 7px;
+    user-select: none;
+    transition: all 0.1s ease-in-out;
+}
+
+.modal_close:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.modal_close:active {
+    background-color: rgba(255, 255, 255, 0.2);
 }
 
 .modal_title {
@@ -63,9 +75,12 @@
     color: white;
     font-family: 'M_Ying_Hei';
     margin-top: 28px;
+    margin-bottom: 35px;
     display: flex;
     height: 30px;
     width: 100%;
+    user-select: none;
+    cursor: default;
 }
 
 .modal_title_text {
@@ -86,7 +101,16 @@
     cursor: pointer;
     border: 3px dashed #929292;
     border-radius: 20px;
-    margin: 35px 25px 5px 25px;
+    margin: 0px 25px 0px 25px;
+    transition: all 0.1s ease-in-out;
+}
+
+.modal_attach_block:hover {
+    background-color: rgba(255, 255, 255, 0.02);
+}
+
+.modal_attach_block:active {
+    background-color: rgba(255, 255, 255, 0.06);
 }
 
 .modal_upload_icon {
