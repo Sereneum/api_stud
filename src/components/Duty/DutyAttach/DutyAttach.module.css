@@ -50,16 +50,17 @@
     -webkit-user-select: none;
     word-break: break-all;
     transition: all 0.1s ease-in-out;
-    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.63);
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);
+    cursor: pointer;
 }
 
 .duty_attach_file:hover {
     background-color: rgba(255, 255, 255, 0.052);
 }
 
-.duty_attach_file:active {
+/* .duty_attach_file:active {
     background-color: rgba(255, 255, 255, 0.1);
-}
+} */
 
 .duty_attach_download_file {
     border-top-left-radius: 10px;

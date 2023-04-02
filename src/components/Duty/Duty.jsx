@@ -109,6 +109,7 @@ const Duty = ({course, task, toBack}) => {
                     <Spin cl={styles.spinner}/>
                     :
                     <>
+                    <div className={styles.duty_desc_block_cover}>
                         <div className={styles.duty_nav} onClick={toBack}>
                             <img
                                 alt=""
@@ -119,6 +120,7 @@ const Duty = ({course, task, toBack}) => {
 
 
                         <>
+                        
                             {task.taskFile
                                 ?
                                 <div className={styles.duty_desc_block} style={{cursor: 'pointer'}}>
@@ -162,8 +164,8 @@ const Duty = ({course, task, toBack}) => {
                                 :
                                 <></>
                             }
+                       
                         </>
-
                         <DutyAttach
                             files={detailTaskData.files}
                             task={task}
@@ -172,7 +174,9 @@ const Duty = ({course, task, toBack}) => {
                             loadingTaskData={loadingTaskData}
                         />
                         <DutyFilesList files={course.courseMaterials}/>
+                    </div>
                     </>
+                    
             }
         </div>
     );
