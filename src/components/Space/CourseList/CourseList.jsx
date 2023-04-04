@@ -5,6 +5,7 @@ import {Container} from "react-bootstrap";
 import {observer} from "mobx-react-lite";
 import {Context} from "../../../index";
 import {useNavigate} from "react-router-dom";
+import DutyFilesList from "../../Duty/DutyFilesList";
 
 const CourseList = ({courses, activeCourse, isActiveConfig, funcActivateCourse, clickOnConfig}) => {
 

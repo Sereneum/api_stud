@@ -41,10 +41,19 @@
     cursor: default;
 }
 
-.task_not_found {
+.course_not_found {
     color: darkgray;
     text-align: center;
     margin-top: 155px;
+}
+
+.tasks_not_found {
+    color: darkgray;
+    text-align: left;
+    margin-top: 0px;
+    margin-bottom: 40px;
+    margin-left: 40px;
+    font-size: 20px;
 }
 
 .task_name {
@@ -91,3 +100,17 @@
     border: none;
     border-top: 1.5px solid white;
 }
+
+.materials_breaker {
+    width: calc(100% + 6px);
+    margin-left: -4px;
+    height: 10px;
+    background-color: #000000;
+}
+
+.open_materials {
+    cursor: pointer;
+    color: #fff;
+}
+
+

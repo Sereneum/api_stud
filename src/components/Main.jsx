@@ -43,7 +43,7 @@ const Main = observer(() => {
 
     useEffect(() => {
         epoch_allCourseData(id).then(r => {
-            // console.log('Main: ', r)
+            console.log('Main: ', r)
             course.setCourses(r)
             if(loadingCourse) setLoadingCourse(false)
         })

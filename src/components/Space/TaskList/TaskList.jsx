@@ -1,11 +1,16 @@
-import React, { useContext, useState } from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import Task from "./Task";
 import styles from './TaskList.module.css'
 import { observer } from "mobx-react-lite";
-import { Context } from "../../../index";
+import DutyFilesList from "../../Duty/DutyFilesList";
 
 const TaskList = observer(({ toDuty, course, activeCourse }) => {
 
+    const [isOpenMaterials, setIsOpenMaterials] = useState(false)
+
+    useEffect(() => {
+        setIsOpenMaterials(false)
+    }, [activeCourse])
 
     return (
         <div className={styles.tasks_block}>
@@ -31,12 +36,31 @@ const TaskList = observer(({ toDuty, course, activeCourse }) => {
                             </div>
                         </>
                         :
-                        <div className={styles.task_not_found}>
+                        <div className={styles.course_not_found}>
                             <p>Не найдены активные курсы</p>
                             <p>перейдите в настройки</p>
                         </div>
                 }
             </div>
+
+
+            {!course.tasks.length
+                &&
+                <div className={styles.tasks_not_found}>Нет заданий</div>
+            }
+
+            <div className={styles.materials_breaker}></div>
+            {isOpenMaterials
+                ?
+                <DutyFilesList files={course.courseMaterials}/>
+                :
+                <div
+                    className={styles.open_materials}
+                    onClick={() => setIsOpenMaterials(true)}
+                >Открыть материалы</div>
+            }
+            {/*<DutyFilesList files={course.courseMaterials}/>*/}
+
         </div>
     );
 });
