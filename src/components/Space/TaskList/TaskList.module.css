@@ -20,7 +20,7 @@
     font-family: 'M_Ying_Hei';
     user-select: none;
     -webkit-user-select: none;
-    margin-bottom: 90px;
+    /*margin-bottom: 90px;*/
 }
 
 .tasks_block_cover {

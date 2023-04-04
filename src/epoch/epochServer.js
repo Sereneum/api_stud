@@ -3,7 +3,8 @@ import {API_ALL_COURSES, API_COURSE, API_DELETE_FILE, API_DUTY, API_UPLOAD_FILE}
 import {preEpoch_division, preEpoch_mergeCourseData} from "./preEpoch";
 
 const conv = data => {
-    if(!data) return []
+    console.log(data)
+    if (!data) return []
     if (typeof 'data' === 'string') return JSON.parse(data)
     else return data
 }
@@ -47,7 +48,7 @@ const fetchAllCourses = async (id) => {
 }
 
 // Получение всех active/passive курсов
-export const epoch_fetchConfigurableCourses  = (id) => {
+export const epoch_fetchConfigurableCourses = (id) => {
     return new Promise((resolve, reject) => {
         Promise.all([epoch_fetchActiveCourses(id), fetchAllCourses(id)])
             .then(r => resolve(preEpoch_division(r[0], r[1])))
@@ -98,7 +99,7 @@ export const epoch_uploadFile = ({formData}) => {
     })
 }
 
-export const epoch_deleteFile = (fileID) =>  new Promise((resolve, reject) => {
+export const epoch_deleteFile = (fileID) => new Promise((resolve, reject) => {
     $authServerHost.delete(API_DELETE_FILE + fileID)
         .then(d => resolve(d.data))
         .catch(e => e)

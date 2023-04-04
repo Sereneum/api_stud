@@ -5,12 +5,6 @@ import Dropzone, {useDropzone} from "react-dropzone";
 
 const DutyAttachDropzone = ({sendData, uploading}) => {
 
-    const toBinary = file => new Promise((resolve, reject) => {
-                const reader = new FileReader()
-                reader.onload = () => resolve(reader.result)
-                reader.readAsArrayBuffer(file)
-        })
-
 
     const onDrop = (acceptedFiles) => {
         uploading(acceptedFiles)
