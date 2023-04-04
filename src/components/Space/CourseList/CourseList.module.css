@@ -47,25 +47,32 @@
     text-align: left;
     user-select: none;
     line-height: 1.9;
-    margin-top: 25px;
-    margin-bottom: 30px;
-    border: 2px solid transparent;
+    /* margin-top: 25px;
+    margin-bottom: 30px; */
+    /* border: 2px solid transparent; */
     /* text-indent: 10px; */
-    margin-left: 15px;
-    font-size: 18px;
-    margin-right: 16.5px;
+    /* margin-left: 15px; */
+    font-size: 16px;
+    /* margin-right: 16.5px; */
+    margin: 0px -15px -3px;
     cursor: pointer;
-    padding-left: 10px;
+    text-align: center;
+    padding: 7px;
+    padding-bottom: 9px;
+    padding-right: 11px;
+    /* padding-left: 43px; */
+    border-bottom-left-radius: 23px;
+    border-bottom-right-radius: 23px;
+    transition: all 0.1s ease-in-out;
+
 }
 
 .course_settings:hover {
-    border: 2px solid transparent;
-    border-radius: 7px;
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.05);
 }
 
 .course_settings:active {
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
 .course_item {
@@ -76,7 +83,7 @@
     vertical-align: center;
     user-select: none;
     margin-bottom: 5px;
-    padding-left: 10px;
+    padding-left: 12px;
     padding-right: 10px;
     font-size: 18px;
     cursor: pointer;
@@ -93,15 +100,14 @@
 }
 
 .isActiveCourse {
-    border: 2px solid transparent;
     border-radius: 7px;
     background-color: rgba(255, 255, 255, 0.1);
 }
 
 .hr {
-    margin: 20px 20px;
+    margin: 25px -15px 0px;
     padding: 0;
     height: 0;
     border: none;
-    border-top: 1.5px solid white;
+    border-top: 10px solid #010101;
 }

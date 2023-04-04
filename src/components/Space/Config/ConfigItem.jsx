@@ -28,7 +28,9 @@ const ConfigItem = memo(({course, click, index, isActive, rename}) => {
         <div
             className={styles.config_item}
         >
+
             <div className={styles.config_in_item}>
+
 
 
                 {
