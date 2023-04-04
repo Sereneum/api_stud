@@ -263,7 +263,7 @@ margin-top: 2px;
     height: 70px;
     margin-left: -14px;
     background-color: rgba(37, 37, 37, 0.707);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     width: 560px;
     /* border-radius: 20px; */
@@ -296,5 +296,6 @@ margin-top: 2px;
     /* align-items: center; */
     justify-content: center;
     margin-top: 18px;
+    user-select: none;
 }
 
