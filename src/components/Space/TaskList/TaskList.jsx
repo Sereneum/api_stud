@@ -1,10 +1,10 @@
 import React, {useContext, useEffect, useState} from 'react';
 import Task from "./Task";
 import styles from './TaskList.module.css'
-import { observer } from "mobx-react-lite";
+import {observer} from "mobx-react-lite";
 import DutyFilesList from "../../Duty/DutyFilesList";
 
-const TaskList = observer(({ toDuty, course, activeCourse }) => {
+const TaskList = observer(({toDuty, course, activeCourse}) => {
 
     const [isOpenMaterials, setIsOpenMaterials] = useState(false)
 
@@ -24,14 +24,14 @@ const TaskList = observer(({ toDuty, course, activeCourse }) => {
                             <div className={styles.task_list}>
                                 {
                                     course.tasks.map((i, index) => <Task key={`t${index}`}
-                                        index={index + 1}
-                                        task={i}
-                                        size={course.tasks.length}
-                                        toDuty={
-                                            () => toDuty({
-                                                courseIndex: activeCourse,
-                                                taskIndex: index
-                                            })}
+                                                                         index={index + 1}
+                                                                         task={i}
+                                                                         size={course.tasks.length}
+                                                                         toDuty={
+                                                                             () => toDuty({
+                                                                                 courseIndex: activeCourse,
+                                                                                 taskIndex: index
+                                                                             })}
                                     />)}
                             </div>
                         </>
@@ -43,23 +43,27 @@ const TaskList = observer(({ toDuty, course, activeCourse }) => {
                 }
             </div>
 
-
-            {!course.tasks.length
+            {course
                 &&
-                <div className={styles.tasks_not_found}>Нет заданий</div>
+                <>
+                    {!course.tasks.length
+                        &&
+                        <div className={styles.tasks_not_found}>Нет заданий</div>
+                    }
+
+                    <div className={styles.materials_breaker}></div>
+                    {isOpenMaterials
+                        ?
+                        <DutyFilesList files={course.courseMaterials}/>
+                        :
+                        <div
+                            className={styles.open_materials}
+                            onClick={() => setIsOpenMaterials(true)}
+                        >Открыть материалы</div>
+                    }
+                </>
             }
 
-            <div className={styles.materials_breaker}></div>
-            {isOpenMaterials
-                ?
-                <DutyFilesList files={course.courseMaterials}/>
-                :
-                <div
-                    className={styles.open_materials}
-                    onClick={() => setIsOpenMaterials(true)}
-                >Открыть материалы</div>
-            }
-            {/*<DutyFilesList files={course.courseMaterials}/>*/}
 
         </div>
     );

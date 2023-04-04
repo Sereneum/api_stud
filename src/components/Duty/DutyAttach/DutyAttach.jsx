@@ -26,6 +26,7 @@ const DutyAttach = ({files, task, detail, sendData, loadingTaskData}) => {
             }
             <DutyAttachAddButton setModal={setModal}/>
             {isModal && <DutyAttachModal
+                isModal={isModal}
                 setModal={setModal}
                 sendData={sendData}
                 courseID={task.courseID}

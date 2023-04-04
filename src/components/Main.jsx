@@ -25,22 +25,6 @@ const Main = observer(() => {
         })
     }
 
-    // const reTasks = (courseID) => {
-    //
-    //     let course_name = ''
-    //     for (let c of course.courses)
-    //         if (c.course_id === courseID)
-    //             course_name = c.course_name
-    //     console.log(courseID, course_name)
-    //     epoch_courseData(courseID, course_name)
-    //         .then(r => {
-    //             console.log('rebuild course: ', r)
-    //             course.setCourses(course.courses.map(
-    //                 obj => obj.course_id === courseID ? r : obj
-    //             ))
-    //         })
-    // }
-
     useEffect(() => {
         epoch_allCourseData(id).then(r => {
             console.log('Main: ', r)

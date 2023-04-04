@@ -21,7 +21,6 @@
     user-select: none;
     -webkit-user-select: none;
     height: fit-content;
-    /* margin-bottom: 90px; */
 }
 
 .tasks_block_cover {
@@ -45,7 +44,8 @@
 .course_not_found {
     color: darkgray;
     text-align: center;
-    margin-top: 155px;
+    margin-top: calc(25px);
+    margin-bottom: 25px;
 }
 
 .tasks_not_found {

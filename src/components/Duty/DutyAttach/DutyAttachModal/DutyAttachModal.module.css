@@ -19,6 +19,7 @@
     100% {opacity: 1;}
   }
 
+
 .modal {
     position: fixed;
     top: auto;
@@ -47,6 +48,30 @@
     0% {transform: translateY(150%);}
     100% {transform: translateY(0%);}
   }
+
+
+.up-enter {
+    opacity: 0;
+    transform: translateY(150%);
+}
+
+.up-enter-active {
+    opacity: 1;
+    transform: translateY(0%);
+    transition: transform 0.1s ease-in-out;
+}
+
+.up-exit {
+    opacity: 1;
+    transform: translateY(0%);
+}
+
+.up-exit-active {
+    opacity: 0;
+    transform: translateY(150%);
+    transition: transform 0.1s ease-in-out;
+}
+
 
 
 .modal_close {

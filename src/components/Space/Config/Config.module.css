@@ -165,29 +165,35 @@
 }
 
 .config_spinner_end {
-    opacity: 0.8;
+    opacity: 1пше;
     text-align: center;
-    height: 22px;
-    width: 22px;
-    margin: auto;
+    height: 24px;
+    width: 24px;
     border-width: 3px;
     color: green;
     animation: fadeInAnimation ease-in-out 0.3s;
     animation-timing-function: ease-out;
     animation-fill-mode: forwards;
     animation-delay: 1.7s;
-    margin-top: 51px;
+    /* margin-top: 51px; */
+    position: relative;
+    bottom: 24px;
+    margin-left: calc(93% - 3px);
+    /* margin-bottom: 30px; */
 }
 
 .config_spinner {
-    text-align: center;
-    height: 16px;
-    width: 16px;
+    text-align: left;
+    height: 18px;
+    width: 18px;
     opacity: 0.7;
-    /*margin-left: 10px;*/
-    margin: auto;
+    margin-left: 93%;
+    /* margin-bottom: 30px; */
     border-width: 3px;
-    margin-top: 54px;
+    /* margin-top: 54px; */
+    z-index: 10;
+    position: relative;
+    bottom: 21px;
 }
 
 .config_main_spinner {
@@ -198,6 +204,7 @@
     margin-left: 260px;
     margin-top: 130px;
     border-width: 3.5px;
+    z-index: 10;
     
 }
 
