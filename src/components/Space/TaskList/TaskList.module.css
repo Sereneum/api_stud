@@ -13,14 +13,14 @@
     border-radius: 23px;
     background-color: #121212;
     background-position: center center;
-    border-color: transparent;
-    border-style: solid;
+    /* border-color: transparent;
+    border-style: solid; */
     min-width: 560px;
-    min-height: 400px;
+    /* min-height: 200px; */
     font-family: 'M_Ying_Hei';
     user-select: none;
     -webkit-user-select: none;
-    /*margin-bottom: 90px;*/
+    height: fit-content;
 }
 
 .tasks_block_cover {
@@ -35,7 +35,7 @@
 .title {
     color: white;
     font-size: 28px;
-    margin: 40px 40px 40px;
+    margin: 45px 40px 40px;
     text-align: left;
     line-height: 1.4;
     cursor: default;
@@ -44,7 +44,8 @@
 .course_not_found {
     color: darkgray;
     text-align: center;
-    margin-top: 155px;
+    margin-top: calc(25px);
+    margin-bottom: 25px;
 }
 
 .tasks_not_found {
@@ -54,6 +55,8 @@
     margin-bottom: 40px;
     margin-left: 40px;
     font-size: 20px;
+    cursor: default;
+
 }
 
 .task_name {
@@ -102,15 +105,30 @@
 }
 
 .materials_breaker {
-    width: calc(100% + 6px);
-    margin-left: -4px;
+    width: 100%;
+    /* margin-left: -0.5px; */
     height: 10px;
-    background-color: #000000;
+    background-color: #0a0a0a;
 }
 
 .open_materials {
     cursor: pointer;
-    color: #fff;
+    color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    padding: 10px;
+    padding-bottom: 12px;
+    bottom: 0px;
+    border: 1px solid transparent;
+    border-bottom-left-radius: 23px;
+    border-bottom-right-radius: 23px;
+    transition: all 0.1s ease-in-out;
 }
 
+.open_materials:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.open_materials:active {
+    background-color: rgba(255, 255, 255, 0.1);
+}
 

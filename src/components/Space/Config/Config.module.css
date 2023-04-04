@@ -12,7 +12,7 @@
 
     box-shadow: 0px 0px 20px 0px rgba(0,0,0,1);
     /* margin-top: 60px; */
-    margin-bottom: 60px;
+    /* margin-bottom: 60px; */
     padding-bottom: 20px;
 }
 
@@ -248,5 +248,46 @@ margin-top: 2px;
 
 .config_icon_in_item:active {
     background-color: rgba(255, 255, 255, 0.5);
+}
+
+.config_in_item_save_button {
+    position: fixed;
+    bottom: 0px;
+    height: 70px;
+    margin-left: -14px;
+    background-color: rgba(37, 37, 37, 0.707);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(20px);
+    width: 560px;
+    /* border-radius: 20px; */
+    border-top-left-radius: 23px;
+    border-top-right-radius: 23px;
+    z-index: 2;
+    color: #ffffff;
+    box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.81);
+    cursor: pointer;
+    transition: all 0.1s ease-in-out;
+    animation: openUp 0.7s cubic-bezier(0.88, 0.02, 0.22, 0.98);
+}
+
+@keyframes openUp {
+    0% {transform: translateY(150%);}
+    100% {transform: translateY(0%);}
+  }
+
+.config_in_item_save_button:hover {
+    background-color: rgba(46, 46, 46, 0.707);
+}
+
+.config_in_item_save_button:active {
+    background-color: rgba(51, 51, 51, 0.707);
+}
+
+.config_in_item_save_text {
+    text-align: center;
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    margin-top: 18px;
 }
 

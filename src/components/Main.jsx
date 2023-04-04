@@ -37,7 +37,7 @@ const Main = observer(() => {
 
     return (
         <div>
-            <Container className='d-flex justify-content-center align-content-center' style={{width: '50vw'}}>
+            <Container className='d-flex justify-content-center align-content-center' style={{width: '50vw', marginBottom: '70px'}}>
                 <Space reCourse={reCourse}/>
             </Container>
         </div>

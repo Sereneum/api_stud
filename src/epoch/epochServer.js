@@ -3,7 +3,6 @@ import {API_ALL_COURSES, API_COURSE, API_DELETE_FILE, API_DUTY, API_UPLOAD_FILE}
 import {preEpoch_division, preEpoch_mergeCourseData} from "./preEpoch";
 
 const conv = data => {
-    console.log(data)
     if (!data) return []
     if (typeof 'data' === 'string') return JSON.parse(data)
     else return data

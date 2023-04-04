@@ -81,6 +81,10 @@ const Config = observer(({reCourse}) => {
                 <Spin cl={styles.config_main_spinner}/>
                 :
                 <>
+                    <div className={styles.config_in_item_save_button} onClick={recording}>
+                        <div className={styles.config_in_item_save_text}>Сохранить изменения</div>
+                        <ConfigSpinController isLoading={loadingFromMain}/>
+                    </div>
                     <ConfigBlock
                         title={'Закрепленные курсы'}
                         list={active}

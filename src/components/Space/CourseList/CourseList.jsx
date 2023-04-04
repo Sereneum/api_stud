@@ -31,7 +31,7 @@ const CourseList = ({courses, activeCourse, isActiveConfig, funcActivateCourse, 
             </div>
             <hr className={styles.hr}/>
             <div
-                className={`${styles.course_settings} ${isActiveConfig ? styles.isActiveCourse : ''}`}
+                className={`${styles.course_settings} ${isActiveConfig ? styles.course_settings_active : ''}`}
                 onClick={clickOnConfig}
             >
                 {isActiveConfig ? 'Настройка курсов' : 'Настройка курсов'}
