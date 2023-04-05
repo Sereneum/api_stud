@@ -146,3 +146,40 @@
     url('M_Ying_Hei.woff2') format('truetype');
     font-weight: bold;
 }
+
+@media (max-width: 560px) {
+    .duty_attach_main_block {
+        overflow: auto;
+        flex-wrap: nowrap;
+        padding-right: 20px;
+    }
+
+    .duty_attach_file {
+        display: inline-flex;
+        height: 170px;
+        width: 136px;
+        margin: 10px;
+        overflow-x: hidden; 
+
+        -webkit-box-flex: 0;
+        -ms-flex-positive: 0;
+        flex-grow: 0;
+        -ms-flex-negative: 0;
+        flex-shrink: 0;
+    }
+
+    .duty_attach_file_name {
+        height: 60px;
+    }
+
+    .duty_attach_file_icon {
+        width: 64px;
+        height: 64px;
+    }
+
+    .duty_attach_modal {
+        min-width: 100vw;
+        width: 100vw;
+        margin-right: 20px;
+    }
+}
