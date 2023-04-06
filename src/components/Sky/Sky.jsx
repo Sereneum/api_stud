@@ -32,7 +32,7 @@ const Sky = () => {
                     y: Math.random() * canvas.height,
                     fullLifeTime: fullLifeTime,
                     life: Math.random() * fullLifeTime,
-                    radius: Math.random() * 1.5 + 0.5,
+                    radius: Math.random() + 0.1,
                 });
             }
             return stars;

@@ -111,3 +111,9 @@
     border: none;
     border-top: 10px solid #010101;
 }
+
+@media (max-width: 1000px) {
+    .course_block {
+        display: none;
+    }
+}

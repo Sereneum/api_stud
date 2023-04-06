@@ -83,3 +83,13 @@
 .duty_materials_download_button:active {
     background-color: rgba(255, 255, 255, 0.4);
 }
+
+@media (max-width: 600px) {
+    .duty_materials_title {
+        font-size: 20px;
+        margin: 35px 32px 37px;
+    }
+    .duty_materials_item {
+        margin: 0px 20px 10px 20px;
+    }
+}

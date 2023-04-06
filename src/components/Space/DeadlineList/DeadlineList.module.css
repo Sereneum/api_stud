@@ -86,3 +86,8 @@
     border-top: 1.5px solid white;
 }
 
+@media (max-width: 1000px) {
+    .deadline_block {
+        display: none;
+    }
+}

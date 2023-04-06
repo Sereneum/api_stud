@@ -56,7 +56,6 @@
     margin-left: 40px;
     font-size: 20px;
     cursor: default;
-
 }
 
 .task_name {
@@ -74,7 +73,7 @@
 
 .task_list {
     /*text-indent: 20px;*/
-    margin: 10px 30px 30px;
+    margin: 10px 30px 40px;
 }
 
 .task {
@@ -132,3 +131,36 @@
     background-color: rgba(255, 255, 255, 0.1);
 }
 
+@media (max-width: 1000px) {
+
+
+    
+}
+
+@media (max-width: 600px) {
+    .tasks_block {
+        width: 100vw;
+        min-width: 100vw;
+        padding: 0;
+    }
+
+    .title {
+        font-size: 22px;
+        margin: 35px 32px 35px;
+    }
+
+    .task_name {
+        font-size: 15px;
+    }
+
+    .status_name {
+        font-size: 15px;
+    }
+    .open_materials {
+        font-size: 15px;
+    }
+    .task_list {
+        margin: 10px 20px 30px;
+    }
+
+}

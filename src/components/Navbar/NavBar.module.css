@@ -3,6 +3,9 @@
     font-family: "M_Ying_Hei";
     display: flex;
     user-select: none;
+    max-width: 1300px;
+    margin: auto;
+    justify-content: space-between;
 }
 
 .navbar_brand {
@@ -27,20 +30,20 @@
 .navbar_info_block {
     color: white;
     display: flex;
-    margin-top: 40px;
+    margin-top: 50px;
     margin-bottom: 40px;
     margin-right: 0px;
-
 }
 
 .navbar_student {
+    display: none;
     text-align: center;
     margin: auto;
     font-size: 16px;
 }
 
 .navbar_human_logo {
-    width: 32px;
+    width: 36px;
     margin-left: 10px;
 }
 
@@ -49,4 +52,36 @@
     src: local('M_Ying_Hei'),
     url('M_Ying_Hei.woff2') format('truetype');
     font-weight: bold;
+}
+
+@media (min-width: 1200px) {
+    .navbar>.container {
+        max-width: 1320px !important;
+    }
+}
+
+
+
+@media (max-width: 1320px) {
+    .navbar_brand {
+        margin-left: 30px;
+    }
+
+    .navbar_info_block {
+        margin-right: 30px;
+    }
+}
+
+@media (max-width: 640px) {
+    .navbar_brand {
+        margin-left: 10px;
+    }
+
+    .navbar_logo {
+        display: none;
+    }
+
+    .navbar_space {
+        font-size: 42px;
+    }
 }

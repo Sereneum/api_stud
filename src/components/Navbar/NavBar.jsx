@@ -29,7 +29,7 @@ const NavBar = observer(({isLoaded}) => {
         <>
 
             <Navbar className={styles.navbar} variant="dark">
-                <Container>
+                {/* <Container> */}
                     <Navbar.Brand className={styles.navbar_brand} onClick={() => navigator('')}>
                         <img
                             alt=""
@@ -51,7 +51,7 @@ const NavBar = observer(({isLoaded}) => {
                         :
                         ''
                     }
-                </Container>
+                {/* </Container> */}
             </Navbar>
         </>
     );

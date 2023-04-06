@@ -70,10 +70,10 @@ const Config = observer(({reCourse}) => {
                 <div className={styles.config_title}>
                     Настройка курсов
                 </div>
-                <div className={styles.config_save} onClick={recording}>
+                {/* <div className={styles.config_save} onClick={recording}>
                     Сохранить изменения
                 </div>
-                <ConfigSpinController isLoading={loadingFromMain}/>
+                <ConfigSpinController isLoading={loadingFromMain}/> */}
             </div>
 
             {loadingCourses
