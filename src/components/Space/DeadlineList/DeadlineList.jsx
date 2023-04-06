@@ -3,7 +3,7 @@ import styles from './DeadlineList.module.css'
 import {observer} from "mobx-react-lite";
 import DeadlineItem from "./DeadlineItem";
 
-const DeadlineList = observer(({tasks, toDuty, courses}) => {
+const DeadlineList = observer(({tasks, desktopMove, courses, mobileMove}) => {
 
 
     const findIndexes = (course_id, courseTaskID) => {
@@ -30,7 +30,7 @@ const DeadlineList = observer(({tasks, toDuty, courses}) => {
                     key={`dl${i.courseTaskID}`}
                     task={i}
                     isLast={tasks.length === index + 1}
-                    toDuty={toDuty}
+                    toDuty={desktopMove.openDuty}
                     findIndexes={findIndexes}
                 />)}
             </div>

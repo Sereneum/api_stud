@@ -7,11 +7,13 @@ import {observer} from "mobx-react-lite";
 import Spin from "../../Spin";
 import ConfigSpinController from "./ConfigSpinController";
 import {epoch_fetchConfigurableCourses, epoch_updateActiveCourses} from "../../../epoch/epochServer";
+import {useMediaQuery} from "react-responsive";
 
 
-const Config = observer(({reCourse}) => {
+const Config = observer(({reCourse, desktopMove, mobileMove}) => {
 
     const {user} = useContext(Context)
+    const isMobile = useMediaQuery({query: '(max-width: 600px)'})
 
     let id = user.user.anotherID
 
@@ -62,18 +64,30 @@ const Config = observer(({reCourse}) => {
         })
     }, [])
 
-    const liar = useCallback(() => {}, [])
+    const liar = useCallback(() => {
+    }, [])
+
 
     return (
         <Container className={styles.config_main_block}>
             <div className={styles.config_nav}>
-                <div className={styles.config_title}>
-                    Настройка курсов
+
+                <div className={styles.block_header}>
+                    <div className={styles.config_title}>
+                        Настройка курсов
+                    </div>
+                    {isMobile
+                        &&
+                        <div
+                            className={styles.to_courses}
+                            onClick={mobileMove.openCourseList}
+                        >
+                            Перейти к курсам
+                        </div>
+                    }
                 </div>
-                {/* <div className={styles.config_save} onClick={recording}>
-                    Сохранить изменения
-                </div>
-                <ConfigSpinController isLoading={loadingFromMain}/> */}
+
+
             </div>
 
             {loadingCourses

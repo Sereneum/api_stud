@@ -12,75 +12,52 @@ import Duty from "../Duty/Duty";
 import {useDeadlineList} from "../../hooks/useDeadlineList";
 import {useConfig} from "../../hooks/useConfig";
 import {useDuty} from "../../hooks/useDuty";
+import {useMediaQuery} from "react-responsive";
+import {useSpace} from "../../hooks/useSpace";
 
 const Space = observer(({reCourse}) => {
 
     const {course} = useContext(Context)
 
-    const [mode, setMode] = useState('tasks')
-    const activeCourseIndex = course.activeCourse
-    const valueActiveCourse = course.courses[course.activeCourse]
+    const {mobileSpace, desktopSpace} = useSpace({course, reCourse})
 
-    const {isActiveConfig} = useConfig()
-    const {deadlineTasks} = useDeadlineList(course.courses)
-    const {dutyActive, exitFromDuty, goToDuty} = useDuty()
+    const isMobile = useMediaQuery({query: '(max-width: 600px)'})
 
-    const funcActivateCourse = index => {
-        course.setActiveCourse(index)
-        setMode('tasks')
-    }
-    const toDuty = ({courseIndex, taskIndex}) => {
-        goToDuty({courseIndex, taskIndex})
-        setMode('duty')
-    }
+    // const {deadlineTasks} = useDeadlineList(course.courses)
+    // const {dutyActive, exitFromDuty, goToDuty} = useDuty()
 
-    const toBack = () => {
-        exitFromDuty()
-        setMode('tasks')
-    }
-
-    const openConfig = () => {
-        setMode('config')
-    }
+    // const funcActivateCourse = index => {
+    //     course.setActiveCourse(index)
+    //     setDesktopMode('tasks')
+    // }
+    // const toDuty = ({courseIndex, taskIndex}) => {
+    //     goToDuty({courseIndex, taskIndex})
+    //     setDesktopMode('duty')
+    // }
+    // const openConfig = () => setDesktopMode('config')
 
 
     return (
         <Container className='space'>
-            <CourseList
-                funcActivateCourse={funcActivateCourse}
-                isActiveConfig={mode === 'config'}
-                openConfig={openConfig}
-            />
-            <>
-                {
-                    mode === 'config'
-                    &&
-                    <Config reCourse={reCourse}/>
-                }
-            </>
-            <>
-                {
-                    mode === 'tasks'
-                    &&
-                    <TaskList
-                        toDuty={toDuty}
-                        course={valueActiveCourse}
-                        activeCourse={activeCourseIndex}
-                    />
-                }
-            </>
-            <>
-                {
-                    mode === 'duty'
-                    &&
-                    <Duty
-                        dutyActive={dutyActive}
-                        toBack={toBack}
-                    />
-                }
-            </>
+            {
+                isMobile
+                    ?
+                    <>
+                        {mobileSpace()}
+                    </>
+                    :
+                    <>
+                        {desktopSpace()}
+                        {/*<CourseList*/}
+                        {/*    funcActivateCourse={funcActivateCourse}*/}
+                        {/*    isActiveConfig={desktopMode === 'config'}*/}
+                        {/*    openConfig={openConfig}*/}
+                        {/*/>*/}
+                        {/*{middleBlock()}*/}
+                        {/*<DeadlineList tasks={deadlineTasks} toDuty={toDuty} courses={course.courses}/>*/}
+                    </>
+            }
 
-            <DeadlineList tasks={deadlineTasks} toDuty={toDuty} courses={course.courses}/>
         </Container>
     );
 });
