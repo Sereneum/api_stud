@@ -9,89 +9,77 @@ import TaskList from "./TaskList/TaskList";
 import DeadlineList from "./DeadlineList/DeadlineList";
 import Config from "./Config/Config";
 import Duty from "../Duty/Duty";
+import {useDeadlineList} from "../../hooks/useDeadlineList";
+import {useConfig} from "../../hooks/useConfig";
+import {useDuty} from "../../hooks/useDuty";
 
 const Space = observer(({reCourse}) => {
 
     const {course} = useContext(Context)
-    const [isActiveConfig, setIsActiveConfig] = useState(false)
 
-    const clickOnConfig = () => {
-        if (!isActiveConfig) setIsActiveConfig(!isActiveConfig)
-    }
+    const [mode, setMode] = useState('tasks')
+    const activeCourseIndex = course.activeCourse
+    const valueActiveCourse = course.courses[course.activeCourse]
 
-    const [dutyActive, setDutyActive] = useState({isActive: false, taskIndex: -1, courseIndex: -1})
+    const {isActiveConfig} = useConfig()
+    const {deadlineTasks} = useDeadlineList(course.courses)
+    const {dutyActive, exitFromDuty, goToDuty} = useDuty()
 
-    const funcActivateCourse = (index) => {
-        if (dutyActive.isActive) toBack()
-        if (isActiveConfig) setIsActiveConfig(false)
+    const funcActivateCourse = index => {
         course.setActiveCourse(index)
-    }
-
-    const [deadlineTasks, setDeadlineTasks] = useState([])
-
-    useEffect(() => {
-        setDeadlineTasks(createDeadlines())
-    }, [course.courses])
-
-    const toBack = () => {
-        setDutyActive({isActive: false, taskIndex: -1, courseIndex: -1})
+        setMode('tasks')
     }
     const toDuty = ({courseIndex, taskIndex}) => {
-        setDutyActive({
-            isActive: true,
-            taskIndex: taskIndex,
-            courseIndex: courseIndex
-        })
-        if(course.activeCourse !== courseIndex)
-            course.setActiveCourse(courseIndex)
-        if(isActiveConfig) {
-            setIsActiveConfig(false)
-        }
+        goToDuty({courseIndex, taskIndex})
+        setMode('duty')
     }
 
-    const createDeadlines = () => {
-        let tasks = []
-        for (let cour of course.courses)
-            for (let task of cour.tasks)
-                if (!task.statusID) tasks.push(task)
-
-        return tasks.slice(-3).sort((a, b) => a.deadline - b.deadline)
+    const toBack = () => {
+        exitFromDuty()
+        setMode('tasks')
     }
 
-    // ##################
-    useEffect(() => {
-        // toDuty({courseIndex: 2, taskIndex: 0})
-    }, [])
-    // ##################
+    const openConfig = () => {
+        setMode('config')
+    }
+
 
     return (
         <Container className='space'>
             <CourseList
-                courses={course.courses}
-                activeCourse={course.activeCourse}
                 funcActivateCourse={funcActivateCourse}
-                isActiveConfig={isActiveConfig}
-                clickOnConfig={clickOnConfig}
+                isActiveConfig={mode === 'config'}
+                openConfig={openConfig}
             />
-            {
-                isActiveConfig
-                    ?
+            <>
+                {
+                    mode === 'config'
+                    &&
                     <Config reCourse={reCourse}/>
-                    :
-                    dutyActive.isActive
-                        ?
-                        <Duty
-                            course={course.courses[course.activeCourse]}
-                            task={course.courses[course.activeCourse].tasks[dutyActive.taskIndex]}
-                            toBack={toBack}
-                        />
-                        :
-                        <TaskList
-                            toDuty={toDuty}
-                            course={course.courses[course.activeCourse]}
-                            activeCourse={course.activeCourse}
-                        />
-            }
+                }
+            </>
+            <>
+                {
+                    mode === 'tasks'
+                    &&
+                    <TaskList
+                        toDuty={toDuty}
+                        course={valueActiveCourse}
+                        activeCourse={activeCourseIndex}
+                    />
+                }
+            </>
+            <>
+                {
+                    mode === 'duty'
+                    &&
+                    <Duty
+                        dutyActive={dutyActive}
+                        toBack={toBack}
+                    />
+                }
+            </>
+
             <DeadlineList tasks={deadlineTasks} toDuty={toDuty} courses={course.courses}/>
         </Container>
     );

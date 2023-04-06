@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import styles from './Duty.module.css'
 import back from '../../resources/back.svg'
 import teacher_icon from '../../resources/teacher.svg'
@@ -13,9 +13,15 @@ import DutyDesc from "./DutyDesc";
 import {preEpoch_getDetailTaskData} from "../../epoch/preEpoch";
 import Spin from "../Spin";
 import DutyAttach from "./DutyAttach/DutyAttach";
+import {Context} from "../../index";
 
 
-const Duty = ({course, task, toBack}) => {
+const Duty = ({toBack, dutyActive}) => {
+
+    const {course} = useContext(Context)
+
+    const valueActiveCourse = course.courses[dutyActive.courseIndex]
+    const task = valueActiveCourse.tasks[dutyActive.taskIndex]
 
     const [detailTaskData, setDetailTaskData] = useState({})
     const [loading, setLoading] = useState(true)
@@ -173,7 +179,7 @@ const Duty = ({course, task, toBack}) => {
                             sendData={sendData}
                             loadingTaskData={loadingTaskData}
                         />
-                        <DutyFilesList files={course.courseMaterials}/>
+                        <DutyFilesList files={valueActiveCourse.courseMaterials}/>
                     </div>
                     </>
                     

@@ -21,6 +21,7 @@ const DeadlineList = observer(({tasks, toDuty, courses}) => {
         return {courseIndex, taskIndex}
     }
 
+
     return (
         <div className={styles.deadline_block}>
             <div className={styles.title}>Ближайшие дедлайны</div>

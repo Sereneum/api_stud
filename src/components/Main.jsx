@@ -1,4 +1,4 @@
-import React, {useContext, useEffect, useState} from 'react';
+import React, {memo, useContext, useEffect, useState} from 'react';
 import {observer} from "mobx-react-lite";
 import {Container} from "react-bootstrap";
 import Space from "./Space/Space";
