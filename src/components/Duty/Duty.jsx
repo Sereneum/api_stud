@@ -20,7 +20,7 @@ import {useMediaQuery} from "react-responsive";
 const Duty = ({dutyActive, mobileMove, desktopMove}) => {
 
     const {course} = useContext(Context)
-    const isMobile = useMediaQuery({query: '(max-width: 600px)'})
+    const isMobile = useMediaQuery({query: '(max-width: 1000px)'})
 
     const valueActiveCourse = course.courses[dutyActive.courseIndex]
     const task = valueActiveCourse.tasks[dutyActive.taskIndex]

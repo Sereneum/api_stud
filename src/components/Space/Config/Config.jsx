@@ -13,7 +13,7 @@ import {useMediaQuery} from "react-responsive";
 const Config = observer(({reCourse, desktopMove, mobileMove}) => {
 
     const {user} = useContext(Context)
-    const isMobile = useMediaQuery({query: '(max-width: 600px)'})
+    const isMobile = useMediaQuery({query: '(max-width: 1000px)'})
 
     let id = user.user.anotherID
 

@@ -10,7 +10,7 @@ const TaskList = observer(({desktopMove, course, activeCourseIndex, mobileMove})
 
     const [isOpenMaterials, setIsOpenMaterials] = useState(false)
 
-    const isMobile = useMediaQuery({query: '(max-width: 600px)'})
+    const isMobile = useMediaQuery({query: '(max-width: 1000px)'})
 
     const toCourses = () => {
 

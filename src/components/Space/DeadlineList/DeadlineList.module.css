@@ -86,6 +86,14 @@
     border-top: 1.5px solid white;
 }
 
+@font-face {
+    font-family: 'M_Ying_Hei';
+    src: local('M_Ying_Hei'),
+    url('M_Ying_Hei.woff2') format('truetype');
+    font-weight: bold;
+}
+
+
 /*@media (max-width: 1000px) {*/
 /*    .deadline_block {*/
 /*        display: none;*/

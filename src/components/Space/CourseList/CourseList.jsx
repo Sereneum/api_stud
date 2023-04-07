@@ -9,7 +9,7 @@ import {useMediaQuery} from "react-responsive";
 const CourseList = ({isActiveConfig, desktopMove, mobileMove}) => {
 
     const {course} = useContext(Context)
-    const isMobile = useMediaQuery({query: '(max-width: 600px)'})
+    const isMobile = useMediaQuery({query: '(max-width: 1000px)'})
 
     const activeCourseIndex = course.activeCourse
     const valueActiveCourse = course.courses[course.activeCourse]

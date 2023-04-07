@@ -15,7 +15,7 @@ const NavBar = observer(({isLoaded}) => {
 
 
     const {user} = useContext(Context)
-    const isMobile = useMediaQuery({query: '(max-width: 600px)'})
+    const isMobile = useMediaQuery({query: '(max-width: 1000px)'})
 
     const navigator = useNavigate()
 

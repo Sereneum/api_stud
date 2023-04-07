@@ -8,6 +8,12 @@
     vertical-align: center;
 }
 
+@media(max-width: 1000px) {
+    .space {
+        flex-direction: column;
+    }
+}
+
 .marker {
     width: 5px;
     height: 5px;

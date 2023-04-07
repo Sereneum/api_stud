@@ -13,16 +13,16 @@ export const useSpace = ({course, reCourse}) => {
     const [dutyActive, setDutyActive] = useState({courseIndex: -1, taskIndex: -1})
     const {deadlineTasks} = useDeadlineList(course.courses)
 
-    const isMobile = useMediaQuery({query: '(max-width: 600px)'})
+    const isMobile = useMediaQuery({query: '(max-width: 1000px)'})
     const [desktopMode, setDesktopMode] = useState('tasks')
     const [mobileMode, setMobileMode] = useState('courses')
 
-        // useEffect(() => {
-        //     console.log('desktopMode: ', desktopMode)
-        // }, [desktopMode])
-        // useEffect(() => {
-        //     console.log('mobileMode: ', mobileMode)
-        // }, [mobileMode])
+    // useEffect(() => {
+    //     console.log('desktopMode: ', desktopMode)
+    // }, [desktopMode])
+    // useEffect(() => {
+    //     console.log('mobileMode: ', mobileMode)
+    // }, [mobileMode])
 
 
     const desktopMove = {
@@ -34,8 +34,8 @@ export const useSpace = ({course, reCourse}) => {
         openConfig: () => {
             setDesktopMode('config')
         },
-        openCourse: (index=activeCourseIndex) => {
-            if(course.activeCourse !== index)
+        openCourse: (index = activeCourseIndex) => {
+            if (course.activeCourse !== index)
                 course.setActiveCourse(index)
             setDesktopMode('tasks')
         }
@@ -49,8 +49,8 @@ export const useSpace = ({course, reCourse}) => {
         openConfig: () => {
             setMobileMode('config')
         },
-        openCourse: (index=activeCourseIndex) => {
-            if(course.activeCourse !== index)
+        openCourse: (index = activeCourseIndex) => {
+            if (course.activeCourse !== index)
                 course.setActiveCourse(index)
             setMobileMode('tasks')
         },
@@ -98,7 +98,7 @@ export const useSpace = ({course, reCourse}) => {
         switch (desktopMode) {
             case 'config':
                 return config
-                case 'tasks':
+            case 'tasks':
                 return task_list
             case 'duty':
                 return duty
@@ -129,6 +129,6 @@ export const useSpace = ({course, reCourse}) => {
     }
 
 
-    return {desktopMode, setDesktopMode, mobileSpace, desktopSpace}
+    return {mobileMove, mobileMode, mobileSpace, desktopSpace}
 }
 
