@@ -29,6 +29,11 @@ const Duty = ({dutyActive, mobileMove, desktopMove}) => {
     const [loading, setLoading] = useState(true)
     const [sendData, setSendData] = useState({})
 
+    useEffect(() => {
+        setLoading(true)
+        loadingTaskData()
+    }, [dutyActive])
+
 
     const dataConv = (dateStr) => {
         const date = new Date(dateStr);
@@ -104,9 +109,12 @@ const Duty = ({dutyActive, mobileMove, desktopMove}) => {
             })
     }
 
-    useEffect(() => {
-        loadingTaskData()
-    }, [])
+
+
+    // useEffect(() => {
+    //     if(!loading)
+    //         console.log(detailTaskData)
+    // }, [loading])
 
 
     const toBack = () => {

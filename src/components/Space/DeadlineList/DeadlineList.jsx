@@ -2,9 +2,11 @@ import React from 'react';
 import styles from './DeadlineList.module.css'
 import {observer} from "mobx-react-lite";
 import DeadlineItem from "./DeadlineItem";
+import {useMediaQuery} from "react-responsive";
 
 const DeadlineList = observer(({tasks, desktopMove, courses, mobileMove}) => {
 
+    const isMobile = useMediaQuery({query: '(max-width: 600px)'})
 
     const findIndexes = (course_id, courseTaskID) => {
         let courseIndex = -1
@@ -21,6 +23,13 @@ const DeadlineList = observer(({tasks, desktopMove, courses, mobileMove}) => {
         return {courseIndex, taskIndex}
     }
 
+    const toDuty = (indexes) => {
+        isMobile
+            ?
+            mobileMove.openDuty(indexes)
+            :
+            desktopMove.openDuty(indexes)
+    }
 
     return (
         <div className={styles.deadline_block}>
@@ -30,7 +39,7 @@ const DeadlineList = observer(({tasks, desktopMove, courses, mobileMove}) => {
                     key={`dl${i.courseTaskID}`}
                     task={i}
                     isLast={tasks.length === index + 1}
-                    toDuty={desktopMove.openDuty}
+                    toDuty={toDuty}
                     findIndexes={findIndexes}
                 />)}
             </div>

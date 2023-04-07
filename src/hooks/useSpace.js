@@ -27,6 +27,7 @@ export const useSpace = ({course, reCourse}) => {
 
     const desktopMove = {
         openDuty: ({courseIndex, taskIndex}) => {
+            // console.log({courseIndex, taskIndex})
             setDutyActive({courseIndex, taskIndex})
             setDesktopMode('duty')
         },
