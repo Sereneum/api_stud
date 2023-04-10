@@ -6,6 +6,13 @@
     justify-content: center;
     align-content: center;
     vertical-align: center;
+    margin-bottom: 70px;
+}
+
+@media(max-width: 1000px) {
+    .space {
+        flex-direction: column;
+    }
 }
 
 .marker {
@@ -28,4 +35,10 @@
     src: local('M_Ying_Hei'),
     url('M_Ying_Hei.woff2') format('truetype');
     font-weight: bold;
+}
+
+@media (max-width: 600px) {
+    .space {
+        margin-bottom: 16vw;
+    }
 }

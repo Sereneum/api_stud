@@ -4,11 +4,6 @@ import styles from './DeadlineList.module.css'
 const DeadlineItem = ({task, isLast, toDuty, findIndexes}) => {
 
 
-    // useEffect(() => {
-    //     console.log('DeadlineItem', task)
-    // }, [])
-
-
     const click = () => {
         let indexes = findIndexes(task.courseID, task.courseTaskID)
         toDuty(indexes)

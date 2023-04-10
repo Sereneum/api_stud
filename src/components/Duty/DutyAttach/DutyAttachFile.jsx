@@ -4,7 +4,7 @@ import {assignorIcon, assignorIconDownload, handleDownload} from "../../../manag
 import {useFileManager} from "../../../managers/useFileManager";
 
 
-const DutyAttachFile = ({file, deleteFile}) => {
+const DutyAttachFile = ({file, deleteFile, isSuccess}) => {
 
 
     const {icon, download} = useFileManager({file})
@@ -24,8 +24,10 @@ const DutyAttachFile = ({file, deleteFile}) => {
             </div>
             <div className={styles.duty_attach_breaker}></div>
             <div
-                className={styles.duty_attach_delete}
-                onClick={() => deleteFile(file.fileID)}
+                className={`${styles.duty_attach_delete} ${isSuccess && styles.taboo}`}
+                onClick={() => {
+                    if(!isSuccess) deleteFile(file.fileID)
+                }}
             >
                 Удалить
             </div>

@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import styles from './Duty.module.css'
 import back from '../../resources/back.svg'
 import teacher_icon from '../../resources/teacher.svg'
@@ -13,13 +13,26 @@ import DutyDesc from "./DutyDesc";
 import {preEpoch_getDetailTaskData} from "../../epoch/preEpoch";
 import Spin from "../Spin";
 import DutyAttach from "./DutyAttach/DutyAttach";
+import {Context} from "../../index";
+import {useMediaQuery} from "react-responsive";
 
 
-const Duty = ({course, task, toBack}) => {
+const Duty = ({dutyActive, mobileMove, desktopMove}) => {
+
+    const {course} = useContext(Context)
+    const isMobile = useMediaQuery({query: '(max-width: 1000px)'})
+
+    const valueActiveCourse = course.courses[dutyActive.courseIndex]
+    const task = valueActiveCourse.tasks[dutyActive.taskIndex]
 
     const [detailTaskData, setDetailTaskData] = useState({})
     const [loading, setLoading] = useState(true)
     const [sendData, setSendData] = useState({})
+
+    useEffect(() => {
+        setLoading(true)
+        loadingTaskData()
+    }, [dutyActive])
 
 
     const dataConv = (dateStr) => {
@@ -96,10 +109,22 @@ const Duty = ({course, task, toBack}) => {
             })
     }
 
-    useEffect(() => {
-        loadingTaskData()
-    }, [])
 
+
+    // useEffect(() => {
+    //     if(!loading)
+    //         console.log(detailTaskData)
+    // }, [loading])
+
+
+    const toBack = () => {
+        isMobile
+            ?
+            mobileMove.openCourse()
+            :
+            desktopMove.openCourse()
+
+    }
 
     return (
         <div className={styles.duty_main_block}>
@@ -109,74 +134,74 @@ const Duty = ({course, task, toBack}) => {
                     <Spin cl={styles.spinner}/>
                     :
                     <>
-                    <div className={styles.duty_desc_block_cover}>
-                        <div className={styles.duty_nav} onClick={toBack}>
-                            <img
-                                alt=""
-                                src={back}
-                                className={styles.duty_back}/>
-                            <div className={styles.duty_title}>{task.nameTask}</div>
+                        <div className={styles.duty_desc_block_cover}>
+                            <div className={styles.duty_nav} onClick={toBack}>
+                                <img
+                                    alt=""
+                                    src={back}
+                                    className={styles.duty_back}/>
+                                <div className={styles.duty_title}>{task.nameTask}</div>
+                            </div>
+
+
+                            <>
+
+                                {task.taskFile
+                                    ?
+                                    <div className={styles.duty_desc_block} style={{cursor: 'pointer'}}>
+                                        <img alt="" src={file_icon} className={styles.duty_desc_icon}/>
+                                        <a
+                                            href={
+                                                `https://stud.mgri.ru/api/ElectronicEducation/Files/downloadTaskFile?taskID=${task.courseTaskID}`
+                                            }
+                                            className={styles.duty_desc_text}
+                                            style={{color: "#6197E8", textDecoration: 'none'}}>
+                                            {taskFile(task.taskFile)}
+                                        </a>
+                                    </div>
+                                    :
+                                    <></>
+                                }
+                                <DutyDesc icon={teacher_icon} text={task.userFIO}/>
+                                <DutyDesc
+                                    icon={date_icon}
+                                    text={localDeadline(task.dateAdded, task.periodRealization)}
+                                />
+                                <DutyDesc
+                                    icon={status_icon}
+                                    text={statusComp(task.statusID)}
+                                />
+                                {detailTaskData.markID
+                                    ?
+                                    <DutyDesc
+                                        icon={mark_icon}
+                                        text={markPusher(detailTaskData.markID)}
+                                    />
+                                    :
+                                    <></>
+                                }
+                                {detailTaskData.notation
+                                    ?
+                                    <DutyDesc
+                                        icon={notation_icon}
+                                        text={detailTaskData.notation}
+                                    />
+                                    :
+                                    <></>
+                                }
+
+                            </>
+                            <DutyAttach
+                                files={detailTaskData.files}
+                                task={task}
+                                detail={detailTaskData}
+                                sendData={sendData}
+                                loadingTaskData={loadingTaskData}
+                            />
+                            <DutyFilesList files={valueActiveCourse.courseMaterials}/>
                         </div>
-
-
-                        <>
-                        
-                            {task.taskFile
-                                ?
-                                <div className={styles.duty_desc_block} style={{cursor: 'pointer'}}>
-                                    <img alt="" src={file_icon} className={styles.duty_desc_icon}/>
-                                    <a
-                                        href={
-                                            `https://stud.mgri.ru/api/ElectronicEducation/Files/downloadTaskFile?taskID=${task.courseTaskID}`
-                                        }
-                                        className={styles.duty_desc_text}
-                                        style={{color: "#6197E8", textDecoration: 'none'}}>
-                                        {taskFile(task.taskFile)}
-                                    </a>
-                                </div>
-                                :
-                                <></>
-                            }
-                            <DutyDesc icon={teacher_icon} text={task.userFIO}/>
-                            <DutyDesc
-                                icon={date_icon}
-                                text={localDeadline(task.dateAdded, task.periodRealization)}
-                            />
-                            <DutyDesc
-                                icon={status_icon}
-                                text={statusComp(task.statusID)}
-                            />
-                            {detailTaskData.markID
-                                ?
-                                <DutyDesc
-                                    icon={mark_icon}
-                                    text={markPusher(detailTaskData.markID)}
-                                />
-                                :
-                                <></>
-                            }
-                            {detailTaskData.notation
-                                ?
-                                <DutyDesc
-                                    icon={notation_icon}
-                                    text={detailTaskData.notation}
-                                />
-                                :
-                                <></>
-                            }
-                       
-                        </>
-                        <DutyAttach
-                            files={detailTaskData.files}
-                            task={task}
-                            detail={detailTaskData}
-                            sendData={sendData}
-                            loadingTaskData={loadingTaskData}
-                        />
-                        <DutyFilesList files={course.courseMaterials}/>
-                    </div>
                     </>
-                    
+
             }
         </div>
     );

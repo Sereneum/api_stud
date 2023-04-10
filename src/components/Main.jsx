@@ -1,4 +1,4 @@
-import React, {useContext, useEffect, useState} from 'react';
+import React, {memo, useContext, useEffect, useState} from 'react';
 import {observer} from "mobx-react-lite";
 import {Container} from "react-bootstrap";
 import Space from "./Space/Space";
@@ -37,7 +37,7 @@ const Main = observer(() => {
 
     return (
         <div>
-            <Container className='d-flex justify-content-center align-content-center' style={{width: '50vw', marginBottom: '70px'}}>
+            <Container className='d-flex justify-content-center align-content-center' style={{width: '50vw'}}>
                 <Space reCourse={reCourse}/>
             </Container>
         </div>

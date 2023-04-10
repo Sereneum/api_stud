@@ -6,7 +6,7 @@
     flex-wrap: wrap;
     padding: 10px;
     /* box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.31); */
-    
+
 }
 
 
@@ -44,7 +44,7 @@
     height: 180px;
     width: 144px;
     margin: 10px;
-    overflow-x: hidden; 
+    overflow-x: hidden;
     /* padding: 10px; */
     user-select: none;
     -webkit-user-select: none;
@@ -54,8 +54,10 @@
     cursor: pointer;
 }
 
-.duty_attach_file:hover {
-    background-color: rgba(255, 255, 255, 0.052);
+@media (pointer: fine) {
+    .duty_attach_file:hover {
+        background-color: rgba(255, 255, 255, 0.052);
+    }
 }
 
 /* .duty_attach_file:active {
@@ -70,8 +72,10 @@
     height: 145px;
 }
 
-.duty_attach_download_file:hover {
-    background-color: rgba(255, 255, 255, 0.05);
+@media (pointer: fine) {
+    .duty_attach_download_file:hover {
+        background-color: rgba(255, 255, 255, 0.05);
+    }
 }
 
 .duty_attach_download_file:active {
@@ -130,8 +134,15 @@
     transition: all 0.1s ease-in-out;
 }
 
-.duty_attach_delete:hover {
-    background-color: rgba(114, 24, 24, 0.2);
+.duty_attach_delete.taboo {
+    /*background-color: rgba(114, 24, 24, 0.1);*/
+    text-decoration: line-through;
+}
+
+@media (pointer: fine) {
+    .duty_attach_delete:hover {
+        background-color: rgba(114, 24, 24, 0.2);
+    }
 }
 
 .duty_attach_delete:active {
@@ -143,15 +154,16 @@
 @font-face {
     font-family: 'M_Ying_Hei';
     src: local('M_Ying_Hei'),
-    url('M_Ying_Hei.woff2') format('truetype');
+        url('M_Ying_Hei.woff2') format('truetype');
     font-weight: bold;
 }
 
-@media (max-width: 560px) {
+@media (max-width: 600px) {
     .duty_attach_main_block {
         overflow: auto;
         flex-wrap: nowrap;
         padding-right: 20px;
+        margin: 40px 10px 40px 10px;
     }
 
     .duty_attach_file {
@@ -159,7 +171,7 @@
         height: 170px;
         width: 136px;
         margin: 10px;
-        overflow-x: hidden; 
+        overflow-x: hidden;
 
         -webkit-box-flex: 0;
         -ms-flex-positive: 0;

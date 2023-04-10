@@ -8,11 +8,17 @@ import {epoch_deleteFile} from "../../../epoch/epochServer";
 const DutyAttach = ({files, task, detail, sendData, loadingTaskData}) => {
     const [isModal, setIsModal] = useState(false)
 
+    const isSuccess = detail.statusID === 4
+
     const setModal = () => {
         setIsModal(!isModal)
     }
 
+    // console.log(task, detail)
+    // console.log(isSuccess)
+
     const deleteFile = (fileID) => {
+        if(isSuccess) return
         epoch_deleteFile(fileID).then(r => {
             console.log(r)
             loadingTaskData()
@@ -22,7 +28,12 @@ const DutyAttach = ({files, task, detail, sendData, loadingTaskData}) => {
     return (
         <div className={styles.duty_attach_main_block}>
             {
-                files.map(i => <DutyAttachFile key={i.fileID} file={i} deleteFile={deleteFile}/>)
+                files.map(i => <DutyAttachFile
+                    key={i.fileID}
+                    file={i}
+                    deleteFile={deleteFile}
+                    isSuccess={isSuccess}
+                />)
             }
             <DutyAttachAddButton setModal={setModal}/>
             {isModal && <DutyAttachModal

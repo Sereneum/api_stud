@@ -1,6 +1,9 @@
 import React, {useRef, useEffect, useLayoutEffect} from 'react';
+import {useMediaQuery} from "react-responsive";
 
 const Sky = () => {
+    const isMobile = useMediaQuery({query: '(max-width: 1000px)'})
+    const radius = isMobile ? 0.1 : 0.25
     const canvasRef = useRef(null);
     // useLayoutEffect(() => {
     //     function handleResize() {
@@ -8,11 +11,11 @@ const Sky = () => {
     //         canvas.width = canvas.clientWidth;
     //         canvas.height = canvas.clientHeight;
     //     }
-
+    //
     //     window.addEventListener("resize", handleResize);
-
+    //
     //     handleResize();
-
+    //
     //     return () => window.removeEventListener("resize", handleResize);
     // }, []);
 
@@ -32,7 +35,7 @@ const Sky = () => {
                     y: Math.random() * canvas.height,
                     fullLifeTime: fullLifeTime,
                     life: Math.random() * fullLifeTime,
-                    radius: Math.random() + 0.1,
+                    radius: Math.random() + radius,
                 });
             }
             return stars;
@@ -59,8 +62,8 @@ const Sky = () => {
         const updateStars = (stars) => {
             stars.forEach((star) => {
                 // Движение
-                star.x -= 0.05
-                star.y -= 0.05
+                star.x -= 0.035
+                star.y -= 0.035
                 if (star.x < -star.radius) star.x = canvas.width + star.radius
                 if (star.x > canvas.width + star.radius) star.x = 0
                 if (star.y < -star.radius) star.y = canvas.height + star.radius

@@ -12,8 +12,6 @@
 
     box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 1);
     margin: 0px auto;
-    margin-bottom: 50px;
-    
 }
 
 .duty_desc_block_cover {
@@ -21,9 +19,14 @@
 }
 
 @keyframes spawn {
-    0% {opacity: 0;}
-    100% {opacity: 1;}
-  }
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
 
 .duty_nav {
     display: flex;
@@ -33,8 +36,10 @@
     transition: all 0.1s ease-in-out;
 }
 
-.duty_nav:hover {
-    background-color: rgba(255, 255, 255, 0.08);
+@media (pointer: fine) {
+    .duty_nav:hover {
+        background-color: rgba(255, 255, 255, 0.08);
+    }
 }
 
 .duty_nav:active {
@@ -145,24 +150,29 @@
 @font-face {
     font-family: 'M_Ying_Hei';
     src: local('M_Ying_Hei'),
-    url('M_Ying_Hei.woff2') format('truetype');
+        url('M_Ying_Hei.woff2') format('truetype');
     font-weight: bold;
 }
 
-@media (max-width: 560px) {
+@media (max-width: 600px) {
     .duty_main_block {
-        width: 100vw;
-        min-width: 100vw;
+        width: 92vw;
+        min-width: 92vw;
         padding: 0;
+        /* border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0px; */
     }
+
     .duty_nav {
-        margin: 15px;
+        margin: 10px 10px 20px 10px;
         padding: 0px 5px;
     }
+
     .duty_title {
         font-size: 22px;
-        margin: 20px 10px 20px 19px;
+        margin: 20px 10px 20px 13px;
     }
+
     .duty_back {
         margin: auto 0px auto 10px;
     }
@@ -175,8 +185,9 @@
         font-size: 12px;
         padding-top: 2px;
     }
+
     .duty_desc_icon {
-        margin: auto 15px auto 15px;
+        margin: auto 10px auto 10px;
     }
 
 

@@ -31,9 +31,10 @@
 @font-face {
     font-family: 'M_Ying_Hei';
     src: local('M_Ying_Hei'),
-    url('M_Ying_Hei.woff2') format('truetype');
+        url('M_Ying_Hei.woff2') format('truetype');
     font-weight: bold;
 }
+
 .course_title {
     color: white;
     font-size: 28px;
@@ -47,28 +48,23 @@
     text-align: left;
     user-select: none;
     line-height: 1.9;
-    /* margin-top: 25px;
-    margin-bottom: 30px; */
-    /* border: 2px solid transparent; */
-    /* text-indent: 10px; */
-    /* margin-left: 15px; */
     font-size: 16px;
-    /* margin-right: 16.5px; */
     margin: 0px -15px -3px;
     cursor: pointer;
     text-align: center;
     padding: 7px;
     padding-bottom: 9px;
     padding-right: 11px;
-    /* padding-left: 43px; */
     border-bottom-left-radius: 23px;
     border-bottom-right-radius: 23px;
     transition: all 0.1s ease-in-out;
 
 }
 
-.course_settings:hover {
-    background-color: rgba(255, 255, 255, 0.05);
+@media (pointer: fine) {
+    .course_settings:hover {
+        background-color: rgba(255, 255, 255, 0.05);
+    }
 }
 
 .course_settings:active {
@@ -78,8 +74,9 @@
 .course_item {
     text-align: left;
     border: 2px solid transparent;
-    background-color: #121212;
     width: 100%;
+    line-height: 1.5;
+    padding: 5px;
     vertical-align: center;
     user-select: none;
     margin-bottom: 5px;
@@ -87,12 +84,15 @@
     padding-right: 10px;
     font-size: 18px;
     cursor: pointer;
+    border-radius: 7px;
+    transition: all 0.1s ease-in-out;
 }
 
-.course_item:hover {
-    border-radius: 7px;
-    background-color: rgba(255, 255, 255, 0.1);
-    transition: background-color 0.15s ease-in-out;
+@media (pointer: fine) {
+    .course_item:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+        transition: background-color 0.15s ease-in-out;
+    }
 }
 
 .course_item:active {
@@ -114,6 +114,36 @@
 
 @media (max-width: 1000px) {
     .course_block {
-        display: none;
+        min-width: 560px;
+        max-width: 560px;
+        margin: 0px auto;
     }
+    .course_item {
+        padding: 3px 10px;
+    }
+    .course_list {
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 600px) {
+    .course_block {
+        min-width: 92vw;
+        width: 92vw;
+    }
+
+    .course_title {
+        margin: 28px 20px 50px;
+        font-size: 24px;
+    }
+
+    .course_item {
+        margin: 0px;
+        width: 100%;
+        padding: 8px 10px;
+    }
+    .course_list {
+        margin: 6px;
+    }
+
 }

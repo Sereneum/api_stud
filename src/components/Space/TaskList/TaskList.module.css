@@ -1,6 +1,11 @@
 @keyframes spawn {
-    0% {opacity: 0%;}
-    100% {opacity: 100%;}
+    0% {
+        opacity: 0%;
+    }
+
+    100% {
+        opacity: 100%;
+    }
 }
 
 
@@ -28,9 +33,14 @@
 }
 
 @keyframes spawn {
-    0% {opacity: 0;}
-    100% {opacity: 1;}
-  }
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
 
 .title {
     color: white;
@@ -84,11 +94,13 @@
     border: 2px solid transparent;
     cursor: pointer;
     transition: all 0.15s ease-in-out;
+    border-radius: 10px;
 }
 
-.task:hover {
-    border-radius: 10px;
-    background-color: rgba(255, 255, 255, 0.07);
+@media (pointer: fine) {
+    .task:hover {
+        background-color: rgba(255, 255, 255, 0.07);
+    }
 }
 
 .task:active {
@@ -123,30 +135,77 @@
     transition: all 0.1s ease-in-out;
 }
 
-.open_materials:hover {
-    background-color: rgba(255, 255, 255, 0.05);
+@media (pointer: fine) {
+    .open_materials:hover {
+        background-color: rgba(255, 255, 255, 0.05);
+    }
 }
 
 .open_materials:active {
     background-color: rgba(255, 255, 255, 0.1);
 }
 
+
+.block_header {
+    display: flex;
+}
+
+.to_courses {
+    margin: auto;
+    color: white;
+    cursor: pointer;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 8px;
+    padding-left: 6px;
+    padding-right: 6px;
+}
+
+.course_back {
+    width: 19px;
+    height: 19px;
+    margin: auto 0px auto 23px;
+    cursor: pointer;
+}
+
+
 @media (max-width: 1000px) {
+    .block_header {
+        display: flex;
+        cursor: pointer;
+        border-radius: 17px;
+        margin: 20px;
+        transition: all 0.1s ease-in-out;
+    }
 
+    .block_header:active {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
 
-    
+    .title {
+        margin: 20px 10px 20px 18px;
+        padding-bottom: 3px;
+    }
 }
 
 @media (max-width: 600px) {
     .tasks_block {
-        width: 100vw;
-        min-width: 100vw;
+        position: relative;
+        width: 92vw;
+        min-width: 92vw;
         padding: 0;
+    }
+
+    .block_header {
+        margin: 12px;
+    }
+
+    .course_back {
+        margin: auto 0px auto 16px;
     }
 
     .title {
         font-size: 22px;
-        margin: 35px 32px 35px;
+        margin: 22px 10px 20px 13px;
     }
 
     .task_name {
@@ -156,11 +215,12 @@
     .status_name {
         font-size: 15px;
     }
+
     .open_materials {
         font-size: 15px;
     }
+
     .task_list {
         margin: 10px 20px 30px;
     }
-
 }

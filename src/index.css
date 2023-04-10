@@ -8,8 +8,8 @@ html {
 .mySpinner {
 
     position: absolute;
-    left: calc(50vw - 25px);
-    top: calc(50vh - 25px);
+    left: calc(50vw - 13px);
+    top: calc(50vh - 30px);
     width: 30px;
     height: 30px;
     z-index: 100000000;
@@ -27,15 +27,18 @@ html {
 }
 
 *::-webkit-scrollbar {
+    overflow: overlay;
     height: 12px;
     width: 8px;
 
 }
 *::-webkit-scrollbar-track {
-    background: rgba(0, 0, 0, 1);
+    overflow: overlay;
+    background: rgba(0, 0, 0, 0);
 
 }
 *::-webkit-scrollbar-thumb {
+    overflow: overlay;
     background-color: #393E46;
     border-radius: 5px;
     border: 0px solid black;
@@ -54,3 +57,9 @@ body {
     width: 100vw;
     height: 100vh;
 }
+
+/* @media (max-width: 560px) {
+    .d-flex .justify-content-center .align-content-center {
+        margin-bottom: 0px;
+    }
+} */

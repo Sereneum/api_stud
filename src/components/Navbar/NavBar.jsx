@@ -8,12 +8,14 @@ import humanLogo from '../../resources/human_logo.svg'
 
 
 import styles from './NavBar.module.css'
+import {useMediaQuery} from "react-responsive";
 
 
 const NavBar = observer(({isLoaded}) => {
 
 
-    const {user, course} = useContext(Context)
+    const {user} = useContext(Context)
+    const isMobile = useMediaQuery({query: '(max-width: 1000px)'})
 
     const navigator = useNavigate()
 
@@ -38,10 +40,11 @@ const NavBar = observer(({isLoaded}) => {
                         />
                         <div className={styles.navbar_space}>.Space</div>
                     </Navbar.Brand>
-                    {isLoaded ?
+                    {isLoaded && !isMobile ?
                         <Navbar.Brand className={styles.navbar_info_block}>
-                            <div className={styles.navbar_student}>{user_info()}</div>
-                            {/*{user_info()}*/}
+                            <div className={styles.navbar_student}>
+                                {user_info()}
+                            </div>
                             <img
                                 alt=""
                                 src={humanLogo}

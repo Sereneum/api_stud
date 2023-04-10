@@ -1,0 +1,71 @@
+.bar {
+    display: flex;
+    flex-direction: row;
+    height: 65px;
+    width: 100%;
+    border: 10px solid transparent;
+    font-family: 'M_Ying_Hei';
+}
+
+
+.block {
+    height: 35px;
+    display: flex;
+    flex-direction: row;
+    padding-right: 10px;
+    padding-left: 7px;
+    border-radius: 48px;
+    cursor: pointer;
+    user-select: none;
+
+    margin-bottom: auto;
+    margin-top: auto;
+    margin-right: 10px;
+
+    background-color: rgba(35, 35, 35, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+.block:active {
+    background-color: rgba(65, 65, 65, 0.7);
+    transition: all 0.1s ease-in-out;
+}
+
+.block.active {
+    /* background-color: rgba(139, 139, 139, 0.9); */
+    filter: invert(1);
+    -webkit-filter: invert(1);
+}
+
+.icon {
+    width: 24px;
+    height: 24px;
+    /* margin-bottom: auto;
+    margin-top: auto; */
+    opacity: 0.8;
+    padding: 2px;
+    margin: auto 5px auto 1px;
+}
+
+.icon.active {
+    /* filter: invert(100%); */
+}
+
+.title {
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: auto;
+    margin-top: auto;
+    padding-bottom: 1px;
+}
+
+.title.active {
+
+}
+
+
+@font-face {
+    font-family: 'M_Ying_Hei';
+    src: local('M_Ying_Hei'),
+    url('M_Ying_Hei.woff2') format('truetype');
+    font-weight: bold;
+}

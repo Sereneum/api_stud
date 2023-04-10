@@ -4,26 +4,26 @@
     display: flex;
     user-select: none;
     max-width: 1300px;
-    margin: auto;
     justify-content: space-between;
+    padding: 0px 7px;
+    margin: auto;
 }
 
 .navbar_brand {
     display: flex;
     margin-bottom: 40px;
+    margin-top: 40px;
     cursor: pointer;
 }
 
 .navbar_space {
     margin-left: 23px;
     font-size: 50px;
-    margin-top: 40px;
-    /*margin-bottom: 40px;*/
 }
 
 .navbar_logo {
     width: 48px;
-    margin-top: 43px;
+    margin-top: 3px;
     margin-left: -10px;
 }
 
@@ -36,7 +36,7 @@
 }
 
 .navbar_student {
-    display: none;
+    /*display: none;*/
     text-align: center;
     margin: auto;
     font-size: 16px;
@@ -74,7 +74,9 @@
 
 @media (max-width: 640px) {
     .navbar_brand {
-        margin-left: 10px;
+        margin-left: 0px;
+        margin-top: 30px;
+        margin-bottom: 30px;
     }
 
     .navbar_logo {

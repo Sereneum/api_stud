@@ -29,7 +29,8 @@
 
     background-color: #1c1c1c;
 
-    height: 60px;
+    min-height: 60px;
+    height: fit-content;
     margin: 0px 20px 10px 20px;
     padding-left: 8px;
 
@@ -55,6 +56,7 @@
     width: 400px;
     margin: auto;
     margin-left: 10px;
+    word-break: break-all;
 }
 
 .duty_materials_preview_button {
@@ -76,9 +78,12 @@
     transition: all 0.1s ease-in-out;
 }
 
-.duty_materials_download_button:hover {
-    background-color: rgba(255, 255, 255, 0.2);
+@media (pointer: fine) {
+    .duty_materials_download_button:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+    }
 }
+
 
 .duty_materials_download_button:active {
     background-color: rgba(255, 255, 255, 0.4);
@@ -89,7 +94,12 @@
         font-size: 20px;
         margin: 35px 32px 37px;
     }
+
     .duty_materials_item {
-        margin: 0px 20px 10px 20px;
+        margin: 0px 15px 10px 15px;
+    }
+
+    .duty_materials_block {
+        margin-bottom: 20px;
     }
 }

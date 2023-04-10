@@ -7,11 +7,15 @@ import {observer} from "mobx-react-lite";
 import Spin from "../../Spin";
 import ConfigSpinController from "./ConfigSpinController";
 import {epoch_fetchConfigurableCourses, epoch_updateActiveCourses} from "../../../epoch/epochServer";
+import {useMediaQuery} from "react-responsive";
+import back from '../../../resources/back.svg';
 
 
-const Config = observer(({reCourse}) => {
+const Config = observer(({reCourse, desktopMove, mobileMove}) => {
 
     const {user} = useContext(Context)
+    const isMobile = useMediaQuery({query: '(max-width: 1000px)'})
+    const isDesktop = useMediaQuery({query: '(min-width: 1001px)'})
 
     let id = user.user.anotherID
 
@@ -62,18 +66,36 @@ const Config = observer(({reCourse}) => {
         })
     }, [])
 
-    const liar = useCallback(() => {}, [])
+    const liar = useCallback(() => {
+    }, [])
+
 
     return (
         <Container className={styles.config_main_block}>
             <div className={styles.config_nav}>
-                <div className={styles.config_title}>
-                    Настройка курсов
+
+            {isDesktop
+                    &&
+                <div className={styles.block_header}>
+                    <div className={styles.config_title}>
+                        Настройка курсов
+                    </div>
                 </div>
-                {/* <div className={styles.config_save} onClick={recording}>
-                    Сохранить изменения
-                </div>
-                <ConfigSpinController isLoading={loadingFromMain}/> */}
+                }
+
+
+                {isMobile
+                    &&
+                    <div className={styles.block_header} onClick={mobileMove.openCourseList}>
+                        <img
+                            alt=""
+                            src={back}
+                            className={styles.config_back}/>
+                        <div className={styles.config_title}>
+                            Настройка курсов
+                        </div>
+                    </div>
+                }
             </div>
 
             {loadingCourses

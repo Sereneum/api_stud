@@ -3,8 +3,8 @@ import {makeAutoObservable} from "mobx";
 export default class CourseStore {
     constructor() {
         this._courses = []
-        this._full = {user_data: {}, duty_data: {}}
         this._activeCourse = 0
+        this._mainMode = 'courses'
         makeAutoObservable(this)
     }
 
@@ -13,23 +13,23 @@ export default class CourseStore {
         this._courses = courses
     }
 
-    setActiveCourse(activeCourse) {
-        this._activeCourse = activeCourse
+    setMainMode(mainMode) {
+        this._mainMode = mainMode
     }
 
-    setFull(data) {
-        this._full = data
+    setActiveCourse(activeCourse) {
+        this._activeCourse = activeCourse
     }
 
     get courses() {
         return JSON.parse(JSON.stringify(this._courses))
     }
 
-    get activeCourse() {
-        return this._activeCourse
+    get mainMode() {
+        return this._mainMode
     }
 
-    get full() {
-        return JSON.parse(JSON.stringify(this._full))
+    get activeCourse() {
+        return this._activeCourse
     }
 }
