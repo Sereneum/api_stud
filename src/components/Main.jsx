@@ -4,6 +4,8 @@ import {Container} from "react-bootstrap";
 import Space from "./Space/Space";
 import {Context} from "../index";
 import MySpinner from "./MySpinner";
+import Preloader from './Preloader';
+import Sky from './Sky/Sky';
 import {epoch_allCourseData, epoch_courseData} from "../epoch/epochServer";
 import {preEpoch_reconstructionCourses} from "../epoch/preEpoch";
 
@@ -33,10 +35,12 @@ const Main = observer(() => {
         })
     }, [])
 
-    if (loadingCourse) return <MySpinner/>
+    if (loadingCourse) return <Preloader/>
+    // if (loadingCourse) return <MySpinner/>
 
     return (
         <div>
+            <Sky />
             <Container className='d-flex justify-content-center align-content-center' style={{width: '50vw'}}>
                 <Space reCourse={reCourse}/>
             </Container>

@@ -5,6 +5,8 @@ import React, {createContext, useContext, useEffect, useState} from "react";
 import {Context} from "./index";
 import {check} from "./http/userAPI";
 import MySpinner from "./components/MySpinner";
+import Preloader from "./components/Preloader";
+import Void from './components/Void'
 import NavBar from "./components/Navbar/NavBar";
 import {useMediaQuery} from "react-responsive";
 
@@ -23,8 +25,8 @@ const App = observer(() => {
     }, [])
 
 
-
-    if (loadingUser) return <MySpinner/>
+    // if (loadingUser) return <Preloader/>
+    if (loadingUser) return <Void/>
 
     return (
         <BrowserRouter>

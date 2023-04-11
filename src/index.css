@@ -5,6 +5,10 @@ html {
     /*display: table-cell;*/
 }
 
+body, html {
+    background-color: #000;
+}
+
 .mySpinner {
 
     position: absolute;
@@ -53,10 +57,78 @@ body {
     position: fixed;
     left: 0;
     right: 0;
-    z-index: -100;
+    top: 0;
+    z-index: 0;
     width: 100vw;
     height: 100vh;
+    animation: breathe 3s ease-in-out;
+    opacity: 0.7;
 }
+
+.preloader {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: #000000;
+    z-index: 99999;
+    transition: all 0.3s ease-in-out;
+}
+
+.preloader_logo {
+    position: absolute;
+    top: calc(50% - 60px);
+    left: calc(50% - 43px);
+    width: 90px;
+    height: 90px;
+    z-index: 100001;
+}
+.preloader_logo_back{
+    position: absolute;
+    top: calc(50% - 80px);
+    left: calc(50% - 63px);
+    width: 130px;
+    height: 130px;
+    z-index: 100000;
+    filter: blur(30px);
+    -webkit-filter:blur(30px);
+    animation-delay: 2s;
+    opacity: 1;
+    animation: flick 2s cubic-bezier(1, -0.01, 0.58, 1);
+}
+
+@keyframes flick {
+    0% {
+        opacity: 0%;
+    }
+
+    100% {
+        opacity: 100%;
+    }
+
+}
+
+@keyframes breathe {
+    0% {
+        opacity: 0%;
+    }
+
+    100% {
+        opacity: 70%;
+    }
+
+}
+  
+
+/* .loaded_hiding .preloader {
+    
+    opacity: 0;
+  }
+
+  .loaded .preloader {
+    display: none;
+  } */
 
 /* @media (max-width: 560px) {
     .d-flex .justify-content-center .align-content-center {

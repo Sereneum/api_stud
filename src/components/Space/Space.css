@@ -7,6 +7,19 @@
     align-content: center;
     vertical-align: center;
     margin-bottom: 70px;
+    z-index: 1;
+    /* animation: flick 0.5s ease-in-out; */
+}
+
+@keyframes flick {
+    0% {
+        opacity: 0%;
+    }
+
+    100% {
+        opacity: 100%;
+    }
+
 }
 
 @media(max-width: 1000px) {
