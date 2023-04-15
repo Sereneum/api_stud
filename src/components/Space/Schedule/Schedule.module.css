@@ -1,0 +1,170 @@
+.block {
+    border-radius: 23px;
+    background-color: #121212;
+    border-color: transparent;
+    border-style: solid;
+    font-family: 'M_Ying_Hei';
+    min-width: 320px;
+    margin-left: 60px;
+    height: fit-content;
+    text-align: left;
+    user-select: none;
+    -webkit-user-select: none;
+    min-height: 250px;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 50px;
+
+    /*width: 560px;*/
+}
+
+.title {
+    color: white;
+    font-size: 28px;
+    margin: 40px 32.5px 50px;
+    text-align: left;
+    line-height: 1.4;
+    cursor: default;
+}
+
+.lesson_block {
+    display: flex;
+    box-sizing: border-box;
+
+    width: 461px;
+    height: 115px;
+
+
+    background: #212121;
+    border-radius: 13px;
+    margin-top: 20px;
+}
+
+.ver_hr {
+    width: 81px;
+    height: 2px;
+    /*left: 87px;*/
+    /*top: 17px;*/
+    margin-top: 55px;
+    /*margin-left: 20px;*/
+
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    transform: rotate(90deg);
+}
+
+.hor_hr {
+    width: 54px;
+    height: 1px;
+    left: 17px;
+    top: 54px;
+
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 6px;
+}
+
+.lesson_date_block {
+    /*margin: auto;*/
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.lesson_date {
+    width: 38px;
+    height: 18px;
+
+    font-family: 'M  PRC';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 18px;
+
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.lesson_description_block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.lesson {
+    display: flex;
+    /*padding-top: 10px;*/
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.lesson > div {
+    width: 317px;
+    /*height: 34px;*/
+    height: fit-content;
+
+    display: flex;
+    align-items: center;
+
+    font-family: 'M_Ying_Hei';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+
+    color: #FFFFFF;
+}
+
+.lesson.secondary > div {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.lesson > img {
+    margin-right: 12px;
+}
+
+.day {
+    width: 510px;
+    height: fit-content;
+
+
+    background: #171717;
+    border-radius: 9px;
+    color: rgba(255, 255, 255, 0.7);
+    font-family: 'M_Ying_Hei';
+    margin: 10px 30px 10px 30px;
+}
+
+.day_title {
+    margin-left: 20px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+}
+
+
+/*.day > title {*/
+
+/*}*/
+
+
+@font-face {
+    font-family: 'M_Ying_Hei';
+    src: local('M_Ying_Hei'),
+    url('M_Ying_Hei.woff2') format('truetype');
+    font-weight: bold;
+}
+
+.spinner {
+    text-align: center;
+    height: 18px;
+    width: 18px;
+    opacity: 0.7;
+    /* margin-left: 265px;
+    margin-top: 235px; */
+    border-width: 3.5px;
+    /* margin: auto; */
+    margin-left: calc(50% - 9px);
+    margin-top: calc(50% - 48px);
+}

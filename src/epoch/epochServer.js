@@ -1,5 +1,12 @@
 import {$authHost, $authServerHost, $serverHost} from "../http";
-import {API_ALL_COURSES, API_COURSE, API_DELETE_FILE, API_DUTY, API_UPLOAD_FILE} from "../utils/consts";
+import {
+    API_ALL_COURSES,
+    API_CHECKER_MAIL,
+    API_COURSE,
+    API_DELETE_FILE,
+    API_DUTY,
+    API_UPLOAD_FILE
+} from "../utils/consts";
 import {preEpoch_division, preEpoch_mergeCourseData} from "./preEpoch";
 
 const conv = data => {
@@ -102,4 +109,22 @@ export const epoch_deleteFile = (fileID) => new Promise((resolve, reject) => {
     $authServerHost.delete(API_DELETE_FILE + fileID)
         .then(d => resolve(d.data))
         .catch(e => e)
+})
+
+export const epoch_checkerMail = () => new Promise((resolve, reject) => {
+    $authServerHost.get(API_CHECKER_MAIL)
+        .then(d => resolve(d.data))
+        .catch(e => e)
+})
+
+export const epoch_schedule = () => new Promise((resolve, reject) => {
+    const idGroup = 214168
+    const week = '2023-04-15'
+    const apiUrl = `/api/Rasp?idGroup=${idGroup}&sdate=${week}`
+
+    $authServerHost.get(apiUrl)
+        .then(r => {
+            resolve(r.data.data)
+        })
+        .catch(err => reject(err))
 })

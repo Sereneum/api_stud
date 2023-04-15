@@ -2,58 +2,56 @@ import React, {memo, useContext, useEffect, useState} from 'react';
 import {Button, Container, Nav, Navbar} from "react-bootstrap";
 import {NavLink, useNavigate} from "react-router-dom";
 import {observer} from "mobx-react-lite";
-import {Context} from "../../index";
+// import {Context} from "../../index";
 import mgriLogo from '../../resources/mgri.svg'
 import humanLogo from '../../resources/human_logo.svg'
-
-
 import styles from './NavBar.module.css'
 import {useMediaQuery} from "react-responsive";
+import Mail from "../DestopMenu/Mail/Mail";
+import {epoch_checkerMail} from "../../epoch/epochServer";
+import ScheduleLink from "../DestopMenu/ScheduleLink/ScheduleLink";
 
 
 const NavBar = observer(({isLoaded}) => {
 
+    const [mailCounter, setMailCounter] = useState({})
 
-    const {user} = useContext(Context)
+    useEffect(() => {
+        epoch_checkerMail().then(r => setMailCounter(r))
+    }, [])
+
     const isMobile = useMediaQuery({query: '(max-width: 1000px)'})
-
     const navigator = useNavigate()
-
-    const user_info = () => {
-        try {
-            return `${user.user.first_name} ${user.user.last_name}, ${user.moreInfo.group.item1}`
-        } catch (e) {
-            return ''
-        }
-    }
 
     return (
         <>
 
             <Navbar className={styles.navbar} variant="dark">
                 {/* <Container> */}
-                    <Navbar.Brand className={styles.navbar_brand} onClick={() => navigator('')}>
+                <Navbar.Brand className={styles.navbar_brand} onClick={() => navigator('')}>
+                    <img
+                        alt=""
+                        src={mgriLogo}
+                        className={styles.navbar_logo}
+                    />
+                    <div className={styles.navbar_space}>.Space</div>
+                </Navbar.Brand>
+                {isLoaded && !isMobile ?
+                    <Navbar.Brand className={styles.navbar_info_block}>
+                        {/*<div className={styles.navbar_student}>*/}
+                        {/*    {user_info()}*/}
+                        {/*</div>*/}
+                        <Mail messages={mailCounter && mailCounter.data}/>
+                        <ScheduleLink />
                         <img
                             alt=""
-                            src={mgriLogo}
-                            className={styles.navbar_logo}
+                            src={humanLogo}
+                            className={styles.navbar_human_logo}
                         />
-                        <div className={styles.navbar_space}>.Space</div>
                     </Navbar.Brand>
-                    {isLoaded && !isMobile ?
-                        <Navbar.Brand className={styles.navbar_info_block}>
-                            <div className={styles.navbar_student}>
-                                {user_info()}
-                            </div>
-                            <img
-                                alt=""
-                                src={humanLogo}
-                                className={styles.navbar_human_logo}
-                            />
-                        </Navbar.Brand>
-                        :
-                        ''
-                    }
+                    :
+                    ''
+                }
                 {/* </Container> */}
             </Navbar>
         </>

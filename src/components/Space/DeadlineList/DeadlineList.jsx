@@ -36,6 +36,7 @@ const DeadlineList = observer(({tasks, desktopMove, courses, mobileMove}) => {
             <div className={styles.title}>Ближайшие дедлайны</div>
             <div className={styles.deadline_list}>
                 {tasks.map((i, index) => <DeadlineItem
+                    // courseName={}
                     key={`dl${i.courseTaskID}`}
                     task={i}
                     isLast={tasks.length === index + 1}

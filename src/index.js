@@ -6,6 +6,7 @@ import UserStore from "./store/userStore";
 import CourseStore from "./store/courseStore";
 import Sky from "./components/Sky/Sky";
 import SizeStore from "./store/sizeStore";
+import Binder from "./store/binder";
 import './night.css'
 import Night from './components/Night';
 export const Context = createContext(null)
@@ -19,14 +20,13 @@ window.onload = function () {
 }
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-// root.style['']
 root.render(
     <div style={{ backgroundColor: 'black' }}>
-        {/* <Sky /> */}
         <Context.Provider value={{
             user: new UserStore(),
             course: new CourseStore(),
-            sizeStore: new SizeStore()
+            sizeStore: new SizeStore(),
+            binder: new Binder()
         }}>
             <App />
         </Context.Provider>

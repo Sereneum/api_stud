@@ -15,6 +15,8 @@ const DeadlineItem = ({task, isLast, toDuty, findIndexes}) => {
         else return `Часов до закрытия: ${(hours)}`
     }
 
+    // console.log(task)
+
     return (
        <div>
            <div className={styles.deadline_item} onClick={click}>

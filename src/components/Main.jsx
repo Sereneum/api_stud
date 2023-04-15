@@ -36,7 +36,6 @@ const Main = observer(() => {
     }, [])
 
     if (loadingCourse) return <Preloader/>
-    // if (loadingCourse) return <MySpinner/>
 
     return (
         <div>

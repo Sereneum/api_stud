@@ -10,9 +10,9 @@ import MobileNavigation from "../MobileNavigation/MobileNavigation";
 
 const Space = observer(({ reCourse }) => {
 
-    const { course, sizeStore } = useContext(Context)
+    const { course, binder } = useContext(Context)
 
-    const { mobileMove, mobileMode, mobileSpace, desktopSpace } = useSpace({ course, reCourse })
+    const { mobileMove, mobileMode, mobileSpace, desktopSpace } = useSpace({ course, reCourse, binder})
 
     const isMobile = useMediaQuery({ query: '(max-width: 1000px)' })
 

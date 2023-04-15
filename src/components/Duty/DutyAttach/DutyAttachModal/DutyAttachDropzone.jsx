@@ -13,7 +13,7 @@ const DutyAttachDropzone = ({sendData, uploading}) => {
 
     return (
         <Dropzone onDrop={onDrop}>
-            {({getRootProps, getInputProps, isDragActive}) => (
+            {({getRootProps, getInputProps, onDropAccepted}) => (
                 <div {...getRootProps()}>
                     <input {...getInputProps()} />
                     <div className={styles.modal_attach_block}>
@@ -22,6 +22,7 @@ const DutyAttachDropzone = ({sendData, uploading}) => {
                             src={upload_icon}
                             className={styles.modal_upload_icon}
                         />
+                        {/*{onDropAccepted && 'onDropAccepted'}*/}
                     </div>
                 </div>
             )}
