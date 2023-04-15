@@ -188,6 +188,7 @@
         width: 92vw;
         min-width: 92vw;
         padding: 0;
+        margin: 0px auto;
     }
 
     .block_header {

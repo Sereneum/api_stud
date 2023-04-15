@@ -42,7 +42,7 @@
 
 .ver_hr {
     width: 2px;
-    height: 60px;
+    height: 75px;
     margin: auto 5px auto 20px;
 
     background: rgba(255, 255, 255, 0.2);
@@ -78,16 +78,16 @@
     font-size: 15px;
     line-height: 18px;
 
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(255, 255, 255);
 }
 
 .lesson_description_block {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: left;
     justify-content: center;
     width: 100%;
-    padding: 10px 10px 10px 0px;
+    padding: 10px 10px 10px 15px;
 }
 
 .lesson {
@@ -98,7 +98,7 @@
 }
 
 .lesson > div {
-    width: 317px;
+    /* width: 317px; */
     /*height: 34px;*/
     height: fit-content;
 
@@ -173,4 +173,37 @@
     margin-left: calc(50% - 9px);
     margin-top: 100px;
     margin-bottom: 200px;
+}
+
+@media (max-width: 600px) {
+    .block {
+        min-width: 92vw;
+        width: 92vw;
+        margin: 0 auto;
+    }
+    .title {
+        margin: 30px 32px 50px;
+        font-size: 24px;
+    }
+    .day {
+        margin: 30px 8px 0px 8px;
+        padding-bottom: 0px;
+    }
+    .lesson_block {
+        margin: 0px 12px 15px 12px;
+    }
+    .lesson_date_block {
+        margin: 0px 0px 0px 15px;
+    }
+    .ver_hr {
+        margin: auto -2px auto 14px;
+    }
+    .day_title {
+        padding: 30px 20px 30px 27px;
+        font-size: 17px;
+    }
+    .day_date {
+        font-size: 14px;
+        padding-top: 3px;
+    }
 }

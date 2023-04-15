@@ -3,10 +3,17 @@
     flex-direction: row;
     height: 65px;
     width: 100%;
-    border: 10px solid transparent;
     font-family: 'M_Ying_Hei';
+    overflow: auto;
+    overflow-x: auto;
+    -ms-overflow-style: none;  /* IE и Edge */
+    scrollbar-width: none; /* Firefox */
+    padding-left: 20px;
 }
 
+.bar::-webkit-scrollbar {
+    display: none;
+}
 
 .block {
     height: 35px;
