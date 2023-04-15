@@ -4,8 +4,9 @@
     border-color: transparent;
     border-style: solid;
     font-family: 'M_Ying_Hei';
-    min-width: 320px;
-    margin-left: 60px;
+    min-width: 560px;
+    max-width: 560px;
+    min-height: 400px;
     height: fit-content;
     text-align: left;
     user-select: none;
@@ -14,14 +15,14 @@
     position: sticky;
     position: -webkit-sticky;
     top: 50px;
-
-    /*width: 560px;*/
+    cursor: default;
+    padding-bottom: 15px;
 }
 
 .title {
     color: white;
     font-size: 28px;
-    margin: 40px 32.5px 50px;
+    margin: 42px 37px 42px;
     text-align: left;
     line-height: 1.4;
     cursor: default;
@@ -30,27 +31,23 @@
 .lesson_block {
     display: flex;
     box-sizing: border-box;
-
-    width: 461px;
-    height: 115px;
-
+    height: fit-content;
 
     background: #212121;
     border-radius: 13px;
-    margin-top: 20px;
+    margin-bottom: 15px;
+    margin: 0px 20px 15px 20px;
+    cursor: default;
 }
 
 .ver_hr {
-    width: 81px;
-    height: 2px;
-    /*left: 87px;*/
-    /*top: 17px;*/
-    margin-top: 55px;
-    /*margin-left: 20px;*/
+    width: 2px;
+    height: 60px;
+    margin: auto 5px auto 20px;
 
     background: rgba(255, 255, 255, 0.2);
     border-radius: 5px;
-    transform: rotate(90deg);
+    /* transform: rotate(90deg); */
 }
 
 .hor_hr {
@@ -58,14 +55,15 @@
     height: 1px;
     left: 17px;
     top: 54px;
+    margin: 8px 0px;
 
     background: rgba(255, 255, 255, 0.2);
     border-radius: 6px;
 }
 
 .lesson_date_block {
-    /*margin: auto;*/
-    margin-left: 20px;
+    /* margin: auto; */
+    margin: 0px 0px 0px 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -76,8 +74,6 @@
     width: 38px;
     height: 18px;
 
-    font-family: 'M  PRC';
-    font-style: normal;
     font-weight: 700;
     font-size: 15px;
     line-height: 18px;
@@ -90,6 +86,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    width: 100%;
+    padding: 10px 10px 10px 0px;
 }
 
 .lesson {
@@ -125,22 +123,29 @@
 }
 
 .day {
-    width: 510px;
     height: fit-content;
 
-
     background: #171717;
-    border-radius: 9px;
-    color: rgba(255, 255, 255, 0.7);
+    border-radius: 10px;
+    color: rgba(255, 255, 255);
     font-family: 'M_Ying_Hei';
-    margin: 10px 30px 10px 30px;
+    margin: 30px 15px 0px 15px;
+    padding-bottom: 5px;
 }
 
 .day_title {
-    margin-left: 20px;
-    margin-top: 20px;
+    padding: 25px 20px 30px 30px;
+    font-size: 20px;
     display: flex;
     flex-direction: row;
+}
+
+.day_date {
+    padding-top: 6px;
+    font-size: 15px;
+    width: 100%;
+    text-align: right;
+    margin-right: 10px;
 }
 
 
@@ -166,5 +171,6 @@
     border-width: 3.5px;
     /* margin: auto; */
     margin-left: calc(50% - 9px);
-    margin-top: calc(50% - 48px);
+    margin-top: 100px;
+    margin-bottom: 200px;
 }

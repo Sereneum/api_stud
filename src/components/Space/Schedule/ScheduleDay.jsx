@@ -7,7 +7,7 @@ const ScheduleDay = ({day}) => {
         <div className={styles.day}>
             <div className={styles.day_title}>
                 <div>{day.day}</div>
-                <div style={{marginLeft: 300}}>{day.date}</div>
+                <div className={styles.day_date}>{day.date}</div>
             </div>
 
             <div>

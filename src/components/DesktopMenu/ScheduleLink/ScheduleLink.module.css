@@ -1,9 +1,9 @@
 .block {
     margin-left: 10px;
-    width: 147px;
     height: 35px;
     background: rgba(33, 33, 33, 0.8);
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     border-radius: 21px;
 
     font-size: 14px;
@@ -13,14 +13,20 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    transition: all 0.1s ease-in-out;
+}
+
+.icon {
+    margin: auto 2px auto 16px;
+    padding-bottom: 2px;
 }
 
 .text {
-        margin-right: 10px;
+        margin-right: 18px;
         margin-left: 10px;
+        padding-bottom: 1px;
 }
 
 .block:hover {
-    background-color: rgba(255, 255, 255, 0.3);
-    transition: background-color 0.1s ease-in-out;
+    background-color: rgba(255, 255, 255, 0.2);
 }

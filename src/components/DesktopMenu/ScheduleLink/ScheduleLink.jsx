@@ -19,7 +19,7 @@ const ScheduleLink = () => {
 
     return (
         <div className={styles.block} onClick={scheduleRequest}>
-            <img src={schedule_icon} alt=""/>
+            <img className={styles.icon} src={schedule_icon} alt=""/>
             <span className={styles.text}>Расписание</span>
         </div>
     );

@@ -10,11 +10,6 @@
 
 
 .tasks_block {
-
-    /*animation: spawn 1s infinite cubic-bezier(0.58, 0, 0, 1.04);*/
-    /*animation-iteration-count: 1;*/
-    /*will-change: opacity;*/
-
     border-radius: 23px;
     background-color: #121212;
     background-position: center center;
@@ -61,7 +56,7 @@
 .tasks_not_found {
     color: darkgray;
     text-align: left;
-    margin-top: 0px;
+    margin-top: -20px;
     margin-bottom: 40px;
     margin-left: 40px;
     font-size: 20px;
