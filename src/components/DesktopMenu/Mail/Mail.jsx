@@ -12,7 +12,7 @@ const Mail = ({messages}) => {
 
     return (
         <div className={styles.mail} onClick={open}>
-            <img src={mail_icon} alt=""/>
+            <img className={styles.icon} src={mail_icon} alt=""/>
             <span className={styles.text}>Почта</span>
             <span className={styles.counter} style={{display: isMessages ? '' : 'none'}}>
                 {isMessages && messages.count}

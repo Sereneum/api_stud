@@ -7,9 +7,9 @@ import mgriLogo from '../../resources/mgri.svg'
 import humanLogo from '../../resources/human_logo.svg'
 import styles from './NavBar.module.css'
 import {useMediaQuery} from "react-responsive";
-import Mail from "../DestopMenu/Mail/Mail";
+import Mail from "../DesktopMenu/Mail/Mail";
 import {epoch_checkerMail} from "../../epoch/epochServer";
-import ScheduleLink from "../DestopMenu/ScheduleLink/ScheduleLink";
+import ScheduleLink from "../DesktopMenu/ScheduleLink/ScheduleLink";
 
 
 const NavBar = observer(({isLoaded}) => {
