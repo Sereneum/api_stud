@@ -3,6 +3,7 @@ import styles from './MobileNavigation.module.css'
 import settings_icon from "../../resources/mobnav/settings_white.svg";
 import courses_icon from "../../resources/mobnav/courses.svg";
 import deadlines_icon from "../../resources/mobnav/deadlines.svg";
+import schedule_icon from '../../resources/schedule_icon.svg'
 
 
 const MobileNavigation = ({mobileMove, mobileMode}) => {
@@ -15,6 +16,10 @@ const MobileNavigation = ({mobileMove, mobileMode}) => {
         mobileMove.openDeadlines()
     }
 
+    const toSchedule = () => {
+        mobileMove.openSchedule()
+    }
+
     const isActive = (mode) => {
         return mobileMode === mode
             ?
@@ -25,12 +30,6 @@ const MobileNavigation = ({mobileMove, mobileMode}) => {
 
     return (
         <div className={styles.bar}>
-            {/*<div className={styles.block}>*/}
-            {/*    <img*/}
-            {/*        alt=""*/}
-            {/*        src={settings_icon}*/}
-            {/*        className={styles.icon}/>*/}
-            {/*</div>*/}
 
             <div
                 className={`${styles.block} ${isActive('courses')}`}
@@ -59,6 +58,21 @@ const MobileNavigation = ({mobileMove, mobileMode}) => {
                     className={`${styles.title} ${isActive('deadlines')}`}
                 >
                     Дедлайны
+                </div>
+            </div>
+
+            <div
+                className={`${styles.block} ${isActive('schedule')}`}
+                onClick={toSchedule}
+            >
+                <img
+                    alt=""
+                    src={schedule_icon}
+                    className={`${styles.icon} ${isActive('schedule')}`}/>
+                <div
+                    className={`${styles.title} ${isActive('schedule')}`}
+                >
+                    Расписание
                 </div>
             </div>
         </div>
