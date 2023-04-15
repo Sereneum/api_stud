@@ -28,11 +28,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
-    font-style: normal;
-    font-weight: 700;
+    font-family: Arial;
+    font-weight: bold;
     font-size: 13px;
-    line-height: 16px;
     color: rgba(0, 0, 0, 0.8);
 }
 

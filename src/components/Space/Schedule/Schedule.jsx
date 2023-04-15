@@ -19,8 +19,6 @@ const Schedule = () => {
         })
     }, [])
 
-    // if(!lessons) return <
-
     return (
         <div className={styles.block}>
             <div className={styles.title}>Расписание</div>
@@ -30,17 +28,11 @@ const Schedule = () => {
                     <Spin cl={styles.spinner}/>
                     :
                     <>
-                        {/*<div className={styles.day}>*/}
-
-                        {/*</div>*/}
-
                         <div>
                             {
                                 week.map(i => <ScheduleDay key={i.dayIndex} day={i}/>)
                             }
                         </div>
-
-                        {/*{lessons && <ScheduleLesson  lesson={lessons[20]}/>}*/}
                     </>
 
             }

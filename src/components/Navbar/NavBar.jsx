@@ -20,6 +20,8 @@ const NavBar = observer(({isLoaded}) => {
         epoch_checkerMail().then(r => setMailCounter(r))
     }, [])
 
+    useEffect(() => console.log(mailCounter.data), [mailCounter])
+
     const isMobile = useMediaQuery({query: '(max-width: 1000px)'})
     const navigator = useNavigate()
 
@@ -42,6 +44,13 @@ const NavBar = observer(({isLoaded}) => {
                         {/*    {user_info()}*/}
                         {/*</div>*/}
                         <Mail messages={mailCounter && mailCounter.data}/>
+                        {/*<Mail messages={*/}
+                        {/*    {*/}
+                        {/*        "messagesIDs": [],*/}
+                        {/*        "count": 10*/}
+                        {/*    }*/}
+                        {/*}/>*/}
+
                         <ScheduleLink />
                         <img
                             alt=""
