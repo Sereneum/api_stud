@@ -1,19 +1,25 @@
-import React, {useEffect, useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import styles from './Schedule.module.css'
 import {epoch_schedule} from "../../../epoch/epochServer";
 import ScheduleLesson from "./ScheduleLesson";
 import {sch_parser} from "./schedule_parser";
 import Spin from "../../Spin";
 import ScheduleDay from "./ScheduleDay";
+import {Context} from "../../../index";
+import {observer} from "mobx-react-lite";
 
 
-const Schedule = () => {
+const Schedule = observer(() => {
 
     const [lessons, setLessons] = useState(null)
     const [week, setWeek] = useState(null)
 
+    const { user } = useContext(Context)
+
+
+
     useEffect(() => {
-        epoch_schedule().then(r => {
+        epoch_schedule(user.detailed.group.item2).then(r => {
             setLessons(r.rasp)
             setWeek(sch_parser(r.rasp))
         })
@@ -38,6 +44,6 @@ const Schedule = () => {
             }
         </div>
     );
-};
+});
 
 export default Schedule;

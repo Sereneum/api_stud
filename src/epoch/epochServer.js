@@ -8,6 +8,7 @@ import {
     API_UPLOAD_FILE
 } from "../utils/consts";
 import {preEpoch_division, preEpoch_mergeCourseData} from "./preEpoch";
+import {parserDateNow} from "../managers/parser";
 
 const conv = data => {
     if (!data) return []
@@ -117,10 +118,9 @@ export const epoch_checkerMail = () => new Promise((resolve, reject) => {
         .catch(e => e)
 })
 
-export const epoch_schedule = () => new Promise((resolve, reject) => {
-    const idGroup = 214168
-    const week = '2023-04-15'
-    const apiUrl = `/api/Rasp?idGroup=${idGroup}&sdate=${week}`
+export const epoch_schedule = (groupID) => new Promise((resolve, reject) => {
+    const week = parserDateNow()
+    const apiUrl = `/api/Rasp?idGroup=${groupID}&sdate=${week}`
 
     $authServerHost.get(apiUrl)
         .then(r => {

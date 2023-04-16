@@ -20,7 +20,6 @@ const NavBar = observer(({isLoaded}) => {
         epoch_checkerMail().then(r => setMailCounter(r))
     }, [])
 
-    useEffect(() => console.log(mailCounter.data), [mailCounter])
 
     const isMobile = useMediaQuery({query: '(max-width: 1000px)'})
     const navigator = useNavigate()

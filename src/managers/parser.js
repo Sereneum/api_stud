@@ -23,3 +23,16 @@ let getDeadline = deadline => {
     let hours = (Date.parse(deadline) - Date.now()) / (1000 * 60 * 60) + 24
     return hours > 0 ? Math.round(hours) : 0
 }
+
+export const parserDateNow = () => {
+    const now = new Date()
+
+    return now.getFullYear() + '-'
+        +
+        ((now.getMonth() + 1).toString().length < 2
+            ?
+            '0' + (now.getMonth() + 1)
+            :
+            (now.getMonth() + 1))
+        + '-' + now.getDate()
+}

@@ -19,7 +19,7 @@ const App = observer(() => {
         check().then(data => {
             user.setIsAuth(data.dataState)
             user.setUser(data.dataUser)
-            // user.setMoreInfo(data.moreInfo)
+            user.setDetailed(data.moreInfo)
         }).catch(e => {})
             .finally(() => setLoadingUser(false))
     }, [])

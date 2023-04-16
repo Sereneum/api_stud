@@ -16,8 +16,11 @@ export const useSpace = ({course, reCourse, binder}) => {
     const {deadlineTasks} = useDeadlineList({course})
 
     const isMobile = useMediaQuery({query: '(max-width: 1000px)'})
-    const [desktopMode, setDesktopMode] = useState('tasks')
-    const [mobileMode, setMobileMode] = useState('courses')
+    // const [desktopMode, setDesktopMode] = useState('tasks')
+    // const [mobileMode, setMobileMode] = useState('courses')
+
+    const [desktopMode, setDesktopMode] = useState('schedule')
+    const [mobileMode, setMobileMode] = useState('schedule')
 
     // useEffect(() => {
     //     console.log('desktopMode: ', desktopMode)

@@ -32,10 +32,9 @@ export const check = async () => {
         .catch(e => badAnswer)
         .then(d => data = d.data)
 
-    // await $authHost.get(API_MORE_INFO + data.data.user.anotherID)
-    //     .then(m => more = m.data)
-    //     .catch(e => badAnswer)
+    await $authHost.get(API_MORE_INFO + data.data.user.anotherID)
+        .then(m => more = m.data)
+        .catch(e => badAnswer)
 
-    // return {dataState: true, dataUser: data.data.user, moreInfo: more.data}
-    return {dataState: true, dataUser: data.data.user}
+    return {dataState: true, dataUser: data.data.user, moreInfo: more.data}
 }

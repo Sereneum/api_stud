@@ -37,7 +37,7 @@ const Login = observer(() => {
 
             user.setIsAuth(true)
             user.setUser(dataUser)
-            user.setMoreInfo(moreInfo)
+            user.setDetailed(moreInfo)
             navigator(MAIN_ROUTE)
         } catch (e) {
             console.log(e)
