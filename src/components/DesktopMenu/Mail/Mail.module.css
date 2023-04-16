@@ -1,5 +1,6 @@
 .mail {
     margin-left: 10px;
+    padding-right: 10px;
     height: 35px;
     background: rgba(33, 33, 33, 0.8);
     backdrop-filter: blur(10px);
@@ -22,13 +23,14 @@
 }
 
 .text {
-    margin-right: 18px;
+    margin-right: 11px;
     margin-left: 10px;
     padding-bottom: 1px;
 }
 
 .counter {
-    width: 35px;
+    width: fit-content;
+    padding: 0px 7px;
     height: 21px;
     background-color:  rgba(255, 255, 255, .5);
     border-radius: 20px;
@@ -36,11 +38,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
-    font-style: normal;
-    font-weight: 700;
+    font-family: Arial;
+    font-weight: bold;
+    letter-spacing: 0.2px;
     font-size: 13px;
-    line-height: 16px;
     color: rgba(0, 0, 0, 0.8);
 }
 

@@ -5,7 +5,7 @@ export default class UserStore {
         this._isAuth = false
         this._token = ''
         this._user = {}
-        // this._moreInfo = {}
+        this._detailed = {}
         makeAutoObservable(this)
     }
 
@@ -21,9 +21,9 @@ export default class UserStore {
         this._user = JSON.parse(JSON.stringify(u))
     }
 
-    // setMoreInfo(data) {
-    //     this._moreInfo = data
-    // }
+    setDetailed(detailed) {
+        this._detailed = detailed
+    }
 
     get isAuth() {
         return this._isAuth
@@ -37,7 +37,7 @@ export default class UserStore {
         return JSON.parse(JSON.stringify(this._user))
     }
 
-    // get moreInfo() {
-    //     return JSON.parse(JSON.stringify(this._moreInfo))
-    // }
+    get detailed() {
+        return JSON.parse(JSON.stringify(this._detailed))
+    }
 }

@@ -3,7 +3,7 @@ import styles from './Mail.module.css'
 import mail_icon from '../../../resources/mail_icon.svg'
 
 const Mail = ({messages}) => {
-    const isMessages = messages && messages.count.length
+    const isMessages = messages && messages.count && messages.count > 0
     const url = 'https://stud.mgri.ru/WebApp/#/mail/all'
 
     const open = () => {
