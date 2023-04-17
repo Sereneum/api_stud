@@ -58,7 +58,7 @@ const Duty = ({dutyActive, mobileMove, desktopMove}) => {
 
 
     const statusComp = (st_id) => {
-        let colors = ['lightslategrey', '#993131', 'lightskyblue', 'lightgoldenrodyellow', 'lightgreen']
+        let colors = ['lightslategrey', '#B14747', 'lightskyblue', 'lightgoldenrodyellow', 'lightgreen']
         if (st_id == null) return <span style={{color: `${colors[0]}`}}>{'Не отправлено'}</span>
         else return <span style={{color: `${colors[task.statusID]}`}}>{task.statusName}</span>
     }
