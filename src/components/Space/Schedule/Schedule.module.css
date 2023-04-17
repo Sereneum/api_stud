@@ -207,3 +207,35 @@
         padding-top: 3px;
     }
 }
+
+.lesson_block.laboratory {
+    border-left: 3px solid #5D3570;
+}
+
+.lesson_block.laboratory.now {
+    box-shadow: 0px 0px 20px #1A1338;
+}
+
+
+.lesson_block.lecture {
+    border-left: 2px solid #397035;
+}
+.lesson_block.lecture.now {
+    box-shadow: 0px 0px 20px rgba(11, 78, 0, 0.3);
+}
+
+.lesson_block.practice {
+    border-left: 2px solid #9F8837;
+}
+
+.lesson_block.practice.now {
+    box-shadow: 0px 0px 20px rgba(104, 69, 0, 0.3);
+}
+
+.now_point {
+
+    width: 6px;
+    height: 6px;
+    border-radius: 100%;
+    background: #75CE56;
+}

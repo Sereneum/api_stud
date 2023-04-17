@@ -1,14 +1,8 @@
 export const sch_parser = (lessons) => {
-    // console.log('lessons', lessons)
-    // console.log(Date.now().toString())
 
-
-    // console.log(lessons[0]['деньНедели'], ':', lessons[0]['день_недели'])
-    // console.log(new Date().getDay())
-    // console.log(lessons[0]['дата'].split('T')[0])
-    // console.log(convNow())
 
     const week = []
+    console.log(lessons)
 
     for (let lesson of lessons) {
         const dayIndex = lesson['деньНедели']
