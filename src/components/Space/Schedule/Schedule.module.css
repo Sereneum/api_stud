@@ -207,3 +207,84 @@
         padding-top: 3px;
     }
 }
+
+.lesson_block.laboratory {
+    border-left: 2px solid #5D3570;
+}
+
+.lesson_block.laboratory.now {
+    box-shadow: 0px 0px 20px #1A1338;
+    animation: breath_purple 5s ease-in-out infinite;
+}
+
+
+.lesson_block.lecture {
+    border-left: 2px solid #397035;
+}
+.lesson_block.lecture.now {
+    box-shadow: 0px 0px 20px rgba(11, 78, 0, 0.3);
+    animation: breath_green 5s ease-in-out infinite;
+}
+
+.lesson_block.practice {
+    border-left: 2px solid #9F8837;
+}
+
+.lesson_block.practice.now {
+    box-shadow: 0px 0px 20px rgba(104, 69, 0, 0.3);
+    animation: breath_yellow 5s ease-in-out infinite;
+}
+
+@keyframes breath_yellow {
+    0% {
+        box-shadow: 0px 0px 20px rgba(104, 69, 0, 0.1);
+    }
+
+    50% {
+        box-shadow: 0px 0px 20px rgba(104, 69, 0, 0.5);
+    }
+
+    100% {
+        box-shadow: 0px 0px 20px rgba(104, 69, 0, 0.1);
+    }
+}
+
+@keyframes breath_green {
+    0% {
+        box-shadow: 0px 0px 20px rgba(11, 78, 0, 0.1);
+    }
+
+    50% {
+        box-shadow: 0px 0px 20px rgba(11, 78, 0, 0.5);
+    }
+
+    100% {
+        box-shadow: 0px 0px 20px rgba(11, 78, 0, 0.1);
+    }
+}
+
+@keyframes breath_purple {
+    0% {
+        box-shadow: 0px 0px 20px rgba(26, 19, 56, 0.2);
+    }
+
+    50% {
+        box-shadow: 0px 0px 20px rgb(39, 29, 84);
+    }
+
+    100% {
+        box-shadow: 0px 0px 20px rgba(26, 19, 56, 0.2);
+    }
+}
+
+
+.now_point {
+
+    position: absolute;
+    margin-top: 10px;
+    margin-left: 84%;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #75CE56;
+}

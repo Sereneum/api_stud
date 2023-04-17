@@ -77,7 +77,8 @@
 
 .dl_item_timer {
     margin-top: 15px;
-    color: #e07e7e;
+    color: #FF6363;
+    opacity: 0.75;
 }
 
 .hr {

@@ -7,7 +7,7 @@ const Task = ({task, size, index, toDuty}) => {
     const styleStatus = status => {
         switch (status) {
             case 0: return {color: 'lightslategrey'}
-            case 1: return {color: 'lightcoral'}
+            case 1: return {color: '#FF6363', opacity: '0.75'}
             case 2: return {color: 'lightskyblue'}
             case 3: return {color: 'lightgoldenrodyellow'}
             case 4: return {color: 'lightgreen'}
