@@ -22,18 +22,6 @@ export const useSpace = ({course, reCourse, binder}) => {
     const [desktopMode, setDesktopMode] = useState('schedule')
     const [mobileMode, setMobileMode] = useState('schedule')
 
-    // useEffect(() => {
-    //     console.log('desktopMode: ', desktopMode)
-    // }, [desktopMode])
-    // useEffect(() => {
-    //     console.log('mobileMode: ', mobileMode)
-    // }, [mobileMode])
-
-    // useEffect(() => {
-    //     console.log('createDeadlines', createDeadlines())
-    // }, [course.courses])
-
-
     const desktopMove = {
         openDuty: ({courseIndex, taskIndex}) => {
             setDutyActive({courseIndex, taskIndex})
@@ -83,15 +71,15 @@ export const useSpace = ({course, reCourse, binder}) => {
         }
 
         binder.setFunc(id, func)
-        // let setter = binder.getSetter(id)
-        // setter(func)
     }, [])
 
 
     const course_list = <CourseList
         isActiveConfig={desktopMode === 'config'}
+        isActiveSch={desktopMode === 'schedule'}
         desktopMove={desktopMove}
         mobileMove={mobileMove}
+        desktopMode={desktopMode}
     />
 
     const task_list = <TaskList
@@ -160,6 +148,6 @@ export const useSpace = ({course, reCourse, binder}) => {
     }
 
 
-    return {mobileMove, mobileMode, mobileSpace, desktopSpace}
+    return {mobileMove, mobileMode, mobileSpace, desktopSpace, desktopMode}
 }
 

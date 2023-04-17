@@ -6,7 +6,7 @@ import {Context} from "../../../index";
 import {useMediaQuery} from "react-responsive";
 
 
-const CourseList = ({isActiveConfig, desktopMove, mobileMove}) => {
+const CourseList = ({isActiveConfig, desktopMove, mobileMove, isActiveSch}) => {
 
     const {course} = useContext(Context)
     const isMobile = useMediaQuery({query: '(max-width: 1000px)'})
@@ -31,6 +31,7 @@ const CourseList = ({isActiveConfig, desktopMove, mobileMove}) => {
             desktopMove.openConfig()
     }
 
+
     return (
         <Container className={styles.course_block}>
             <div className={styles.course_title}>
@@ -42,7 +43,8 @@ const CourseList = ({isActiveConfig, desktopMove, mobileMove}) => {
                     courses
                         ?
                         courses.map((i, index) => <CourseItem key={i.course_id}
-                                                              isActive={!isActiveConfig && !isMobile && index === activeCourseIndex}
+                                                              isActive={!isActiveConfig && !isActiveSch
+                                                                  && !isMobile && index === activeCourseIndex}
                                                               course={i}
                                                               click={openCourse}
                                                               index={index}/>)
