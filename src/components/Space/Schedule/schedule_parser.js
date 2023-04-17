@@ -2,7 +2,7 @@ export const sch_parser = (lessons) => {
 
 
     const week = []
-    console.log(lessons)
+    // console.log(lessons)
 
     for (let lesson of lessons) {
         const dayIndex = lesson['деньНедели']

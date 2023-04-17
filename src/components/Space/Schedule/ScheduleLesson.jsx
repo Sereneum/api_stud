@@ -21,7 +21,8 @@ const ScheduleLesson = ({lesson}) => {
     }
 
     const activeStyle = () => {
-        let date = new Date(2023, 3, 17, 12)
+        // let date = new Date(2023, 3, 17, 12)
+        let date = new Date() 
         if (
             lesson['деньНедели'] === date.getDay()
             &&
@@ -31,11 +32,6 @@ const ScheduleLesson = ({lesson}) => {
         ) return true
         else
             return false
-        // let b = lesson['датаНачала']
-        // let e = lesson['датаОкончания']
-        //
-        // if(date.getTime() >= Date.parse(b) && date.getTime() <= Date.parse(e))
-        //     return
     }
 
 

@@ -8,12 +8,7 @@ const ScheduleLink = () => {
     const { binder } = useContext(Context)
     const [func, setFunc] = useState(null)
 
-    // useEffect(() => {
-    //     binder.setSetter(id, setFunc)
-    // }, [])
-
     const scheduleRequest = () => {
-        console.log(binder.getFunc(id))
         binder.getFunc(id) && binder.getFunc(id)()
     }
 
