@@ -20,7 +20,7 @@ import {useMediaQuery} from "react-responsive";
 const Duty = ({dutyActive, mobileMove, desktopMove}) => {
 
     const {course} = useContext(Context)
-    const isMobile = useMediaQuery({query: '(max-width: 1000px)'})
+    const isMobile = useMediaQuery({query: '(max-width: 1300px)'})
 
     const valueActiveCourse = course.courses[dutyActive.courseIndex]
     const task = valueActiveCourse.tasks[dutyActive.taskIndex]
@@ -53,12 +53,12 @@ const Duty = ({dutyActive, mobileMove, desktopMove}) => {
         else if (hours > 0) str = `Часов до закрытия: ${hours}`
         else str = ``
 
-        return <> <span>{comp}</span>{str ? ' / ' : ''}<span style={{color: '#d25752'}}>{str}</span> </>
+        return <> <span>{comp}</span>{str ? ' / ' : ''}<span style={{color: '#f08080cc'}}>{str}</span> </>
     }
 
 
     const statusComp = (st_id) => {
-        let colors = ['lightslategrey', '#B14747', 'lightskyblue', 'lightgoldenrodyellow', 'lightgreen']
+        let colors = ['lightslategrey', '#f08080cc', 'lightskyblue', 'lightgoldenrodyellow', 'lightgreen']
         if (st_id == null) return <span style={{color: `${colors[0]}`}}>{'Не отправлено'}</span>
         else return <span style={{color: `${colors[task.statusID]}`}}>{task.statusName}</span>
     }

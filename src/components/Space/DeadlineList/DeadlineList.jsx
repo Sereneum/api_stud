@@ -6,7 +6,7 @@ import {useMediaQuery} from "react-responsive";
 
 const DeadlineList = observer(({tasks, desktopMove, courses, mobileMove}) => {
 
-    const isMobile = useMediaQuery({query: '(max-width: 1000px)'})
+    const isMobile = useMediaQuery({query: '(max-width: 1300px)'})
 
     const findIndexes = (course_id, courseTaskID) => {
         let courseIndex = -1

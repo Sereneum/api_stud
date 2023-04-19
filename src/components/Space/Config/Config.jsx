@@ -14,8 +14,8 @@ import back from '../../../resources/back.svg';
 const Config = observer(({reCourse, desktopMove, mobileMove}) => {
 
     const {user} = useContext(Context)
-    const isMobile = useMediaQuery({query: '(max-width: 1000px)'})
-    const isDesktop = useMediaQuery({query: '(min-width: 1001px)'})
+    const isMobile = useMediaQuery({query: '(max-width: 1300px)'})
+    const isDesktop = useMediaQuery({query: '(min-width: 1301px)'})
 
     let id = user.user.anotherID
 

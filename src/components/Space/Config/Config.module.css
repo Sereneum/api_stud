@@ -12,7 +12,7 @@
 
     box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 1);
     /* margin-top: 60px; */
-    /* margin-bottom: 60px; */
+    margin-bottom: -30px;
     padding-bottom: 20px;
 }
 
@@ -104,20 +104,20 @@
 
 .config_item {
     background-color: #262626;
-    border: 7px solid transparent;
+    /* border: 7px solid transparent; */
     border-radius: 10px;
     font-size: 17px;
     margin-bottom: 10px;
     text-align: left;
-    padding: 0 10px;
+    padding: 7px 17px;
     -webkit-user-select: none;
     user-select: none;
     cursor: default;
     vertical-align: center;
     width: 100%;
+    /* border-left: 2px solid rgb(208, 255, 0); */
+    border-left: 2px solid rgba(205, 168, 250, 0.728);
 }
-
-
 
 .config_rename {
     font-size: 17px;
@@ -334,11 +334,12 @@
     cursor: pointer;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1300px) {
     .config_main_block {
         min-width: 560px;
         max-width: 560px;
         margin: 0px auto;
+        margin-bottom: -30px;
     }
     .block_header{ 
         width: 100%;
@@ -360,7 +361,7 @@
     .config_main_block {
         min-width: 92vw;
         width: 92vw;
-        margin-bottom: -25px;
+        margin-bottom: -45px;
     }
 
     .config_in_item_save_button {
@@ -386,7 +387,6 @@
     }
     .config_item {
         font-size: 15px;
-        border: 7px solid transparent;
         /* padding-top: 2px; */
     }
     .config_list {

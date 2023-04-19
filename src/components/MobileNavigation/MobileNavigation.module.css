@@ -8,7 +8,7 @@
     overflow-x: auto;
     -ms-overflow-style: none;  /* IE и Edge */
     scrollbar-width: none; /* Firefox */
-    padding-left: 20px;
+    padding-left: 10px;
 }
 
 .bar::-webkit-scrollbar {
@@ -32,16 +32,18 @@
     background-color: rgba(35, 35, 35, 0.7);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
+    transition: all 0.1s ease-in-out;
 }
 .block:active {
     background-color: rgba(65, 65, 65, 0.7);
-    transition: all 0.1s ease-in-out;
+    /* transition: all 0.05s ease-in-out; */
 }
 
 .block.active {
-    /* background-color: rgba(139, 139, 139, 0.9); */
-    filter: invert(1);
-    -webkit-filter: invert(1);
+    background-color: rgba(39, 39, 39, 0.9);
+    /* transition: all 0.1s ease-in-out; */
+    /* filter: invert(1);
+    -webkit-filter: invert(1); */
 }
 
 .icon {
@@ -52,6 +54,16 @@
     opacity: 0.8;
     padding: 2px;
     margin: auto 5px auto 1px;
+}
+
+.icon_schedule {
+    width: 22px;
+    height: 22px;
+    opacity: 0.8;
+    padding: 2px;
+    padding-bottom: 3px;
+    padding-top: 1px;
+    margin: auto 6px auto 3px;
 }
 
 .icon.active {
@@ -69,6 +81,11 @@
 
 }
 
+@media (max-width: 600px) {
+    .bar {
+        padding-left: 5%;
+    }
+}
 
 @font-face {
     font-family: 'M_Ying_Hei';
