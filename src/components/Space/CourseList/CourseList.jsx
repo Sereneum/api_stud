@@ -1,15 +1,16 @@
-import React, {memo, useCallback, useContext} from 'react';
+import React, { memo, useCallback, useContext } from 'react';
 import CourseItem from "./CourseItem";
 import styles from './CourseList.module.css'
-import {Container} from "react-bootstrap";
-import {Context} from "../../../index";
-import {useMediaQuery} from "react-responsive";
+import { Container } from "react-bootstrap";
+import { Context } from "../../../index";
+import { useMediaQuery } from "react-responsive";
+import settings from '../../../resources/settings_icon.svg';
 
 
-const CourseList = ({isActiveConfig, desktopMove, mobileMove, isActiveSch}) => {
+const CourseList = ({ isActiveConfig, desktopMove, mobileMove, isActiveSch }) => {
 
-    const {course} = useContext(Context)
-    const isMobile = useMediaQuery({query: '(max-width: 1000px)'})
+    const { course } = useContext(Context)
+    const isMobile = useMediaQuery({ query: '(max-width: 1300px)' })
 
     const activeCourseIndex = course.activeCourse
     const valueActiveCourse = course.courses[course.activeCourse]
@@ -43,21 +44,28 @@ const CourseList = ({isActiveConfig, desktopMove, mobileMove, isActiveSch}) => {
                     courses
                         ?
                         courses.map((i, index) => <CourseItem key={i.course_id}
-                                                              isActive={!isActiveConfig && !isActiveSch
-                                                                  && !isMobile && index === activeCourseIndex}
-                                                              course={i}
-                                                              click={openCourse}
-                                                              index={index}/>)
+                            isActive={!isActiveConfig && !isActiveSch
+                                && !isMobile && index === activeCourseIndex}
+                            course={i}
+                            click={openCourse}
+                            index={index} />)
                         :
                         "пусто"
                 }
             </div>
-            <hr className={styles.hr}/>
-            <div
-                className={`${styles.course_settings} ${isActiveConfig ? styles.course_settings_active : ''}`}
-                onClick={openConfig}
-            >
-                {isActiveConfig ? 'Настройка курсов' : 'Настройка курсов'}
+            <hr className={styles.hr} />
+            <div className={styles.course_settings_hover} onClick={openConfig}>
+                <img
+                            alt=""
+                            src={settings}
+                            className={styles.course_settings_icon}/>
+                <div
+                    className={`${styles.course_settings} ${isActiveConfig ? styles.course_settings_active : ''}`}
+                    
+                >
+                    {isActiveConfig ? 'Настройка курсов' : 'Настройка курсов'}
+                </div>
+
             </div>
         </Container>
     );

@@ -14,7 +14,7 @@ const Space = observer(({reCourse}) => {
 
     const {mobileMove, mobileMode, mobileSpace, desktopSpace} = useSpace({course, reCourse, binder})
 
-    const isMobile = useMediaQuery({query: '(max-width: 1000px)'})
+    const isMobile = useMediaQuery({query: '(max-width: 1300px)'})
 
 
     return (

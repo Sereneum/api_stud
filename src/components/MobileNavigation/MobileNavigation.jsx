@@ -47,6 +47,21 @@ const MobileNavigation = ({mobileMove, mobileMode}) => {
             </div>
 
             <div
+                className={`${styles.block} ${isActive('schedule')}`}
+                onClick={toSchedule}
+            >
+                <img
+                    alt=""
+                    src={schedule_icon}
+                    className={`${styles.icon_schedule} ${isActive('schedule')}`}/>
+                <div
+                    className={`${styles.title} ${isActive('schedule')}`}
+                >
+                    Расписание
+                </div>
+            </div>
+
+            <div
                 className={`${styles.block} ${isActive('deadlines')}`}
                 onClick={toDeadlines}
             >
@@ -58,21 +73,6 @@ const MobileNavigation = ({mobileMove, mobileMode}) => {
                     className={`${styles.title} ${isActive('deadlines')}`}
                 >
                     Дедлайны
-                </div>
-            </div>
-
-            <div
-                className={`${styles.block} ${isActive('schedule')}`}
-                onClick={toSchedule}
-            >
-                <img
-                    alt=""
-                    src={schedule_icon}
-                    className={`${styles.icon} ${isActive('schedule')}`}/>
-                <div
-                    className={`${styles.title} ${isActive('schedule')}`}
-                >
-                    Расписание
                 </div>
             </div>
         </div>

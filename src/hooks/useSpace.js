@@ -15,7 +15,7 @@ export const useSpace = ({course, reCourse, binder}) => {
     const [dutyActive, setDutyActive] = useState({courseIndex: -1, taskIndex: -1})
     const {deadlineTasks} = useDeadlineList({course})
 
-    const isMobile = useMediaQuery({query: '(max-width: 1000px)'})
+    const isMobile = useMediaQuery({query: '(max-width: 1300px)'})
     // const [desktopMode, setDesktopMode] = useState('tasks')
     // const [mobileMode, setMobileMode] = useState('courses')
 

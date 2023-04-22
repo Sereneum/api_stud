@@ -21,7 +21,7 @@ const NavBar = observer(({isLoaded}) => {
     }, [])
 
 
-    const isMobile = useMediaQuery({query: '(max-width: 1000px)'})
+    const isMobile = useMediaQuery({query: '(max-width: 1300px)'})
     const navigator = useNavigate()
 
     return (

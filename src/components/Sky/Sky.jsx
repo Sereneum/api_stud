@@ -2,7 +2,7 @@ import React, {useRef, useEffect, useLayoutEffect} from 'react';
 import {useMediaQuery} from "react-responsive";
 
 const Sky = () => {
-    const isMobile = useMediaQuery({query: '(max-width: 1000px)'})
+    const isMobile = useMediaQuery({query: '(max-width: 1300px)'})
     const radius = isMobile ? 0.1 : 0.25
     const canvasRef = useRef(null);
     // useLayoutEffect(() => {
