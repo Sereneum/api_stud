@@ -7,27 +7,28 @@ import Spin from "../../Spin";
 import ScheduleDay from "./ScheduleDay";
 import {Context} from "../../../index";
 import {observer} from "mobx-react-lite";
+import ScheduleController from "./ScheduleController/ScheduleController";
 
 
-const Schedule = observer(() => {
+const Schedule = observer(({weekID}) => {
 
     const [lessons, setLessons] = useState(null)
     const [week, setWeek] = useState(null)
 
-    const { user } = useContext(Context)
-
-
+    const { user, schStore} = useContext(Context)
 
     useEffect(() => {
-        epoch_schedule(user.detailed.group.item2).then(r => {
-            setLessons(r.rasp)
-            setWeek(sch_parser(r.rasp))
+        epoch_schedule(user.detailed.group.item2, weekID).then(r => {
+            setLessons(r[0].rasp)
+            setWeek(sch_parser(r[0].rasp))
+            schStore.setCalendar(r[1])
         })
     }, [])
 
     return (
         <div className={styles.block}>
             <div className={styles.title}>Расписание</div>
+            <ScheduleController />
             {
                 !week
                     ?

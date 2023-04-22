@@ -36,3 +36,16 @@ export const parserDateNow = () => {
             (now.getMonth() + 1))
         + '-' + now.getDate()
 }
+
+export const parserDateNowForSch = () => {
+    const now = new Date()
+
+    return now.getDate()  + '.'
+        +
+        ((now.getMonth() + 1).toString().length < 2
+            ?
+            '0' + (now.getMonth() + 1)
+            :
+            (now.getMonth() + 1))
+        + '.' + now.getFullYear()
+}

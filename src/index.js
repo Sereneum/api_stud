@@ -9,6 +9,7 @@ import SizeStore from "./store/sizeStore";
 import Binder from "./store/binder";
 import './night.css'
 import Night from './components/Night';
+import SchStore from "./store/schStore";
 export const Context = createContext(null)
 
 window.onload = function () {
@@ -26,7 +27,8 @@ root.render(
             user: new UserStore(),
             course: new CourseStore(),
             sizeStore: new SizeStore(),
-            binder: new Binder()
+            binder: new Binder(),
+            schStore: new SchStore()
         }}>
             <App />
         </Context.Provider>

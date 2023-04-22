@@ -118,13 +118,29 @@ export const epoch_checkerMail = () => new Promise((resolve, reject) => {
         .catch(e => e)
 })
 
-export const epoch_schedule = (groupID) => new Promise((resolve, reject) => {
-    const week = parserDateNow()
-    const apiUrl = `/api/Rasp?idGroup=${groupID}&sdate=${week}`
+export const epoch_schedule = (groupID, weekID=parserDateNow()) => new Promise((resolve, reject) => {
+    const apiUrl = `/api/Rasp?idGroup=${groupID}&sdate=${weekID ? weekID : parserDateNow()}`
+    const apiCalendarUrl = `api/GetRaspDates?idGroup=${groupID}`
 
-    $authServerHost.get(apiUrl)
-        .then(r => {
-            resolve(r.data.data)
-        })
-        .catch(err => reject(err))
+    const currentWeek = new Promise((resCurrentWeek, rejCurrentWeek) => {
+        $authServerHost.get(apiUrl)
+            .then(r => resCurrentWeek(r.data.data))
+            .catch(err => rejCurrentWeek(err))
+    })
+
+    const calendarData = new Promise((resCalendarData, rejCalendarData) => {
+        $authServerHost.get(apiCalendarUrl)
+            .then(r => resCalendarData(r.data.data))
+            .catch(err => rejCalendarData(err))
+    })
+
+    Promise.all([currentWeek, calendarData])
+        .then(r => resolve(r))
+
+
+    // $authServerHost.get(apiUrl)
+    //     .then(r => {
+    //         resolve(r.data.data)
+    //     })
+    //     .catch(err => reject(err))
 })

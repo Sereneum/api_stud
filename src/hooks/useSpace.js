@@ -1,4 +1,4 @@
-import React, {useContext, useEffect, useState} from "react";
+import React, {useCallback, useContext, useEffect, useMemo, useState} from "react";
 import Duty from "../components/Duty/Duty";
 import TaskList from "../components/Space/TaskList/TaskList";
 import Config from "../components/Space/Config/Config";
@@ -64,15 +64,6 @@ export const useSpace = ({course, reCourse, binder}) => {
         }
     }
 
-    useEffect(() => {
-        let id = 'scheduleLink'
-        let func = () => {
-            isMobile ? mobileMove.openSchedule() : desktopMove.openSchedule()
-        }
-
-        binder.setFunc(id, func)
-    }, [])
-
 
     const course_list = <CourseList
         isActiveConfig={desktopMode === 'config'}
@@ -106,7 +97,24 @@ export const useSpace = ({course, reCourse, binder}) => {
         mobileMove={mobileMove}
         courses={course.courses}/>
 
-    const schedule = <Schedule />
+
+    const [weekID, setWeekID] = useState(null)
+    const [calendar, setCalender] = useState({})
+
+
+    useEffect(() => {
+        binder.setFunc('scheduleLink', () => {
+            isMobile ? mobileMove.openSchedule() : desktopMove.openSchedule()
+        })
+
+        binder.setFunc('setWeekID', () => {
+            setWeekID(weekID)
+        })
+
+        binder.setFunc('loadCalendar', () => {
+
+        })
+    }, [])
 
 
     const middleBlock = () => {
@@ -118,7 +126,7 @@ export const useSpace = ({course, reCourse, binder}) => {
             case 'duty':
                 return duty
             case 'schedule':
-                return schedule
+                return <Schedule weekID={weekID}/>
         }
     }
 
@@ -143,7 +151,7 @@ export const useSpace = ({course, reCourse, binder}) => {
             case 'courses':
                 return course_list
             case 'schedule':
-                return schedule
+                return <Schedule weekID={weekID} setCalender={setCalender}/>
         }
     }
 

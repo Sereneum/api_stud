@@ -1,0 +1,134 @@
+.controller {
+    display: flex;
+    flex-direction: row;
+}
+
+.block {
+    width: 245px;
+    height: 43px;
+
+    background: #1C1C1C;
+    border-radius: 9px;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+}
+
+.block.date_selector {
+    padding-right: 14px;
+    z-index: 5;
+}
+
+.calendar {
+    position: absolute;
+    height: 236px;
+    width: 245px;
+    margin-left:  calc(3% - 1px);
+    margin-top: calc(120px + 45px - 10px);
+    border: 4px solid black;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    z-index: 4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 1);
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.table {
+    width: 100%;
+    height: 100%;
+}
+
+tbody {
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+td {
+    /*width: 27px;*/
+    /*height: 24px;*/
+    /*background: rgba(255, 255, 255, 0.15);*/
+    /*border-radius: 4px;*/
+    width: 28px;
+    height: 28px;
+
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+
+    font-weight: bold;
+    letter-spacing: 0.2px;
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.8);
+    flex: none;
+    order: 5;
+    flex-grow: 0;
+}
+
+
+.input {
+    width: 45px;
+    height: 17px;
+    margin: auto 0px auto 15px;
+    width: auto;
+    height: 22px;
+    background-color: transparent;
+    border: none;
+
+    font-family: 'M_Ying_Hei';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    color: white;
+}
+input:focus {
+    outline: none;
+}
+
+.icon {
+    width: 20px;
+    margin-left: 16px;
+}
+
+.last_icon {
+    width: 18px;
+}
+.last_icon.show {
+    rotate: 180deg;
+}
+
+
+
+.text {
+    width: 100%;
+    height: 17px;
+    margin: auto 0px auto 15px;
+
+    font-family: 'M_Ying_Hei';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    /* identical to box height */
+
+
+
+
+    color: rgba(255, 255, 255, 0.7);
+}
+
+@font-face {
+    font-family: 'M_Ying_Hei';
+    src: local('M_Ying_Hei'),
+    url('M_Ying_Hei.woff2') format('truetype');
+    font-weight: bold;
+}
