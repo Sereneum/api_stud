@@ -1,15 +1,23 @@
-export const sch_parser = (lessons) => {
+import {parserDateNow, parserDateNowForSch} from "../../../managers/parser";
+
+export const sch_parser = (lessons, weekID=null) => {
 
 
     const week = []
-    // console.log(lessons)
+
+
+    const currentDayId = weekID
+        ?
+        new Date(weekID).getDay()
+        :
+        new Date().getDay()
 
     for (let lesson of lessons) {
         const dayIndex = lesson['деньНедели']
         const day = lesson['день_недели']
 
         const lesDayId = lesson['деньНедели']
-        const currentDayId = new Date().getDay()
+
         if(currentDayId > lesDayId) continue
 
         let isFind = findDay(week, dayIndex)

@@ -118,29 +118,50 @@ export const epoch_checkerMail = () => new Promise((resolve, reject) => {
         .catch(e => e)
 })
 
-export const epoch_schedule = (groupID, weekID=parserDateNow()) => new Promise((resolve, reject) => {
-    const apiUrl = `/api/Rasp?idGroup=${groupID}&sdate=${weekID ? weekID : parserDateNow()}`
-    const apiCalendarUrl = `api/GetRaspDates?idGroup=${groupID}`
+export const epoch_schedule = ({groupID, weekID = parserDateNow(), isCalendar = false}) =>
+    new Promise((resolve, reject) => {
 
-    const currentWeek = new Promise((resCurrentWeek, rejCurrentWeek) => {
-        $authServerHost.get(apiUrl)
-            .then(r => resCurrentWeek(r.data.data))
-            .catch(err => rejCurrentWeek(err))
+        // console.log('epoch_schedule', groupID, weekID)
+
+        const apiUrl = `/api/Rasp?idGroup=${groupID}&sdate=${weekID ? weekID : parserDateNow()}`
+        const apiCalendarUrl = `api/GetRaspDates?idGroup=${groupID}`
+
+        const promiseList = [
+            new Promise((resCurrentWeek, rejCurrentWeek) => {
+                $authServerHost.get(apiUrl)
+                    .then(r => resCurrentWeek(r.data.data))
+                    .catch(err => rejCurrentWeek(err))
+            })
+        ]
+        if (!isCalendar) promiseList.push(
+            new Promise((resCalendarData, rejCalendarData) => {
+                $authServerHost.get(apiCalendarUrl)
+                    .then(r => resCalendarData(r.data.data))
+                    .catch(err => rejCalendarData(err))
+            })
+        )
+        Promise.all(promiseList)
+            .then(r => resolve(r))
+
+
+        // const currentWeek = new Promise((resCurrentWeek, rejCurrentWeek) => {
+        //     $authServerHost.get(apiUrl)
+        //         .then(r => resCurrentWeek(r.data.data))
+        //         .catch(err => rejCurrentWeek(err))
+        // })
+        //
+        // const calendarData = new Promise((resCalendarData, rejCalendarData) => {
+        //     $authServerHost.get(apiCalendarUrl)
+        //         .then(r => resCalendarData(r.data.data))
+        //         .catch(err => rejCalendarData(err))
+        // })
+
+        // const promiseList = [currentWeek];
+        // console.log('isCalendar', isCalendar)
+        // if(!isCalendar) promiseList.push(calendarData)
+        //
+        // Promise.all(promiseList)
+        //     .then(r => resolve(r))
+
+
     })
-
-    const calendarData = new Promise((resCalendarData, rejCalendarData) => {
-        $authServerHost.get(apiCalendarUrl)
-            .then(r => resCalendarData(r.data.data))
-            .catch(err => rejCalendarData(err))
-    })
-
-    Promise.all([currentWeek, calendarData])
-        .then(r => resolve(r))
-
-
-    // $authServerHost.get(apiUrl)
-    //     .then(r => {
-    //         resolve(r.data.data)
-    //     })
-    //     .catch(err => reject(err))
-})

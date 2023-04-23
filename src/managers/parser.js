@@ -24,8 +24,8 @@ let getDeadline = deadline => {
     return hours > 0 ? Math.round(hours) : 0
 }
 
-export const parserDateNow = () => {
-    const now = new Date()
+export const parserDateNow = (date=null) => {
+    const now = date ? date : new Date()
 
     return now.getFullYear() + '-'
         +
@@ -34,11 +34,12 @@ export const parserDateNow = () => {
             '0' + (now.getMonth() + 1)
             :
             (now.getMonth() + 1))
-        + '-' + now.getDate()
+        + '-' + (now.getDate().toString().length < 2 ? '0' + now.getDate() : now.getDate())
 }
 
-export const parserDateNowForSch = () => {
-    const now = new Date()
+export const parserDateNowForSch = (date=null) => {
+
+    const now = date ? new Date(date) : new Date()
 
     return now.getDate()  + '.'
         +

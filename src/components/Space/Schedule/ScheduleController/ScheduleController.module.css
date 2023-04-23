@@ -33,6 +33,7 @@
 
     z-index: 4;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     background-color: rgba(0, 0, 0, 1);
@@ -51,6 +52,7 @@ tbody {
     justify-content: center;
     align-items: center;
 }
+
 
 td {
     /*width: 27px;*/
@@ -73,6 +75,36 @@ td {
     flex-grow: 0;
 }
 
+td.isOk {
+    border: 1px solid goldenrod;
+}
+
+td.isNow {
+    border: 1px solid cornflowerblue;
+}
+
+td:hover {
+    background-color: #464343;
+}
+
+.head {
+    color: rgba(255, 255, 255, .7);
+    display: flex;
+}
+
+.arrow {
+    width: 14px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.arrow:hover {
+    border: 1px solid ghostwhite;
+}
+
+.passiveArrow {
+    filter: opacity(.4);
+}
 
 .input {
     width: 45px;
@@ -132,3 +164,5 @@ input:focus {
     url('M_Ying_Hei.woff2') format('truetype');
     font-weight: bold;
 }
+
+
