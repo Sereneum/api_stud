@@ -8,7 +8,7 @@ import '../../../../cssAnimation/sch_controller_animation.css'
 
 const ScheduleController = ({weekID, reLoadWeek}) => {
 
-    const [isVisible, setIsVisible] = useState(true)
+    const [isVisible, setIsVisible] = useState(false)
     const modalControl = () => {
         setIsVisible(!isVisible)
     }
@@ -17,7 +17,7 @@ const ScheduleController = ({weekID, reLoadWeek}) => {
         <div className={styles.controller}>
             <SchDateSelector modalControl={modalControl} isVisible={isVisible} />
             <SchSearch />
-            <CSSTransition  in={isVisible} mountOnEnter timeout={1000} classNames={'my-node'}>
+            <CSSTransition  in={isVisible} timeout={1000} classNames={'my-node'}>
                 <SchCalendar
                     isVisible={isVisible}
                     setIsVisible={setIsVisible}

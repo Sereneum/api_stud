@@ -16,7 +16,8 @@ const SchCalendar = observer(({isVisible, setIsVisible, weekID, reLoadWeek}) => 
 
     const fillTable = (calendar) => {
         // console.log(calendar)
-        let offset = 5
+        let firstDay = new Date(year, month, 1).getDay()
+        let offset = firstDay === 0 ? 6 : firstDay - 1
         let value = 0
         let mx = 31
 
@@ -83,7 +84,9 @@ const SchCalendar = observer(({isVisible, setIsVisible, weekID, reLoadWeek}) => 
         let new_year = month - 1 < 0 ? year - 1 : year
         let new_date = new Date(new_year, new_month, 1)
 
-        return minDate < new_date
+        // console.log(new_date)
+
+        return minDate.getMonth() <= new_date.getMonth()
     }
 
     const nextMonth = () => {
@@ -92,7 +95,7 @@ const SchCalendar = observer(({isVisible, setIsVisible, weekID, reLoadWeek}) => 
         let new_year = month + 1 > 12 ? year + 1 : year
         let new_date = new Date(new_year, new_month, 1)
 
-        return maxDate > new_date
+        return maxDate.getMonth() >= new_date.getMonth()
     }
 
     const clickOnArrow = (offset) => {
