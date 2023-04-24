@@ -148,8 +148,22 @@ export const preEpoch_reconstructionCourses = (before = [], after = [], courses)
         //     resolve({isWithoutChanges: false, courses: courses})
         // })
     })
-
 }
+
+export const preEpoch_reboot = (course_id, courses) => new Promise((resolve, reject) => {
+    epoch_courseData(course_id)
+        .then(new_course => {
+            // console.log(new_course)
+            let ans = []
+            for(let i = 0; i < courses.length; ++i) {
+                if(courses.course_id === course_id)
+                    ans.push(new_course)
+                else
+                    ans.push(courses[i])
+            }
+            resolve(ans)
+        })
+})
 
 
 

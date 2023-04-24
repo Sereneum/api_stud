@@ -7,7 +7,7 @@ import { useMediaQuery } from "react-responsive";
 import settings from '../../../resources/settings_icon.svg';
 
 
-const CourseList = ({ isActiveConfig, desktopMove, mobileMove, isActiveSch }) => {
+const CourseList = ({ isActiveConfig, desktopMove, mobileMove, isActiveSch, reboot}) => {
 
     const { course } = useContext(Context)
     const isMobile = useMediaQuery({ query: '(max-width: 1300px)' })
@@ -48,7 +48,9 @@ const CourseList = ({ isActiveConfig, desktopMove, mobileMove, isActiveSch }) =>
                                 && !isMobile && index === activeCourseIndex}
                             course={i}
                             click={openCourse}
-                            index={index} />)
+                            index={index}
+                            reboot={reboot}
+                        />)
                         :
                         "пусто"
                 }

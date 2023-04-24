@@ -14,6 +14,7 @@ const SchSearch = () => {
                 onChange={e => setInput(e.target.value)}
                 className={styles.input}
             />
+
             {/*<div className={styles.text}>Поиск</div>*/}
         </div>
     );

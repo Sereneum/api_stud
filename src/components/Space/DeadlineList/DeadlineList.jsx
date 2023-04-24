@@ -29,6 +29,7 @@ const DeadlineList = observer(({tasks, desktopMove, courses, mobileMove}) => {
             mobileMove.openDuty(indexes)
             :
             desktopMove.openDuty(indexes)
+
     }
 
     return (

@@ -6,8 +6,9 @@ import DutyFilesList from "../../Duty/DutyFilesList";
 import {useMediaQuery} from 'react-responsive'
 import TaskListMaterialsBlock from "./TaskListMaterialsBlock";
 import back from "../../../resources/back.svg";
+import Spin from "../../Spin";
 
-const TaskList = observer(({desktopMove, course, activeCourseIndex, mobileMove}) => {
+const TaskList = observer(({desktopMove, course, activeCourseIndex, mobileMove, rebootLoader}) => {
 
     const [isOpenMaterials, setIsOpenMaterials] = useState(false)
 
@@ -47,6 +48,11 @@ const TaskList = observer(({desktopMove, course, activeCourseIndex, mobileMove})
 
     return (
         <div className={styles.tasks_block}>
+            {rebootLoader
+                ?
+                <Spin cl={styles.spinner}/>
+                :
+                <>
             <div className={styles.tasks_block_cover}>
                 {isDesktop
                     &&
@@ -89,8 +95,8 @@ const TaskList = observer(({desktopMove, course, activeCourseIndex, mobileMove})
                 isOpen={isOpenMaterials}
                 open={() => setIsOpenMaterials(true)}
             />
-
-
+                </>
+            }
         </div>
     );
 });

@@ -105,7 +105,21 @@
     cursor: pointer;
     border-radius: 7px;
     transition: all 0.1s ease-in-out;
+    display: flex;
 }
+.course_item>div {
+    width: 100%;
+}
+.course_item>img {
+    width: 20px;
+    filter: invert(90%);
+    margin-left: 16px;
+}
+.course_item>img:hover {
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+
 
 @media (pointer: fine) {
     .course_item:hover {
