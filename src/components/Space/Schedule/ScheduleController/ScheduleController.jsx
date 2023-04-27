@@ -4,7 +4,6 @@ import SchDateSelector from "./SchDateSelector";
 import styles from './ScheduleController.module.css'
 import SchCalendar from "./SchCalendar";
 import {CSSTransition, Transition} from "react-transition-group";
-import '../../../../cssAnimation/sch_controller_animation.css'
 
 const ScheduleController = ({weekID, reLoadWeek}) => {
 
@@ -15,20 +14,16 @@ const ScheduleController = ({weekID, reLoadWeek}) => {
 
     return (
         <div className={styles.controller}>
-            <SchDateSelector modalControl={modalControl} isVisible={isVisible} />
+            <SchDateSelector modalControl={modalControl} isVisible={isVisible} setIsVisible={setIsVisible}/>
             <SchSearch />
-            <CSSTransition  in={isVisible} timeout={1000} classNames={'my-node'}>
+            {/*<CSSTransition  in={isVisible} timeout={1000} classNames={'my-node'}>*/}
                 <SchCalendar
                     isVisible={isVisible}
                     setIsVisible={setIsVisible}
                     weekID={weekID}
                     reLoadWeek={reLoadWeek}
                 />
-            </CSSTransition>
-
-
-
-
+            {/*</CSSTransition>*/}
         </div>
     );
 };

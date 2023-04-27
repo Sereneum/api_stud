@@ -3,6 +3,7 @@ import styles from './DutyAttachModal.module.css'
 import upload_icon from '../../../../resources/duty/upload_icon.svg'
 import Dropzone, {useDropzone} from "react-dropzone";
 
+
 const DutyAttachDropzone = ({sendData, uploading}) => {
 
 

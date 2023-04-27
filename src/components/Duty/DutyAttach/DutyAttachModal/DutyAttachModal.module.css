@@ -48,8 +48,7 @@
     max-width: 620px;
     min-height: 620px;
     max-height: 620px;
-
-    animation: openUp 0.7s cubic-bezier(0.88, 0.02, 0.22, 0.98);
+    /*animation: openUp 0.7s cubic-bezier(0.88, 0.02, 0.22, 0.98);*/
 }
 
 
@@ -118,28 +117,6 @@
 }
 
 
-.up-enter {
-    opacity: 0;
-    transform: translateY(150%);
-}
-
-.up-enter-active {
-    opacity: 1;
-    transform: translateY(0%);
-    transition: transform 0.1s ease-in-out;
-}
-
-.up-exit {
-    opacity: 1;
-    transform: translateY(0%);
-}
-
-.up-exit-active {
-    opacity: 0;
-    transform: translateY(150%);
-    transition: transform 0.1s ease-in-out;
-}
-
 
 
 .modal_close {
@@ -197,7 +174,7 @@
     border: 3px dashed #929292;
     border-radius: 20px;
     margin: 0px 25px 0px 25px;
-    transition: all 0.1s ease-in-out;
+    /*transition: all 0.1s ease-in-out;*/
 }
 
 .modal_attach_block:active {

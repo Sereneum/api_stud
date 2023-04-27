@@ -1,0 +1,53 @@
+.modal-animation-enter {
+    transform: translateY(150%);
+}
+
+.modal-animation-enter-active {
+    transform: translateY(0%);
+    transition: all 0.7s cubic-bezier(0.88, 0.02, 0.22, 0.98);
+}
+
+.modal-animation-enter-done {
+}
+
+.modal-animation-exit {
+    transform: translateY(0%);
+    transition: 0.7s cubic-bezier(0.88, 0.02, 0.22, 0.98);
+}
+
+.modal-animation-exit-active {
+    transform: translateY(150%);
+}
+
+.modal-animation-exit-done {
+    transform: translateY(150%);
+    display: none;
+}
+
+
+.blur-enter {
+    opacity: 0;
+}
+
+.blur-enter-active {
+    opacity: 1;
+    transition: all 0.2s ease-in;
+}
+
+.blur-enter-done {
+    opacity: 1;
+}
+
+.blur-exit {
+    opacity: 1;
+    transition: all 0.2s ease-in;
+}
+
+.blur-exit-active {
+    opacity: 0;
+}
+
+.blur-exit-done {
+    display: none;
+    opacity: 0;
+}
