@@ -4,7 +4,7 @@
 
 .my-node-enter-active {
     opacity: 1;
-    transition: opacity 1000ms;
+    transition: opacity 300ms;
 }
 
 .my-node-exit {
@@ -13,5 +13,5 @@
 
 .my-node-exit-active {
     opacity: 0;
-    transition: opacity 1000ms;
+    transition: opacity 300ms;
 }

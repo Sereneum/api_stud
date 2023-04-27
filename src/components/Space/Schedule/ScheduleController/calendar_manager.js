@@ -4,17 +4,17 @@ export const inValidDate = (str) => {
 
 export const toMonth = (num, fullMode=true) => {
     switch (num) {
-        case (0): return fullMode ? 'январь' : 'янв.'
-        case (1): return fullMode ? 'февраль' : 'февр.'
-        case (2): return fullMode ? 'март' : 'март.'
-        case (3): return fullMode ? 'апрель' : 'апр.'
-        case (4): return fullMode ? 'май' : 'май.'
-        case (5): return fullMode ? 'июнь' : 'июнь'
-        case (6): return fullMode ? 'июль' : 'июль'
-        case (7): return fullMode ? 'август' : 'авг.'
-        case (8): return fullMode ? 'сентябрь' : 'сент.'
-        case (9): return fullMode ? 'октярь' : 'окт.'
-        case (10): return fullMode ? 'ноябрь' : 'нояб.'
-        case (11): return fullMode ? 'декабрь' : 'дек.'
+        case (0): return fullMode ? 'Январь' : 'янв.'
+        case (1): return fullMode ? 'Февраль' : 'февр.'
+        case (2): return fullMode ? 'Март' : 'март.'
+        case (3): return fullMode ? 'Апрель' : 'апр.'
+        case (4): return fullMode ? 'Май' : 'май.'
+        case (5): return fullMode ? 'Июнь' : 'июнь'
+        case (6): return fullMode ? 'Июль' : 'июль'
+        case (7): return fullMode ? 'Август' : 'авг.'
+        case (8): return fullMode ? 'Сентябрь' : 'сент.'
+        case (9): return fullMode ? 'Октярь' : 'окт.'
+        case (10): return fullMode ? 'Ноябрь' : 'нояб.'
+        case (11): return fullMode ? 'Декабрь' : 'дек.'
     }
 }

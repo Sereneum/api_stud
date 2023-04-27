@@ -116,8 +116,8 @@ const SchCalendar = observer(({isVisible, setIsVisible, weekID, reLoadWeek}) => 
                     style={{rotate: '90deg'}}
                     onClick={() => {previousMonth() && clickOnArrow(-1)}}
                 />
-                <div>
-                    {`${toMonth(month)} ${year}г.`}
+                <div className={styles.month}>
+                    {`${toMonth(month)}, ${year}`}
                 </div>
                 <img
                     src={show_icon}
@@ -130,11 +130,11 @@ const SchCalendar = observer(({isVisible, setIsVisible, weekID, reLoadWeek}) => 
 
             {table.length
                 &&
-                <table>
-                    <thead>
+                <table className={styles.calendar_box}>
+                    <thead className={styles.days}>
                     <tr>
-                        {['П', 'В', 'С', 'Ч', 'П', 'С', 'В']
-                            .map((i, ind) => <th key={i + ind}>{i}</th>)}
+                        {['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс']
+                            .map((i, ind) => <th className={styles.day} key={i + ind}>{i}</th>)}
                     </tr>
                     </thead>
 

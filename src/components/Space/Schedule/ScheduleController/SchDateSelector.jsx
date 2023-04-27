@@ -13,7 +13,7 @@ const SchDateSelector = ({modalControl, isVisible}) => {
 
 
     return (
-        <div className={styles.block + ' ' + styles.date_selector }>
+        <div className={styles.block + ' ' + styles.date_selector } onClick={modalControl}>
             <img src={sch_icon} alt="" className={styles.icon}/>
             <div className={styles.text}>{date}</div>
             <img
