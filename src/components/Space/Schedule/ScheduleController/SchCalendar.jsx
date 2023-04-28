@@ -5,7 +5,8 @@ import {observer} from "mobx-react-lite";
 import {inValidDate, toMonth} from "./calendar_manager";
 import {parserDateNow} from "../../../../managers/parser";
 import show_icon from "../../../../resources/show_icon.svg";
-import '../../../../cssAnimation/arrow_animation.css'
+import {CSSTransition} from "react-transition-group";
+import '../../../../cssAnimation/sch_controller_animation.css'
 
 const SchCalendar = observer(({isVisible, setIsVisible, weekID, reLoadWeek}) => {
 
@@ -23,10 +24,10 @@ const SchCalendar = observer(({isVisible, setIsVisible, weekID, reLoadWeek}) => 
 
         const isNow = (d1, d2) =>
             d1.getFullYear() === d2.getFullYear()
-                &&
-                d1.getMonth() === d2.getMonth()
-                &&
-                d1.getDate() === d2.getDate()
+            &&
+            d1.getMonth() === d2.getMonth()
+            &&
+            d1.getDate() === d2.getDate()
 
 
         const table = []
@@ -60,37 +61,30 @@ const SchCalendar = observer(({isVisible, setIsVisible, weekID, reLoadWeek}) => 
 
     useEffect(() => {
 
-        if(schStore.calendar
-        &&
-        Object.entries(schStore.calendar).length) {
+        if (schStore.calendar
+            &&
+            Object.entries(schStore.calendar).length) {
             setTable(fillTable(schStore.calendar))
         }
     }, [schStore.calendar, schStore.currentWeek, month, year])
 
     const click = (obj) => {
-        // console.log(
-        //     obj.strDate, `weekID: ${weekID}`
-        // )
         reLoadWeek(parserDateNow(obj.normalDate))
         setIsVisible(false)
-        // schStore.setCurrentWeek(
-        //     parserDateNow(obj.normalDate)
-        // )
     }
 
     const previousMonth = () => {
-        let minDate  = new Date(schStore.calendar.minDate)
+        let minDate = new Date(schStore.calendar.minDate)
         let new_month = month - 1 < 0 ? 12 : month - 1
         let new_year = month - 1 < 0 ? year - 1 : year
         let new_date = new Date(new_year, new_month, 1)
 
-        // console.log(new_date)
 
         return minDate.getMonth() <= new_date.getMonth()
     }
 
     const nextMonth = () => {
-        let maxDate  = new Date(schStore.calendar.maxDate)
+        let maxDate = new Date(schStore.calendar.maxDate)
         let new_month = month + 1 > 12 ? 0 : month + 1
         let new_year = month + 1 > 12 ? year + 1 : year
         let new_date = new Date(new_year, new_month, 1)
@@ -104,39 +98,44 @@ const SchCalendar = observer(({isVisible, setIsVisible, weekID, reLoadWeek}) => 
 
 
     return (
-        <div
-            className={styles.calendar}
-            style={{display: isVisible ? '' : 'none'}}
-        >
-            <div className={styles.head}>
-                <img
-                    src={show_icon}
-                    alt=""
-                    className={`${styles.arrow} ${!previousMonth() && styles.passiveArrow}`}
-                    style={{rotate: '90deg'}}
-                    onClick={() => {previousMonth() && clickOnArrow(-1)}}
-                />
-                <div className={styles.month}>
+        <CSSTransition in={isVisible} timeout={1000} classNames={'my-node'} mountOnEnter>
+            <div
+                className={styles.calendar}
+                // style={{display: isVisible ? '' : 'none'}}
+            >
+                <div className={styles.head}>
+                    <img
+                        src={show_icon}
+                        alt=""
+                        className={`${styles.arrow} ${!previousMonth() && styles.passiveArrow}`}
+                        style={{rotate: '90deg'}}
+                        onClick={() => {
+                            previousMonth() && clickOnArrow(-1)
+                        }}
+                    />
+                    <div className={styles.month}>
                     {`${toMonth(month)}, ${year}`}
+                    </div>
+                    <img
+                        src={show_icon}
+                        alt=""
+                        className={`${styles.arrow} ${!nextMonth() && styles.passiveArrow}`}
+                        style={{rotate: '270deg'}}
+                        onClick={() => {
+                            nextMonth() && clickOnArrow(+1)
+                        }}
+                    />
                 </div>
-                <img
-                    src={show_icon}
-                    alt=""
-                    className={`${styles.arrow} ${!nextMonth() && styles.passiveArrow}`}
-                    style={{rotate: '270deg'}}
-                    onClick={() => {nextMonth() && clickOnArrow(+1)}}
-                />
-            </div>
 
-            {table.length
-                &&
-                <table className={styles.calendar_box}>
-                    <thead className={styles.days}>
-                    <tr>
+                {table.length
+                    &&
+                    <table className={styles.calendar_box}>
+                        <thead className={styles.days}>
+                        <tr>
                         {['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс']
-                            .map((i, ind) => <th className={styles.day} key={i + ind}>{i}</th>)}
-                    </tr>
-                    </thead>
+                                .map((i, ind) => <th key={i + ind}>{i}</th>)}
+                        </tr>
+                        </thead>
 
                     <tbody>
                     {
@@ -159,8 +158,9 @@ const SchCalendar = observer(({isVisible, setIsVisible, weekID, reLoadWeek}) => 
                     }
                     </tbody>
                 </table>
-            }
-        </div>
+                }
+            </div>
+        </CSSTransition>
     );
 });
 

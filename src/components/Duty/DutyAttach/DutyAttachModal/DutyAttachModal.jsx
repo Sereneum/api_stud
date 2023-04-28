@@ -5,7 +5,9 @@ import attach_icon from '../../../../resources/duty/attach.svg'
 import upload_icon from '../../../../resources/duty/upload_icon.svg'
 import DutyAttachDropzone from "./DutyAttachDropzone";
 import {epoch_uploadFile} from "../../../../epoch/epochServer";
-import { CSSTransition } from "react-transition-group";
+import {CSSTransition} from "react-transition-group";
+import '../../../../cssAnimation/modal_animation.css'
+import link from '../../../../resources/duty/link_icon.svg'
 
 const DutyAttachModal = ({setModal, sendData, courseID, loadingTaskData, isModal}) => {
 
@@ -25,7 +27,7 @@ const DutyAttachModal = ({setModal, sendData, courseID, loadingTaskData, isModal
     }
 
     const uploadingLink = (name, url) => {
-        if(!(inputUrl.length || inputName.length)) return
+        if (!(inputUrl.length || inputName.length)) return
         const formData = new FormData()
         formData.append("link", url)
         formData.append("linkName", name)
@@ -42,28 +44,18 @@ const DutyAttachModal = ({setModal, sendData, courseID, loadingTaskData, isModal
             })
     }
 
-    const afterAnime = () => {
-        console.log('afterAnime')
-    }
-
-
 
     const [inputName, setInputName] = useState('')
     const [inputUrl, setInputUrl] = useState('')
-
+    // style={{display: isModal ? '' : 'none'}}
     return (
-        <div className={styles.modal_wrapper}>
-            <div className={styles.modal_bg} onClick={setModal}></div>
+    <div className={styles.modal_wrapper}>
 
-            <CSSTransition
-                timeout={0}
-                classNames={styles.up}
-                in={isModal}
-                unmountOnExit={true}
-                onExit={afterAnime}
-                // reverse
-                // unmountOnExit
-            >
+        <CSSTransition in={isModal} timeout={1000} classNames={'blur'} mountOnEnter>
+            <div className={styles.modal_bg} onClick={setModal}></div>
+        </CSSTransition>
+
+        <CSSTransition in={isModal} timeout={700} classNames={'modal-animation'} mountOnEnter>
             <div className={styles.modal}>
                 <img
                     alt=""
@@ -78,13 +70,17 @@ const DutyAttachModal = ({setModal, sendData, courseID, loadingTaskData, isModal
                 </div>
 
 
-                <DutyAttachDropzone sendData={sendData} uploading={uploadingFiles}/>
+                <DutyAttachDropzone sendData={sendData} uploading={uploadingFiles} isModal={isModal}/>
 
                 <div className={styles.url_block}>
-                    <div className={styles.placeholder}>
-                        Вы можете указать URL ссылку:
+                    <div className={styles.url_title}>
+                        <img alt="" src={link} className={styles.link_icon}/>
+                        <div className={styles.link_title_text}>
+                            Добавить ссылку
+                        </div>
                     </div>
                     <input
+                        className={styles.url_name}
                         placeholder='Наименование URL ссылки'
                         value={inputName}
                         onChange={e => setInputName(e.target.value)}
@@ -99,15 +95,18 @@ const DutyAttachModal = ({setModal, sendData, courseID, loadingTaskData, isModal
                         className={styles.url_button}
                         onClick={() => uploadingLink(inputName, inputUrl)}
                     >
-                        добавить
+                        Добавить
                     </div>
 
                 </div>
 
 
             </div>
-            </CSSTransition>
+        </CSSTransition>
         </div>
+
+
+
     );
 };
 

@@ -3,6 +3,7 @@ import styles from './DutyAttachModal.module.css'
 import upload_icon from '../../../../resources/duty/upload_icon.svg'
 import Dropzone, {useDropzone} from "react-dropzone";
 
+
 const DutyAttachDropzone = ({sendData, uploading}) => {
 
 
@@ -22,6 +23,7 @@ const DutyAttachDropzone = ({sendData, uploading}) => {
                             src={upload_icon}
                             className={styles.modal_upload_icon}
                         />
+                        <div className={styles.modal_note}>Выберите файл или перетащите его в это окно</div>
                         {/*{onDropAccepted && 'onDropAccepted'}*/}
                     </div>
                 </div>

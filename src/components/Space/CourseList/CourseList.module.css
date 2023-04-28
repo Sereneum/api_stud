@@ -90,6 +90,10 @@
     background-color: rgba(255, 255, 255, 0.1);
 }
 
+.reboot {
+    display: none;
+}
+
 .course_item {
     text-align: left;
     border: 2px solid transparent;

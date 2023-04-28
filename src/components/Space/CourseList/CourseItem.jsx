@@ -10,7 +10,7 @@ const CourseItem = ({isActive, course, click, index, reboot}) => {
     return (
         <div className={`${styles.course_item} ${isActive ? styles.isActiveCourse : ''}`} onClick={() => click(index)}>
             <div>{course.course_name}</div>
-            {isActive && <img src={reboot_icon} alt="" onClick={clickOnReboot}/>}
+            {isActive && <img className={styles.reboot} src={reboot_icon} alt="" onClick={clickOnReboot}/>}
         </div>
     );
 };

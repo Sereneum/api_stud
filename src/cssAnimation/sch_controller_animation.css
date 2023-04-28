@@ -1,17 +1,35 @@
 .my-node-enter {
     opacity: 0;
+    /* transform: scale(0, 0); */
+    transform: translateY(-30px);
 }
 
 .my-node-enter-active {
     opacity: 1;
-    transition: opacity 300ms;
+    /* transform: scale(1, 1); */
+    transform: translateY(0px);
+    transition: all 0.2s cubic-bezier(0.88, 0.02, 0.22, 0.98);
+}
+
+.my-node-enter-done {
+    opacity: 1;
+    /* transform: scale(1, 1); */
+    transform: translateY(0px);
 }
 
 .my-node-exit {
     opacity: 1;
+    /* transform: scale(1, 1); */
+    transform: translateY(0px);
+    transition: all 0.2s cubic-bezier(0.88, 0.02, 0.22, 0.98);
 }
 
 .my-node-exit-active {
     opacity: 0;
-    transition: opacity 300ms;
+    /* transform: scale(0, 0); */
+    transform: translateY(-30px);
+}
+
+.my-node-exit-done {
+    display: none;
 }

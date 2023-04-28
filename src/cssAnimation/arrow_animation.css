@@ -1,17 +1,25 @@
-.my-node-enter {
-    opacity: 0;
+.arrow-animation-enter {
+    rotate: 0deg;
 }
 
-.my-node-enter-active {
-    opacity: 1;
-    transition: opacity 200ms;
+.arrow-animation-enter-active {
+    rotate: -180deg;
+    transition: all 0.3s cubic-bezier(0.42, 0, 0.42, 1.35);
 }
 
-.my-node-exit {
-    opacity: 1;
+.arrow-animation-enter-done {
+    rotate: -180deg;
 }
 
-.my-node-exit-active {
-    opacity: 0;
-    transition: opacity 200ms;
+.arrow-animation-exit {
+    rotate: -180deg;
+    transition: all 0.3s cubic-bezier(0.42, 0, 0.42, 1.35);
+}
+
+.arrow-animation-exit-active {
+    rotate: 0deg;
+}
+
+.arrow-animation-exit-done {
+    rotate: 0deg;
 }
