@@ -116,8 +116,19 @@
     vertical-align: center;
     width: 100%;
     /* border-left: 2px solid rgb(208, 255, 0); */
-    border-left: 2px solid rgba(205, 168, 250, 0.728);
+
 }
+
+.config_item.green {
+    border-left: 2px solid lightgreen;
+}
+
+.config_item.gray {
+    border-left: 2px solid lightgray;
+}
+
+
+
 
 .config_rename {
     font-size: 17px;

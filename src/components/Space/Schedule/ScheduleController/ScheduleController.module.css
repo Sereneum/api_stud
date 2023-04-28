@@ -42,7 +42,6 @@
     backdrop-filter: blur(25px);
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px;
-    transition: all 0.1s ease-in-out;
 }
 
 .month {

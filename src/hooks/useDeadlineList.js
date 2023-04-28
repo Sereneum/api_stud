@@ -15,10 +15,12 @@ const createDeadlines = (courseList) => {
     let tasks = []
     for (let item of courseList)
         for (let task of item.tasks)
-            if (!task.statusID && Date.now() < Date.parse(task.periodRealization))
+            if ((!task.statusID || task.statusID === 3) && Date.now() < Date.parse(task.periodRealization))
                 tasks.push({...task, courseName: item.course_name})
 
 
-
-    return tasks.slice(-3).sort((a, b) => a.deadline - b.deadline)
+    return tasks
+        .sort((a, b) => b.deadline - a.deadline)
+        .slice(-3)
+        .sort((a, b) => a.deadline - b.deadline)
 }
