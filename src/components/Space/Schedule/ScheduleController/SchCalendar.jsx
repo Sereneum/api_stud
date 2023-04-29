@@ -96,6 +96,7 @@ const SchCalendar = observer(({isVisible, setIsVisible, weekID, reLoadWeek}) => 
         setMonth(month + offset)
     }
 
+    console.log()
 
     return (
         <CSSTransition in={isVisible} timeout={1000} classNames={'my-node'} mountOnEnter>
