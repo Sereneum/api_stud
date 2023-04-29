@@ -154,7 +154,7 @@ const SchCalendar = observer(({isVisible, setIsVisible, weekID, reLoadWeek}) => 
                         </tr>
                         </thead>
 
-                    <tbody>
+                    <tbody className={styles.calendar_date_pool}>
                     {
                         table.map(
                             (rows, rowIndex) => <tr key={`r${rowIndex}`}>

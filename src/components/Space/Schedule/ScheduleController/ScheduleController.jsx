@@ -15,9 +15,10 @@ const ScheduleController = ({weekID, reLoadWeek}) => {
     return (
         <div className={styles.controller}>
             <SchDateSelector modalControl={modalControl} isVisible={isVisible} setIsVisible={setIsVisible}/>
-            <SchSearch />
+            {/* <SchSearch /> */}
             {/*<CSSTransition  in={isVisible} timeout={1000} classNames={'my-node'}>*/}
                 <SchCalendar
+                    className={styles.calendar_block}
                     isVisible={isVisible}
                     setIsVisible={setIsVisible}
                     weekID={weekID}
