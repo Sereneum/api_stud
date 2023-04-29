@@ -1,5 +1,21 @@
 export const inValidDate = (str) => {
-    return new Date(str.split('.')[2] + '-' + str.split('.')[1] + '-' + str.split('.')[0])
+    let ans = new Date(str)
+    console.log('ans', ans)
+    return ans
+    // let prop = str.split('.')[2] + '-' + str.split('.')[1] + '-' + str.split('.')[0]
+    // let new_date = new Date(str.split('.')[2] + '-' + str.split('.')[1] + '-' + str.split('.')[0])
+    //
+    // console.log('str', str)
+    // console.log('prop', prop)
+    // console.log('new_date', new_date)
+    // return new_date
+}
+
+export const dateGetter = (str) => {
+    let date = new Date(str)
+    return  date == NaN
+        ? new Date(str.split('.')[2] + '-' + str.split('.')[1] + '-' + str.split('.')[0])
+        : date
 }
 
 export const toMonth = (num, fullMode=true) => {

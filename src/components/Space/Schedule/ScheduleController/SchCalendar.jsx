@@ -2,7 +2,7 @@ import React, {useContext, useEffect, useState} from 'react';
 import styles from './ScheduleController.module.css'
 import {Context} from "../../../../index";
 import {observer} from "mobx-react-lite";
-import {inValidDate, toMonth} from "./calendar_manager";
+import {dateGetter, inValidDate, toMonth} from "./calendar_manager";
 import {parserDateNow} from "../../../../managers/parser";
 import show_icon from "../../../../resources/show_icon.svg";
 import {CSSTransition} from "react-transition-group";
@@ -11,12 +11,25 @@ import '../../../../cssAnimation/sch_controller_animation.css'
 const SchCalendar = observer(({isVisible, setIsVisible, weekID, reLoadWeek}) => {
 
     const {schStore} = useContext(Context)
-    const validDate = inValidDate(weekID)
-    const [year, setYear] = useState(validDate.getFullYear())
-    const [month, setMonth] = useState(validDate.getMonth())
+    const validDate = dateGetter(weekID)
+
+
+    const createMonth = weekID => new Date(weekID).getMonth()
+    const createYear = weekID => new Date(weekID).getFullYear()
+
+
+    const [year, setYear] = useState(weekID ? createYear(weekID): '')
+    const [month, setMonth] = useState(weekID ? createMonth(weekID): '')
+
+    useEffect(() => {
+        if(weekID && !month.length) {
+            setMonth(createMonth(weekID))
+            setYear(createYear(weekID))
+        }
+    }, [weekID])
+
 
     const fillTable = (calendar) => {
-        // console.log(calendar)
         let firstDay = new Date(year, month, 1).getDay()
         let offset = firstDay === 0 ? 6 : firstDay - 1
         let value = 0
@@ -66,6 +79,8 @@ const SchCalendar = observer(({isVisible, setIsVisible, weekID, reLoadWeek}) => 
             Object.entries(schStore.calendar).length) {
             setTable(fillTable(schStore.calendar))
         }
+
+
     }, [schStore.calendar, schStore.currentWeek, month, year])
 
     const click = (obj) => {
@@ -98,11 +113,12 @@ const SchCalendar = observer(({isVisible, setIsVisible, weekID, reLoadWeek}) => 
 
     console.log()
 
+
+
     return (
-        <CSSTransition in={isVisible} timeout={1000} classNames={'my-node'} mountOnEnter>
+        <CSSTransition in={isVisible} timeout={200} classNames={'my-node'} mountOnEnter>
             <div
                 className={styles.calendar}
-                // style={{display: isVisible ? '' : 'none'}}
             >
                 <div className={styles.head}>
                     <img

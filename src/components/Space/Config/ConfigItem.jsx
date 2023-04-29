@@ -26,7 +26,7 @@ const ConfigItem = memo(({course, click, index, isActive, rename}) => {
 
     return (
         <div
-            className={styles.config_item}
+            className={`${styles.config_item} ${isActive ? styles.green : styles.gray}`}
         >
 
             <div className={styles.config_in_item}>

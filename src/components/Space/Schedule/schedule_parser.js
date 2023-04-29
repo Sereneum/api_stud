@@ -18,7 +18,7 @@ export const sch_parser = (lessons, weekID=null) => {
 
         const lesDayId = lesson['деньНедели']
 
-        if(currentDayId > lesDayId) continue
+        if(currentDayId > lesDayId && currentDayId) continue
 
         let isFind = findDay(week, dayIndex)
         if (isFind !== -1) week[isFind].lessons.push(lesson)

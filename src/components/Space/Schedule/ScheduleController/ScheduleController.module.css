@@ -42,7 +42,6 @@
     backdrop-filter: blur(25px);
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px;
-    transition: all 0.1s ease-in-out;
 }
 
 .month {
@@ -104,7 +103,8 @@ td.isOk {
 }
 
 td.isNow {
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.2);
+    color: rgba(255, 255, 255);
     cursor: pointer;
 }
 

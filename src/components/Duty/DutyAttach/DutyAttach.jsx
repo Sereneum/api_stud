@@ -16,9 +16,6 @@ const DutyAttach = ({files, task, detail, sendData, loadingTaskData}) => {
         setIsModal(!isModal)
     }
 
-    // console.log(task, detail)
-    // console.log(isSuccess)
-
     const deleteFile = (fileID) => {
         if (isSuccess) return
         epoch_deleteFile(fileID).then(r => {
@@ -26,8 +23,6 @@ const DutyAttach = ({files, task, detail, sendData, loadingTaskData}) => {
             loadingTaskData()
         })
     }
-
-    // useEffect(() => console.log(isModal), [isModal])
 
     return (
         <div className={styles.duty_attach_main_block}>
@@ -40,9 +35,6 @@ const DutyAttach = ({files, task, detail, sendData, loadingTaskData}) => {
                 />)
             }
             <DutyAttachAddButton setModal={setModal}/>
-            {/*{isModal*/}
-            {/*    &&*/}
-            {/*    <CSSTransition in={isModal} timeout={1000} classNames={'modal-animation'} >*/}
                     <DutyAttachModal
                         isModal={isModal}
                         setModal={setModal}
@@ -50,8 +42,6 @@ const DutyAttach = ({files, task, detail, sendData, loadingTaskData}) => {
                         courseID={task.courseID}
                         loadingTaskData={loadingTaskData}
                     />
-                {/*</CSSTransition>*/}
-            {/*}*/}
         </div>
     );
 };
