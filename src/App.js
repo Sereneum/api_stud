@@ -25,7 +25,6 @@ const App = observer(() => {
     }, [])
 
 
-    // if (loadingUser) return <Preloader/>
     if (loadingUser) return <Void/>
 
     return (

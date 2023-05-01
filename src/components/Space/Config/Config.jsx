@@ -59,6 +59,7 @@ const Config = observer(({reCourse, desktopMove, mobileMove}) => {
 
     useEffect(() => {
         epoch_fetchConfigurableCourses(id).then(r => {
+            console.log('epoch_fetchConfigurableCourses: ', r)
             setActive(r.active)
             setInitiallyCourses(r.active)
             setPassive(r.passive)

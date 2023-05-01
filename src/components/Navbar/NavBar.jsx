@@ -10,6 +10,7 @@ import {useMediaQuery} from "react-responsive";
 import Mail from "../DesktopMenu/Mail/Mail";
 import {epoch_checkerMail} from "../../epoch/epochServer";
 import ScheduleLink from "../DesktopMenu/ScheduleLink/ScheduleLink";
+import MenuButton from "../DesktopMenu/Menu/MenuButton";
 
 
 const NavBar = observer(({isLoaded}) => {
@@ -39,23 +40,16 @@ const NavBar = observer(({isLoaded}) => {
                 </Navbar.Brand>
                 {isLoaded && !isMobile ?
                     <Navbar.Brand className={styles.navbar_info_block}>
-                        {/*<div className={styles.navbar_student}>*/}
-                        {/*    {user_info()}*/}
-                        {/*</div>*/}
                         <Mail messages={mailCounter && mailCounter.data}/>
-                        {/*<Mail messages={*/}
-                        {/*    {*/}
-                        {/*        "messagesIDs": [],*/}
-                        {/*        "count": 10*/}
-                        {/*    }*/}
-                        {/*}/>*/}
 
                         <ScheduleLink />
-                        <img
-                            alt=""
-                            src={humanLogo}
-                            className={styles.navbar_human_logo}
-                        />
+                        <MenuButton />
+                        {/*<img*/}
+                        {/*    alt=""*/}
+                        {/*    src={humanLogo}*/}
+                        {/*    className={styles.navbar_human_logo}*/}
+                        {/*/>*/}
+
                     </Navbar.Brand>
                     :
                     ''

@@ -7,7 +7,7 @@ import { useMediaQuery } from "react-responsive";
 import settings from '../../../resources/settings_icon.svg';
 
 
-const CourseList = ({ isActiveConfig, desktopMove, mobileMove, isActiveSch, reboot}) => {
+const CourseList = ({ isActiveConfig, isActiveMenu, isActiveSch, desktopMove, mobileMove, reboot}) => {
 
     const { course } = useContext(Context)
     const isMobile = useMediaQuery({ query: '(max-width: 1300px)' })
@@ -44,7 +44,7 @@ const CourseList = ({ isActiveConfig, desktopMove, mobileMove, isActiveSch, rebo
                     courses
                         ?
                         courses.map((i, index) => <CourseItem key={i.course_id}
-                            isActive={!isActiveConfig && !isActiveSch
+                            isActive={!isActiveConfig && !isActiveSch && !isActiveMenu
                                 && !isMobile && index === activeCourseIndex}
                             course={i}
                             click={openCourse}

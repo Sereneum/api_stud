@@ -103,18 +103,9 @@ const Duty = ({dutyActive, mobileMove, desktopMove}) => {
                     courseTaskID: r.courseTaskID,
                     courseStudentID: r.courseStudentID,
                 })
-
-                // console.log('task: ', task)
-                // console.log('detailTaskData: ', r)
             })
     }
 
-
-
-    // useEffect(() => {
-    //     if(!loading)
-    //         console.log(detailTaskData)
-    // }, [loading])
 
 
     const toBack = () => {

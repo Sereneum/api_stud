@@ -2,7 +2,7 @@ import React, {useContext, useEffect, useState} from 'react';
 import styles from './ScheduleController.module.css'
 import {Context} from "../../../../index";
 import {observer} from "mobx-react-lite";
-import {dateGetter, inValidDate, toMonth} from "./calendar_manager";
+import {dateGetter, toMonth} from "./calendar_manager";
 import {parserDateNow} from "../../../../managers/parser";
 import show_icon from "../../../../resources/show_icon.svg";
 import {CSSTransition} from "react-transition-group";
@@ -89,7 +89,7 @@ const SchCalendar = observer(({isVisible, setIsVisible, weekID, reLoadWeek}) => 
     }
 
     const previousMonth = () => {
-        let minDate = new Date(schStore.calendar.minDate)
+        let minDate = new Date(schStore.calendar?.dates[0])
         let new_month = month - 1 < 0 ? 12 : month - 1
         let new_year = month - 1 < 0 ? year - 1 : year
         let new_date = new Date(new_year, new_month, 1)
@@ -99,7 +99,7 @@ const SchCalendar = observer(({isVisible, setIsVisible, weekID, reLoadWeek}) => 
     }
 
     const nextMonth = () => {
-        let maxDate = new Date(schStore.calendar.maxDate)
+        let maxDate = new Date(schStore.calendar?.dates[schStore.calendar?.dates.length - 1])
         let new_month = month + 1 > 12 ? 0 : month + 1
         let new_year = month + 1 > 12 ? year + 1 : year
         let new_date = new Date(new_year, new_month, 1)

@@ -16,6 +16,7 @@ const Schedule = observer(({weekID}) => {
     const [lessons, setLessons] = useState(null)
     const [week, setWeek] = useState(null)
     const [reloading, setReloading] = useState(false)
+    const [isCalendar, setIsCalendar] = useState(false)
 
     const {user, schStore} = useContext(Context)
 
@@ -54,16 +55,23 @@ const Schedule = observer(({weekID}) => {
     return (
         <div className={styles.block}>
             <div className={styles.title}>Расписание</div>
-            <ScheduleController
-                weekID={schStore.currentWeek ? schStore.currentWeek : parserDateNowForSch()}
-                reLoadWeek={reLoadWeek}
-            />
+
             {
                 !week || reloading
                     ?
                     <Spin cl={styles.spinner}/>
                     :
                     <>
+                        {
+                            schStore.calendar
+                            &&
+                            Object.entries(schStore.calendar).length
+                            &&
+                            <ScheduleController
+                                weekID={schStore.currentWeek ? schStore.currentWeek : parserDateNowForSch()}
+                                reLoadWeek={reLoadWeek}
+                            />
+                        }
                         <div>
                             {
                                 week.map(i => <ScheduleDay key={i.dayIndex} day={i}/>)

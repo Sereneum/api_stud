@@ -6,6 +6,7 @@ import CourseStore from "./store/courseStore";
 import Binder from "./store/binder";
 import './night.css'
 import SchStore from "./store/schStore";
+import SettingsStore from "./store/settingsStore";
 export const Context = createContext(null)
 
 window.onload = function () {
@@ -22,6 +23,7 @@ root.render(
         <Context.Provider value={{
             user: new UserStore(),
             course: new CourseStore(),
+            settings: new SettingsStore(),
             binder: new Binder(),
             schStore: new SchStore()
         }}>

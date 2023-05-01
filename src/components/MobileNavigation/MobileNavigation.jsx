@@ -4,6 +4,7 @@ import settings_icon from "../../resources/mobnav/settings_white.svg";
 import courses_icon from "../../resources/mobnav/courses.svg";
 import deadlines_icon from "../../resources/mobnav/deadlines.svg";
 import schedule_icon from '../../resources/schedule_icon.svg'
+import menu_icon from '../../resources/menu_icon.svg'
 
 
 const MobileNavigation = ({mobileMove, mobileMode}) => {
@@ -19,6 +20,12 @@ const MobileNavigation = ({mobileMove, mobileMode}) => {
     const toSchedule = () => {
         mobileMove.openSchedule()
     }
+
+    const toMenu = () => {
+        mobileMove.openMenu()
+    }
+
+    // const
 
     const isActive = (mode) => {
         return mobileMode === mode
@@ -75,6 +82,22 @@ const MobileNavigation = ({mobileMove, mobileMode}) => {
                     Дедлайны
                 </div>
             </div>
+
+            <div
+                className={`${styles.block} ${isActive('menu')}`}
+                onClick={toMenu}
+            >
+                <img
+                    alt=""
+                    src={menu_icon}
+                    className={`${styles.icon_schedule} ${isActive('menu')}`}/>
+                <div
+                    className={`${styles.title} ${isActive('menu')}`}
+                >
+                    Меню
+                </div>
+            </div>
+
         </div>
     );
 };
