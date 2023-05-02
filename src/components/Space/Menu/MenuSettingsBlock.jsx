@@ -6,7 +6,7 @@ const MenuSettingsBlock = () => {
 
     const set_settings = [
         {text: 'Отображать количество непрочитанных сообщений на почте', isActive: false},
-        {text: 'Анимированный фо', isActive: false},
+        {text: 'Анимированный фон', isActive: false},
     ]
 
     return (

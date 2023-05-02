@@ -17,14 +17,30 @@ const Menu = () => {
             {/*    {user.user?.email}*/}
             {/*</div>*/}
 
+            <div className={styles.settings_title}>Настройки</div>
             <MenuSettingsBlock />
 
+            <div className={styles.settings_title}>Авторы</div>
 
-            <div className={styles.we}>
-                Проект выполнен студентами кафедры информатики и геоинформационных систем
+            <div className={styles.autors_block}>
+                <div className={styles.autor}>
+                    <div className={styles.autor_name}>Романов Максим</div>
+                    <div className={styles.autor_solutions}>Backend, Frontend developing</div>
+                </div>
+                <div className={styles.autor}>
+                    <div className={styles.autor_name}>Могильников Михаил</div>
+                    <div className={styles.autor_solutions}>Web-designer, UI/UX, Frontend developing</div>
+                </div>
+            </div>
+            <div className={styles.additional_info}>
+                Группа: ПИ-20 <br />
+                Кафедра информатики и геоинформационных систем <br /> <br /> 
+                Российский государственный геологоразведочный университет имени Серго Орджоникидзе 
+            </div>
 
-                <p style={{marginTop: '10px'}}>Романов Максим, ПИ-20</p>
-                <p style={{marginTop: '-14px'}}>Могильников Михаил, ПИ-20</p>
+            <div className={styles.breaker}></div>
+            <div className={styles.exit_block}>
+                <div className={styles.exit_text}>Выйти</div>
             </div>
 
         </div>
