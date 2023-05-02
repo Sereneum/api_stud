@@ -19,7 +19,7 @@
 .title {
     color: white;
     font-size: 28px;
-    margin: 42px 37px 55px;
+    margin: 45px 40px 55px;
     text-align: left;
     line-height: 1.4;
     cursor: default;
@@ -36,7 +36,7 @@
 
 .settings_title {
     color: #8f8f8f;
-    margin-left: 40px;
+    margin-left: 43px;
     margin-bottom: 10px;
 }
 .settings_item {
@@ -168,7 +168,7 @@
 
 .additional_info {
     color: #4b4b4b;
-    width: 87%;
+    width: 84%;
     margin: 20px auto 40px auto;
     font-size: 14px;
 }
