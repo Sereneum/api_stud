@@ -1,8 +1,8 @@
-import React, {useContext, useState} from 'react';
+import React, {useContext} from 'react';
 import styles from './ScheduleController.module.css'
 import sch_icon from "../../../../resources/schedule_icon.svg";
 import show_icon from "../../../../resources/show_icon.svg";
-import {parserDateNow, parserDateNowForSch} from "../../../../managers/parser";
+import {parserDateNowForSch} from "../../../../managers/parser";
 import {Context} from "../../../../index";
 import {CSSTransition} from "react-transition-group";
 import '../../../../cssAnimation/arrow_animation.css'
@@ -13,9 +13,6 @@ const SchDateSelector = ({modalControl, isVisible, setIsVisible}) => {
     const date = schStore.currentWeek ? parserDateNowForSch(schStore.currentWeek) :
         parserDateNowForSch()
 
-    // ${isVisible && styles.show}
-
-    const [isRotate, setIsRotate] = useState(false)
 
     return (
         <div className={styles.block + ' ' + styles.date_selector} onClick={modalControl}>

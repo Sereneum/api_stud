@@ -1,11 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="062e48f7-2eb0-4883-8627-50c807327ef0" name="Changes" comment="_materials_">
+    <list default="true" id="dc2d28cc-c8f7-42aa-baed-f6034f0063b6" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/Space/Menu/MenuSettingsBlock.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Space/Menu/MenuSettingsItem.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Duty/Duty.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Duty/Duty.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Duty/DutyFile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Duty/DutyFile.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Duty/DutyMaterials.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Duty/DutyMaterials.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Duty/Duty.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Duty/Duty.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Main.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/MobileNavigation/MobileNavigation.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MobileNavigation/MobileNavigation.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Navbar/NavBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navbar/NavBar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Space/Config/Config.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Space/Config/Config.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Space/CourseList/CourseList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Space/CourseList/CourseList.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Space/Schedule/Schedule.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Space/Schedule/Schedule.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Space/Schedule/ScheduleController/SchCalendar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Space/Schedule/ScheduleController/SchCalendar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Space/Schedule/ScheduleController/SchDateSelector.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Space/Schedule/ScheduleController/SchDateSelector.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Space/Schedule/ScheduleController/calendar_manager.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Space/Schedule/ScheduleController/calendar_manager.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/TestUI/TestUI.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/epoch/epochServer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/epoch/epochServer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hooks/useSpace.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/useSpace.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/http/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/http/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/http/userAPI.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/http/userAPI.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/managers/useFileManager.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/managers/useFileManager.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,86 +32,43 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
-    <favorite-branches>
-      <branch-storage>
-        <map>
-          <entry type="LOCAL">
-            <value>
-              <list>
-                <branch-info repo="$PROJECT_DIR$" source="lolita" />
-                <branch-info repo="$PROJECT_DIR$" source="main" />
-              </list>
-            </value>
-          </entry>
-        </map>
-      </branch-storage>
-    </favorite-branches>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="2NPbkEMvtZm5ZvSdStMAA0QBlfy" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectId" id="2P7unCHr6eZ4c6GJNLUPLYFxmT0" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "io.unthrottled.amii.config.ui.PluginSettingsUI",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/projects/.Space/src/components/Space/Menu&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\projects\.Space\src\components\Space\Menu" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
-<HEAD
     <task active="true" id="Default" summary="Default task">
-      <changelist id="fc4bc475-f70f-4480-9533-2c8d19d48ce8" name="Changes" comment="" />
-      <created>1676384477351</created>
+      <changelist id="dc2d28cc-c8f7-42aa-baed-f6034f0063b6" name="Changes" comment="" />
+      <created>1682820608910</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1676384477351</updated>
-      <workItem from="1676384478691" duration="17662000" />
-      <workItem from="1676542346382" duration="10725000" />
-      <workItem from="1676573507063" duration="1704000" />
-      <workItem from="1676581002220" duration="2109000" />
-      <workItem from="1676625024394" duration="10167000" />
-      <workItem from="1676664213841" duration="3572000" />
-      <workItem from="1676701948170" duration="21057000" />
-      <workItem from="1676900077596" duration="207000" />
-      <workItem from="1676910724513" duration="26311000" />
-      <workItem from="1677023204106" duration="1934000" />
-      <workItem from="1677033842292" duration="3337000" />
-      <workItem from="1677167545764" duration="6135000" />
-      <workItem from="1677250965286" duration="9682000" />
-      <workItem from="1677512909747" duration="4332000" />
-      <workItem from="1677551660279" duration="3655000" />
-      <workItem from="1677745053815" duration="1248000" />
-      <workItem from="1677777755252" duration="779000" />
-      <workItem from="1677813804271" duration="7651000" />
-      <workItem from="1677911466715" duration="7517000" />
-      <workItem from="1678084815618" duration="474000" />
-      <workItem from="1678124035609" duration="8558000" />
-      <workItem from="1678183842829" duration="12539000" />
-      <workItem from="1678479849329" duration="2532000" />
-      <workItem from="1678955814861" duration="3135000" />
-      <workItem from="1678958997981" duration="5291000" />
-      <workItem from="1679049958083" duration="9196000" />
-      <workItem from="1679072608436" duration="1620000" />
-      <workItem from="1679079257326" duration="52000" />
-      <workItem from="1679216033245" duration="5750000" />
-      <workItem from="1679272032603" duration="578000" />
-      <workItem from="1679322846877" duration="3232000" />
-      <workItem from="1679388884170" duration="12360000" />
-      <workItem from="1679417852034" duration="8548000" />
+      <updated>1682820608910</updated>
+      <workItem from="1682820611532" duration="8637000" />
+      <workItem from="1682941590781" duration="3719000" />
     </task>
-=======
->>>>>>> adca54aa7f0060dc78b10548f8745488c221a315
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -108,9 +84,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="_materials_" />
-    <option name="LAST_COMMIT_MESSAGE" value="_materials_" />
   </component>
 </project>

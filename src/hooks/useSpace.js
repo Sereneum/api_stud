@@ -10,6 +10,7 @@ import Schedule from "../components/Space/Schedule/Schedule";
 import {Context} from "../index";
 import {epoch_courseData} from "../epoch/epochServer";
 import {preEpoch_reboot} from "../epoch/preEpoch";
+import Menu from "../components/Space/Menu/Menu";
 
 export const useSpace = ({course, reCourse, binder}) => {
     const activeCourseIndex = course.activeCourse
@@ -18,22 +19,21 @@ export const useSpace = ({course, reCourse, binder}) => {
     const {deadlineTasks} = useDeadlineList({course})
 
     const isMobile = useMediaQuery({query: '(max-width: 1300px)'})
-    // const [desktopMode, setDesktopMode] = useState('tasks')
-    // const [mobileMode, setMobileMode] = useState('courses')
 
-    const [desktopMode, setDesktopMode] = useState('schedule')
-    const [mobileMode, setMobileMode] = useState('schedule')
+    // const [desktopMode, setDesktopMode] = useState('schedule')
+    // const [mobileMode, setMobileMode] = useState('schedule')
+    //
+    const [desktopMode, setDesktopMode] = useState('menu')
+    const [mobileMode, setMobileMode] = useState('menu')
 
     const [rebootLoader, setRebootLoader] = useState(false)
 
-    // const reboot = (course_id) => epoch_courseData(course_id)
-    //     .then(new_course => console.log(new_course))
+
 
     const reboot = (course_id, index) => new Promise((re, rj) => {
         setRebootLoader(true)
         preEpoch_reboot(course_id, course.courses)
             .then(r => {
-                // console.log(r)
                 course.setCourses(r)
                 course.setActiveCourse(index)
                 setRebootLoader(false)
@@ -58,6 +58,9 @@ export const useSpace = ({course, reCourse, binder}) => {
         },
         openSchedule: () => {
             setDesktopMode('schedule')
+        },
+        openMenu: () => {
+            setDesktopMode('menu')
         }
     }
 
@@ -84,6 +87,9 @@ export const useSpace = ({course, reCourse, binder}) => {
         },
         openSchedule: () => {
             setMobileMode('schedule')
+        },
+        openMenu: () => {
+            setMobileMode('menu')
         }
     }
 
@@ -91,6 +97,7 @@ export const useSpace = ({course, reCourse, binder}) => {
     const course_list = <CourseList
         isActiveConfig={desktopMode === 'config'}
         isActiveSch={desktopMode === 'schedule'}
+        isActiveMenu={desktopMode === 'menu'}
         desktopMove={desktopMove}
         mobileMove={mobileMove}
         desktopMode={desktopMode}
@@ -122,6 +129,8 @@ export const useSpace = ({course, reCourse, binder}) => {
         mobileMove={mobileMove}
         courses={course.courses}/>
 
+    const menu = <Menu />
+
 
     const [weekID, setWeekID] = useState(null)
     const [calendar, setCalender] = useState({})
@@ -132,12 +141,15 @@ export const useSpace = ({course, reCourse, binder}) => {
             isMobile ? mobileMove.openSchedule() : desktopMove.openSchedule()
         })
 
+        binder.setFunc('menuOpen', () => {
+            isMobile ? mobileMove.openMenu() : desktopMove.openMenu()
+        })
+
         binder.setFunc('setWeekID', () => {
             setWeekID(weekID)
         })
 
         binder.setFunc('loadCalendar', () => {
-
         })
     }, [])
 
@@ -152,6 +164,8 @@ export const useSpace = ({course, reCourse, binder}) => {
                 return duty
             case 'schedule':
                 return <Schedule weekID={weekID}/>
+            case 'menu':
+                return menu
         }
     }
 
@@ -177,6 +191,8 @@ export const useSpace = ({course, reCourse, binder}) => {
                 return course_list
             case 'schedule':
                 return <Schedule weekID={weekID} setCalender={setCalender}/>
+            case 'menu':
+                return menu
         }
     }
 

@@ -26,7 +26,6 @@ export const check = async () => {
     let badAnswer = {dataState: false, dataUser: {}, moreInfo: {}}
     let data, more
 
-    const bad = () => console.log('bad')
 
     await $authHost.get(API_AUTH)
         .catch(e => badAnswer)

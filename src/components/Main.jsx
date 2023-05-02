@@ -6,13 +6,14 @@ import {Context} from "../index";
 import MySpinner from "./MySpinner";
 import Preloader from './Preloader';
 import Sky from './Sky/Sky';
-import {epoch_allCourseData, epoch_courseData} from "../epoch/epochServer";
+import {epoch_preloadingAllData, epoch_courseData} from "../epoch/epochServer";
 import {preEpoch_reconstructionCourses} from "../epoch/preEpoch";
+import {settings} from "../utils/settings";
 
 const Main = observer(() => {
 
     const [loadingCourse, setLoadingCourse] = useState(true)
-    const {user, course} = useContext(Context)
+    const {user, course, settings} = useContext(Context)
     let id = user.user.anotherID
 
 
@@ -28,12 +29,15 @@ const Main = observer(() => {
     }
 
     useEffect(() => {
-        epoch_allCourseData(id).then(r => {
+        epoch_preloadingAllData(id).then(r => {
             console.log('Main: ', r)
-            course.setCourses(r)
+            // console.log('courses: ', r.courses)
+            course.setCourses(r.courses)
+            settings.setSettings(r.settings)
             if(loadingCourse) setLoadingCourse(false)
         })
     }, [])
+
 
     if (loadingCourse) return <Preloader/>
 
