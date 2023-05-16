@@ -20,11 +20,11 @@ export const useSpace = ({course, reCourse, binder}) => {
 
     const isMobile = useMediaQuery({query: '(max-width: 1300px)'})
 
-    // const [desktopMode, setDesktopMode] = useState('schedule')
-    // const [mobileMode, setMobileMode] = useState('schedule')
-    //
-    const [desktopMode, setDesktopMode] = useState('menu')
-    const [mobileMode, setMobileMode] = useState('menu')
+    const [desktopMode, setDesktopMode] = useState('schedule')
+    const [mobileMode, setMobileMode] = useState('schedule')
+    
+    // const [desktopMode, setDesktopMode] = useState('menu')
+    // const [mobileMode, setMobileMode] = useState('menu')
 
     const [rebootLoader, setRebootLoader] = useState(false)
 

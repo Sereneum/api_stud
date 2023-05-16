@@ -29,7 +29,7 @@ const Menu = () => {
                 </div>
                 <div className={styles.autor}>
                     <div className={styles.autor_name}>Могильников Михаил</div>
-                    <div className={styles.autor_solutions}>Web-designer, UI/UX, Frontend developing</div>
+                    <div className={styles.autor_solutions}>Web-design, UI/UX, Frontend developing</div>
                 </div>
             </div>
             <div className={styles.additional_info}>
