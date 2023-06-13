@@ -9,6 +9,7 @@
     -ms-overflow-style: none;  /* IE и Edge */
     scrollbar-width: none; /* Firefox */
     padding-left: 10px;
+    padding-right: 15px;
 }
 
 .bar::-webkit-scrollbar {
@@ -19,7 +20,7 @@
     height: 35px;
     display: flex;
     flex-direction: row;
-    padding-right: 10px;
+    padding-right: 15px;
     padding-left: 7px;
     border-radius: 48px;
     cursor: pointer;
@@ -51,19 +52,29 @@
     height: 24px;
     /* margin-bottom: auto;
     margin-top: auto; */
-    opacity: 0.8;
+    opacity: 1;
     padding: 2px;
-    margin: auto 5px auto 1px;
+    margin: auto 9px auto 4px;
 }
 
 .icon_schedule {
     width: 22px;
     height: 22px;
-    opacity: 0.8;
+    opacity: 1;
     padding: 2px;
     padding-bottom: 3px;
     padding-top: 1px;
-    margin: auto 6px auto 3px;
+    margin: auto 10px auto 6px;
+}
+
+.icon_menu {
+    width: 20px;
+    height: 20px;
+    opacity: 1;
+    padding: 2px;
+    padding-bottom: 2px;
+    padding-top: 1px;
+    margin: auto 10px auto 5px;
 }
 
 .icon.active {
@@ -71,7 +82,7 @@
 }
 
 .title {
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(255, 255, 255);
     margin-bottom: auto;
     margin-top: auto;
     padding-bottom: 1px;

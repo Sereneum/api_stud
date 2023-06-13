@@ -225,7 +225,7 @@ input:focus {
         position: absolute;
         height: fit-content;
         width: calc(100% - 54px);
-        margin: 30px auto 0 auto;
+        margin: 40px auto 0 auto;
     } 
 
     .days {

@@ -90,7 +90,7 @@ const MobileNavigation = ({mobileMove, mobileMode}) => {
                 <img
                     alt=""
                     src={menu_icon}
-                    className={`${styles.icon_schedule} ${isActive('menu')}`}/>
+                    className={`${styles.icon_menu} ${isActive('menu')}`}/>
                 <div
                     className={`${styles.title} ${isActive('menu')}`}
                 >

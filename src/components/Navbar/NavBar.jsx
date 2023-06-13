@@ -36,7 +36,7 @@ const NavBar = observer(({isLoaded}) => {
                         src={mgriLogo}
                         className={styles.navbar_logo}
                     />
-                    <div className={styles.navbar_space}>.Space</div>
+                    <div className={styles.navbar_space}>Space</div>
                 </Navbar.Brand>
                 {isLoaded && !isMobile ?
                     <Navbar.Brand className={styles.navbar_info_block}>

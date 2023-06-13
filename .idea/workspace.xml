@@ -2,14 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dc2d28cc-c8f7-42aa-baed-f6034f0063b6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/cssAnimation/preloader_animation.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Main.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Duty/DutyAttach/DutyAttachModal/DutyAttachModal.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Duty/DutyAttach/DutyAttachModal/DutyAttachModal.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/MobileNavigation/MobileNavigation.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MobileNavigation/MobileNavigation.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/MobileNavigation/MobileNavigation.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MobileNavigation/MobileNavigation.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Navbar/NavBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navbar/NavBar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Space/Menu/Menu.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Space/Menu/Menu.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Space/Menu/Menu.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Space/Menu/Menu.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Space/Menu/MenuSettingsBlock.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Space/Menu/MenuSettingsBlock.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Space/Menu/MenuSettingsItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Space/Menu/MenuSettingsItem.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Space/Schedule/ScheduleController/ScheduleController.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Space/Schedule/ScheduleController/ScheduleController.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Space/Space.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Space/Space.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/hooks/useSpace.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/useSpace.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +62,7 @@
       <workItem from="1684021123230" duration="483000" />
       <workItem from="1684231932333" duration="1296000" />
       <workItem from="1686463338502" duration="2360000" />
-      <workItem from="1686646868725" duration="310000" />
+      <workItem from="1686646868725" duration="1111000" />
     </task>
     <servers />
   </component>

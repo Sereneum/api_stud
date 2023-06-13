@@ -8,6 +8,7 @@ const MenuSettingsBlock = () => {
     const [settingsData, setSettingsData] = useState([
         {text: 'Отображать количество непрочитанных сообщений на почте', isActive: false},
         {text: 'Анимированный фон', isActive: false},
+
     ])
 
     const setter = (inpInd) => {
@@ -18,9 +19,6 @@ const MenuSettingsBlock = () => {
         )
     }
 
-    useEffect(() => {
-        //console.log(settingsData)
-    }, [settingsData])
 
     return (
         <div className={styles.settings_block}>
