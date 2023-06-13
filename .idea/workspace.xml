@@ -2,29 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dc2d28cc-c8f7-42aa-baed-f6034f0063b6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/Space/Menu/MenuSettingsBlock.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Space/Menu/MenuSettingsItem.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/cssAnimation/preloader_animation.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Duty/Duty.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Duty/Duty.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Main.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/MobileNavigation/MobileNavigation.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MobileNavigation/MobileNavigation.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Navbar/NavBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navbar/NavBar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Space/Config/Config.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Space/Config/Config.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Space/CourseList/CourseList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Space/CourseList/CourseList.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Space/Schedule/Schedule.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Space/Schedule/Schedule.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Space/Schedule/ScheduleController/SchCalendar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Space/Schedule/ScheduleController/SchCalendar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Space/Schedule/ScheduleController/SchDateSelector.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Space/Schedule/ScheduleController/SchDateSelector.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Space/Schedule/ScheduleController/calendar_manager.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Space/Schedule/ScheduleController/calendar_manager.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/TestUI/TestUI.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/epoch/epochServer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/epoch/epochServer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Space/Menu/Menu.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Space/Menu/Menu.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Space/Menu/MenuSettingsBlock.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Space/Menu/MenuSettingsBlock.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Space/Menu/MenuSettingsItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Space/Menu/MenuSettingsItem.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/hooks/useSpace.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/useSpace.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/http/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/http/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/http/userAPI.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/http/userAPI.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/managers/useFileManager.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/managers/useFileManager.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +34,7 @@
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;last_opened_file_path&quot;: &quot;D:/projects/.Space/src/components/Space/Menu&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -68,6 +53,11 @@
       <updated>1682820608910</updated>
       <workItem from="1682820611532" duration="8637000" />
       <workItem from="1682941590781" duration="3719000" />
+      <workItem from="1683545852779" duration="1339000" />
+      <workItem from="1684021123230" duration="483000" />
+      <workItem from="1684231932333" duration="1296000" />
+      <workItem from="1686463338502" duration="2360000" />
+      <workItem from="1686646868725" duration="310000" />
     </task>
     <servers />
   </component>

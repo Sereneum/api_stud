@@ -1,0 +1,26 @@
+.preloader-animation-enter {
+    opacity: 0;
+}
+
+.preloader-animation-enter-active {
+    opacity: 1;
+    transition: all 1s cubic-bezier(0.42, 0, 0.42, 1.35);
+}
+
+.preloader-animation-enter-done {
+    opacity: 1;
+}
+
+.preloader-animation-exit {
+    opacity: 1;
+    transition: all 1s cubic-bezier(0.42, 0, 0.42, 1.35);
+}
+
+.preloader-animation-exit-active {
+    opacity: 0;
+}
+
+.preloader-animation-exit-done {
+    opacity: 0;
+    display: none;
+}

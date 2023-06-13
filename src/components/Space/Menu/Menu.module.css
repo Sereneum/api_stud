@@ -39,6 +39,7 @@
 }
 
 .settings_item {
+
     display: flex;
     /*width: 375px;*/
     height: 36px;
@@ -68,13 +69,28 @@
     margin-bottom: auto;
     display: flex;
     align-items: center;
+    cursor: pointer;
 }
+
+.check_box.activeBox {
+
+}
+
 .check_box > div {
     width: 22.08px;
     height: 22.08px;
     background: #FFFFFF;
     border-radius: 31px;
     margin-left: 3px;
+}
+
+.innerBox {
+    transition: transform 0.423s ease;
+    transform: translateX(0%);
+}
+
+.innerBox.actInBox {
+    transform: translateX(100%);
 }
 
 .settings_item > span {

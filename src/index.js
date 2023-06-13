@@ -9,13 +9,13 @@ import SchStore from "./store/schStore";
 import SettingsStore from "./store/settingsStore";
 export const Context = createContext(null)
 
-window.onload = function () {
-    document.body.classList.add('loaded_hiding');
-    window.setTimeout(function () {
-        document.body.classList.add('loaded');
-        document.body.classList.remove('loaded_hiding');
-    }, 500);
-}
+// window.onload = function () {
+//     document.body.classList.add('loaded_hiding');
+//     window.setTimeout(function () {
+//         document.body.classList.add('loaded');
+//         document.body.classList.remove('loaded_hiding');
+//     }, 500);
+// }
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

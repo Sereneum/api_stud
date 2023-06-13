@@ -22,7 +22,7 @@ export const useSpace = ({course, reCourse, binder}) => {
 
     // const [desktopMode, setDesktopMode] = useState('schedule')
     // const [mobileMode, setMobileMode] = useState('schedule')
-    //
+
     const [desktopMode, setDesktopMode] = useState('menu')
     const [mobileMode, setMobileMode] = useState('menu')
 
