@@ -1,0 +1,452 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+body {
+    background-color: black;
+    font-family: "Inter";
+    margin: 0;
+}
+
+p {
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: 700;
+    font-style: normal;
+    font-family: "Inter-Bold", "Inter", "Inter Placeholder", sans-serif;
+    color: #ffffff;
+    font-size: 16px;
+    letter-spacing: 0em;
+    line-height: 1.2;
+}
+
+.icon {
+    color: white;
+    font-size: 20px;
+}
+
+.breaker {
+    flex-shrink: 0;
+    width: 100%;
+    height: 1px;
+    display: block;
+    background-color: #ffffff;
+    overflow: hidden;
+    opacity: 0.1;
+    position: relative;
+    border-radius: 10px;
+}
+
+
+.window {
+    box-sizing: border-box;
+    width: 100%;
+    height: min-content; /* 1860px */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 165px 0px 80px 0px;
+    background-color: #000000;
+    overflow: hidden;
+    align-content: center;
+    flex-wrap: nowrap;
+    gap: 10px;
+    position: absolute;
+    border-radius: 0px 0px 0px 0px;
+
+}
+
+.content_container {
+    flex-shrink: 0;
+    width: 1320px;
+    height: min-content; /* 1615px */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    overflow: hidden;
+    position: relative;
+    padding: 0px 0px 0px 0px;
+    align-content: flex-start;
+    flex-wrap: nowrap;
+    border-radius: 0px 0px 0px 0px;
+}
+
+.edge_block {
+    flex-shrink: 0;
+    width: 320px;
+    height: 320px;
+    display: block;
+    background-color: #121212;
+    overflow: hidden;
+    position: relative;
+    border-radius: 23px;
+}
+
+.main_block {
+    box-sizing: border-box;
+    flex-shrink: 0;
+    width: 560px;
+    height: min-content; /* 1615px */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 45px 30px 30px 30px;
+    background-color: #121212;
+    overflow: visible;
+    position: relative;
+    align-content: flex-start;
+    flex-wrap: nowrap;
+    gap: 45px;
+    border-radius: 23px;
+}
+
+.title {
+    flex-shrink: 0;
+    width: auto; /* 174px */
+    height: auto; /* 34px */
+    white-space: pre;
+    position: relative;
+    font-weight: 650;
+    font-style: normal;
+    font-family: "Inter-Bold", "Inter", "Inter Placeholder", sans-serif;
+    color: #ffffff;
+    font-size: 28px;
+    letter-spacing: 0em;
+    line-height: 1.2;
+    margin: 0;
+    margin-left: 6px;
+}
+
+.days_container {
+    flex-shrink: 0;
+    width: 100%;
+    height: min-content; /* 1461px */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    overflow: visible;
+    position: relative;
+    padding: 0px 0px 0px 0px;
+    align-content: flex-start;
+    flex-wrap: nowrap;
+    gap: 50px;
+}
+
+.calendar_body {
+    box-sizing: border-box;
+    flex-shrink: 0;
+    width: 245px;
+    height: 44px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 20px 0px 20px;
+    background-color: #1b1b1b;
+    overflow: hidden;
+    z-index: 1;
+    align-content: center;
+    flex-wrap: nowrap;
+    position: absolute;
+    border-radius: 13px;
+    top: 42px;
+    right: 30px;
+    cursor: pointer;
+}
+
+.calendar_date {
+    font-size: 14px;
+}
+
+.day {
+    flex-shrink: 0;
+    width: 100%;
+    height: min-content; /* 577px */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    padding: 0px 0px 0px 0px;
+    align-content: center;
+    flex-wrap: nowrap;
+    gap: 15px;
+    border-radius: 0px 0px 0px 0px;
+}
+
+.date_container {
+    box-sizing: border-box;
+    flex-shrink: 0;
+    width: 100%;
+    height: min-content; /* 20px */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 10px 0px 10px;
+    overflow: hidden;
+    position: relative;
+    align-content: center;
+    flex-wrap: nowrap;
+    border-radius: 0px 0px 0px 0px;
+}
+
+.date {
+    font-size: 14px;
+}
+
+.lesson_container {
+    box-sizing: border-box;
+    flex-shrink: 0;
+    width: 100%;
+    height: min-content; /* 543px */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 24px 24px 24px 24px;
+    background-color: #1b1b1b;
+    overflow: visible;
+    position: relative;
+    align-content: flex-start;
+    gap: 20px;
+    border-radius: 14px;
+}
+
+.lesson {
+    width: 100%;
+    height: min-content; /* 125px */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    overflow: visible;
+    padding: 0px 0px 0px 0px;
+    align-content: flex-start;
+    flex-wrap: nowrap;
+    gap: 15px;
+    position: relative;
+    border-radius: 0px 0px 0px 0px;
+}
+
+.lesson_time_container {
+    flex-shrink: 0;
+    width: 100%;
+    height: min-content; /* 26px */
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    overflow: visible;
+    position: relative;
+    padding: 0px 0px 0px 0px;
+    align-content: center;
+    flex-wrap: nowrap;
+    gap: 15px;
+    border-radius: 0px 0px 0px 0px;
+}
+
+.lesson_time_element_lab {
+    box-sizing: border-box;
+    flex-shrink: 0;
+    width: min-content; /* 107px */
+    height: min-content; /* 26px */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 15px 5px 15px;
+    box-shadow: 0px 4px 8px 1px rgba(145, 40, 175, 0.25);
+    background: linear-gradient(244deg, #b41dbf 0%, hsl(264, 63%, 46%) 100%);
+    overflow: hidden;
+    position: relative;
+    align-content: center;
+    flex-wrap: nowrap;
+    gap: 10px;
+    border-radius: 10px;
+}
+
+.lesson_time_element_pract {
+    box-sizing: border-box;
+    flex-shrink: 0;
+    width: min-content; /* 107px */
+    height: min-content; /* 26px */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 15px 5px 15px;
+    box-shadow: 0px 4px 8px 1px rgba(175, 87, 40, 0.25);
+    background: linear-gradient(244deg, #b7860b 0%, hsl(23, 71%, 43%) 100%);
+    overflow: hidden;
+    position: relative;
+    align-content: center;
+    flex-wrap: nowrap;
+    gap: 10px;
+    border-radius: 10px;
+}
+
+.lesson_time_element_lec {
+    box-sizing: border-box;
+    flex-shrink: 0;
+    width: min-content; /* 107px */
+    height: min-content; /* 26px */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 15px 5px 15px;
+    box-shadow: 0px 4px 8px 1px rgba(40, 175, 82, 0.25);
+    background: linear-gradient(72deg, #189062 0%, hsl(71, 75%, 34%) 100%);
+    overflow: hidden;
+    position: relative;
+    align-content: center;
+    flex-wrap: nowrap;
+    gap: 10px;
+    border-radius: 10px;
+}
+
+.lesson_time_element_exam {
+    box-sizing: border-box;
+    flex-shrink: 0;
+    width: min-content; /* 107px */
+    height: min-content; /* 26px */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 15px 5px 15px;
+    box-shadow: 0px 4px 8px 1px rgba(31, 120, 255, 0.25);
+    background: linear-gradient(244deg, #1f7093 0%, hsl(219, 94%, 38%) 100%);
+    overflow: hidden;
+    position: relative;
+    align-content: center;
+    flex-wrap: nowrap;
+    gap: 10;
+    border-radius: 10px;
+}
+
+.lesson_time {
+    font-size: 13px;
+    white-space: nowrap;
+}
+
+.lesson_active {
+    flex-shrink: 0;
+    width: 6px;
+    height: 6px;
+    display: block;
+    background-color: #40ff00;
+    position: relative;
+    aspect-ratio: 1 / 1;
+    border-radius: 59px;
+    box-shadow: 0px 1px 5px 1px rgba(55, 255, 0, 0.25);
+    animation: pulsing 4s ease-in-out infinite;
+
+}
+
+.lesson_info {
+    flex-shrink: 0;
+    width: 460px;
+    height: min-content; /* 50px */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    padding: 0px 0px 0px 0px;
+    align-content: center;
+    flex-wrap: nowrap;
+    gap: 10px;
+    border-radius: 0px 0px 0px 0px;
+}
+
+.lesson_info_container {
+    flex-shrink: 0;
+    width: 100%;
+    height: min-content; /* 20px */
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    overflow: hidden;
+    opacity: 0.7;
+    position: relative;
+    padding: 0px 0px 0px 0px;
+    align-content: center;
+    flex-wrap: nowrap;
+    gap: 10px;
+    border-radius: 0px 0px 0px 0px;
+}
+
+.lesson_info_text {
+    flex-shrink: 0;
+    width: auto; /* 153px */
+    height: auto; /* 16px */
+    white-space: pre;
+    position: relative;
+    font-weight: 650;
+    font-style: normal;
+    font-family: "Inter-Bold", "Inter", "Inter Placeholder", sans-serif;
+    color: #ffffff;
+    font-size: 13px;
+    letter-spacing: 0em;
+    line-height: 1.2;
+}
+
+
+@keyframes pulsing {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .window {
+        padding-top: 198px;
+    }
+
+    .edge_block {
+        display: none;
+    }
+
+    .content_container {
+        min-width: 100vw;
+        width: 100vw;
+        justify-content: center;
+    }
+
+    .main_block {
+        width: 92vw;
+        padding: 37px 25px 25px 25px;
+    }
+
+    .title {
+        font-size: 24px;
+        margin-left: 10px;
+    }
+
+    .calendar_body {
+        position: relative;
+        width: 100%;
+        top: 0;
+        left: 0;
+    }
+}
+

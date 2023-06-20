@@ -1,16 +1,20 @@
 import React from 'react';
 import styles from './Schedule.module.css'
 import ScheduleLesson from "./ScheduleLesson";
+import stl from './ScheduleSpace.module.css'
+
 
 const ScheduleDay = ({day}) => {
     return (
-        <div className={styles.day}>
-            <div className={styles.day_title}>
-                <div>{day.day}</div>
-                <div className={styles.day_date}>{day.date}</div>
+        <div className={stl.day}>
+
+
+            <div className={stl.date_container}>
+                <p>{day.day}</p>
+                <p className={stl.date}>{day.date}</p>
             </div>
 
-            <div>
+            <div className={stl.lesson_container}>
                 {
                     day.lessons.map(
                         i => <ScheduleLesson lesson={i} key={i['код']}/>

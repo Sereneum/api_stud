@@ -3,26 +3,29 @@ import styles from './Schedule.module.css'
 import lesson_icon from '../../../resources/schedule_lesson/sch_lesson_icon.svg'
 import teacher_icon from '../../../resources/schedule_lesson/sch_teacher_icon.svg'
 import audience_icon from '../../../resources/schedule_lesson/sch_audience_icon.svg'
+import stl from './ScheduleSpace.module.css'
+
+import { GraduationCap, MapPin} from "@phosphor-icons/react";
 
 const ScheduleLesson = ({lesson}) => {
-
-    useEffect(() => {
-        // console.log(lesson)
-    }, [])
 
 
     const typeStyle = (les) => {
         if (les.length > 3 && les.slice(0, 3) === 'лек')
-            return styles.lecture
+            return stl.lesson_time_element_lec
         if (les.length > 3 && les.slice(0, 3) === 'пр.')
-            return styles.practice
+            return stl.lesson_time_element_pract
         if (les.length > 3 && les.slice(0, 3) === 'лаб')
-            return styles.laboratory
+            return stl.lesson_time_element_lab
+        if (les.length > 3 && les.slice(0, 3) === 'экз')
+            return stl.lesson_time_element_exam
     }
 
+
+
     const activeStyle = () => {
-        // let date = new Date(2023, 3, 17, 12)
-        let date = new Date() 
+
+        let date = new Date()
         if (
             lesson['деньНедели'] === date.getDay()
             &&
@@ -43,36 +46,30 @@ const ScheduleLesson = ({lesson}) => {
 
     const isNow = activeStyle()
 
-
     return (
-        <div className={`${styles.lesson_block} ${typeStyle(lessonName)} ${isNow && styles.now}`}>
-            {isNow && <div className={styles.now_point}></div>}
-            <div className={styles.lesson_date_block}>
-                <span className={styles.lesson_date}>{begin}</span>
-                <div className={styles.hor_hr}></div>
-                <span className={styles.lesson_date}>{end}</span>
+        <div className={stl.lesson}>
+
+            <div className={stl.lesson_time_container}>
+                <div className={`${typeStyle(lessonName)}`}>
+                    <p className={stl.lesson_time}>{`${begin} - ${end}`}</p>
+                </div>
+                <div className={stl.lesson_active} style={{display: isNow ? "" : "none"}} ></div>
             </div>
 
-            <div className={styles.ver_hr}></div>
 
-            <div className={styles.lesson_description_block}>
-                <div className={styles.lesson}>
-                    <img src={lesson_icon} alt=""/>
-                    <div>{lessonName}</div>
+            <p>{lessonName}</p>
+
+            <div className={stl.lesson_info}>
+                <div className={stl.lesson_info_container}>
+                    <GraduationCap weight="bold" className={stl.icon}/>
+                    <p className={stl.lesson_info_text}>{teacher}</p>
                 </div>
-
-                <div className={styles.lesson + ' ' + styles.secondary}>
-                    <img src={teacher_icon} alt=""/>
-                    <div>{teacher}</div>
+                <div className={stl.lesson_info_container}>
+                    <MapPin weight="bold" className={stl.icon}/>
+                    <p className={stl.lesson_info_text}>{audience}</p>
                 </div>
-
-                <div className={styles.lesson + ' ' + styles.secondary}>
-                    <img src={audience_icon} alt=""/>
-                    <div>{audience}</div>
-                </div>
-
             </div>
-
+            <div className="breaker"></div>
         </div>
     );
 };

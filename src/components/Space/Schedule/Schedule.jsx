@@ -1,7 +1,10 @@
 import React, {useContext, useEffect, useState} from 'react';
-import styles from './Schedule.module.css'
+
+
+
+
 import {epoch_schedule} from "../../../epoch/epochServer";
-import ScheduleLesson from "./ScheduleLesson";
+
 import {sch_parser} from "./schedule_parser";
 import Spin from "../../Spin";
 import ScheduleDay from "./ScheduleDay";
@@ -9,6 +12,9 @@ import {Context} from "../../../index";
 import {observer} from "mobx-react-lite";
 import ScheduleController from "./ScheduleController/ScheduleController";
 import {parserDateNow, parserDateNowForSch} from "../../../managers/parser";
+
+import styles from './Schedule.module.css'
+import stl from './ScheduleSpace.module.css'
 
 
 const Schedule = observer(({weekID}) => {
@@ -53,8 +59,8 @@ const Schedule = observer(({weekID}) => {
     }
 
     return (
-        <div className={styles.block}>
-            <div className={styles.title}>Расписание</div>
+        <div className={stl.main_block}>
+            <div className={stl.title}>Расписание</div>
 
             {
                 !week || reloading
@@ -72,7 +78,7 @@ const Schedule = observer(({weekID}) => {
                                 reLoadWeek={reLoadWeek}
                             />
                         }
-                        <div>
+                        <div className={stl.days_container}>
                             {
                                 week.map(i => <ScheduleDay key={i.dayIndex} day={i}/>)
                             }
